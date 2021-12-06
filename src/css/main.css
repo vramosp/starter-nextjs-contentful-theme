@@ -19,6 +19,9 @@
 }
 
 @layer components {
+    .overlap {
+        @apply -mt-56 relative z-10;
+    }
     .sb-markdown {
         @apply leading-relaxed;
         a {

@@ -3,7 +3,7 @@ title: Careers
 layout: PageLayout
 sections:
   - elementId: ''
-    colors: colors-a
+    colors: colors-h
     title: We’re growing fast
     subtitle: You should join us.
     media:
@@ -20,7 +20,7 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-12
+          - pt-36
           - pb-12
           - pl-4
           - pr-4
@@ -99,7 +99,7 @@ sections:
     type: MediaGallerySection
   - colors: colors-a
     elementId: ''
-    title: Convinced? check out these open roles
+    title: Open roles
     items:
       - type: FeaturedItem
         title: Product
@@ -196,12 +196,12 @@ sections:
         width: narrow
         margin:
           - mt-0
-          - mb-0
+          - mb-32
           - ml-0
           - mr-0
         padding:
-          - pt-28
-          - pb-28
+          - pt-32
+          - pb-32
           - pl-4
           - pr-4
         justifyContent: center
@@ -210,13 +210,14 @@ sections:
         borderStyle: none
         borderColor: border-dark
       title:
-        textAlign: center
+        textAlign: left
       subtitle:
         textAlign: center
       actions:
         justifyContent: flex-start
     type: FeaturedItemsSection
   - elementId: contact-form
+    customClass: 'overlap'
     colors: colors-f
     backgroundSize: inset
     title: Not seeing the right role? Contact us
@@ -264,15 +265,14 @@ sections:
         height: auto
         width: wide
         margin:
-          - mt-0
           - mb-0
-          - ml-4
-          - mr-4
+          - ml-0
+          - mr-0
         padding:
           - pt-24
           - pb-24
-          - pl-12
-          - pr-12
+          - pr-64
+          - pl-64
         alignItems: center
         justifyContent: center
         flexDirection: row

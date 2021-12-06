@@ -96,7 +96,7 @@ function FaqItem(props) {
     return (
         <div className="sb-faq-section-item border-b border-current pb-8 mb-8" data-sb-field-path={props['data-sb-field-path']}>
             {props.question && (
-                <h3 className={classNames('flex', 'items-center', 'justify-between', 'cursor-pointer', props?.styles?.question ? mapStyles(props?.styles?.question) : null)} onClick={() => setIsActive(!isActive)}>
+                <h3 className={classNames('flex', 'items-center', 'justify-between', 'cursor-pointer', 'text-2xl', props?.styles?.question ? mapStyles(props?.styles?.question) : null)} onClick={() => setIsActive(!isActive)}>
                     <span data-sb-field-path=".question">{props.question}</span>
                     <span className={classNames('ml-4', isActive ? 'transform rotate-90' : null)}><ChevronIcon className="fill-current h-6 w-6" /></span>
                 </h3>

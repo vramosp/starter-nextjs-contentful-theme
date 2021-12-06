@@ -46,7 +46,7 @@ export default function FeaturedItemsSection(props) {
                     {props.subtitle && (
                         <p
                             className={classNames('text-lg', 'sm:text-xl', props?.styles?.subtitle ? mapStyles(props?.styles?.subtitle) : null, {
-                                'mt-2': props.title
+                                'mt-6': props.title
                             })}
                             data-sb-field-path=".subtitle"
                         >

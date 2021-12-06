@@ -17,6 +17,7 @@ export default function Footer(props) {
             data-sb-field-path={`${props.annotationPrefix}:footer`}
         >
             <div className={classNames('mx-auto', footerStyles.width ? mapMaxWidthStyles(footerStyles.width) : null)}>
+                <div className="sb-divider mb-12" />
                 {(props.logo || props.title || props.text) && (
                     <div className="mb-12">
                         <Link href="/" className="flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">

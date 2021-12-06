@@ -35,7 +35,7 @@ sections:
           - mr-0
         padding:
           - pt-12
-          - pb-12
+          - pb-80
           - pr-4
           - pl-4
         alignItems: center
@@ -50,6 +50,7 @@ sections:
       actions:
         justifyContent: flex-start
   - elementId: ''
+    customClass: 'overlap'
     colors: colors-f
     backgroundSize: inset
     title: Where did everyone go?
@@ -78,7 +79,6 @@ sections:
         height: auto
         width: wide
         margin:
-          - mt-20
           - mb-20
           - ml-4
           - mr-4
@@ -507,10 +507,10 @@ sections:
         width: wide
         margin:
           - mt-0
-          - mb-0
+          - mb-24
         padding:
           - pt-28
-          - pb-28
+          - pb-64
           - pl-4
           - pr-4
         justifyContent: center
@@ -520,6 +520,7 @@ sections:
         textAlign: left
     type: TestimonialsSection
   - type: ContactSection
+    customClass: 'overlap'
     colors: colors-f
     title: Get early access
     text: >
@@ -542,15 +543,14 @@ sections:
         height: auto
         width: wide
         margin:
-          - mt-20
           - mb-0
           - ml-0
           - mr-0
         padding:
-          - pt-36
-          - pb-36
-          - pr-32
-          - pl-32
+          - pt-24
+          - pb-24
+          - pr-64
+          - pl-64
         alignItems: center
         justifyContent: center
         flexDirection: row
