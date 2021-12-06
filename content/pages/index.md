@@ -5,7 +5,6 @@ sections:
   - type: HeroSection
     elementId: homepage-hero-1
     colors: colors-a
-    backgroundSize: full
     title: 'Love your work. Work loves you.'
     subtitle: 'One platform, one comunity.'
     actions:
@@ -101,7 +100,7 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-start
-    type: HeroSection
+    type: FeatureHighlightSection
     media:
       url: /images/hero-3.jpg
       altText: Where did everyone go?
@@ -329,7 +328,7 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-start
-    type: HeroSection
+    type: FeatureHighlightSection
   - elementId: ''
     colors: colors-a
     title: And a strong value proposition
@@ -375,7 +374,7 @@ sections:
         textAlign: left
       actions:
         justifyContent: flex-start
-    type: HeroSection
+    type: FeatureHighlightSection
   - elementId: ''
     colors: colors-a
     variant: variant-b

@@ -26,6 +26,7 @@ module.exports = {
             },
             spacing: {
                 '1/1': '100%',
+                '1/4': '25%',
                 '2/3': '66.666%',
                 '3/2': '150%',
                 '3/4': '75%',
@@ -50,7 +51,7 @@ module.exports = {
                 'h1,h2,h3,h4,h5,h6,blockquote': {
                     fontFamily: theme(`fontFamily.${themeStyle.fontHeadlines}`)
                 },
-                h1: {
+                'h1,.h1': {
                     fontSize: theme(`fontSize.${themeStyle.h1.size}`),
                     fontWeight: theme(`fontWeight.${themeStyle.h1.weight}`),
                     letterSpacing: theme(`letterSpacing.${themeStyle.h1.letterSpacing}`),

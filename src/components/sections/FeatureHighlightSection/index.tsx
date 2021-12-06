@@ -7,9 +7,10 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Action, Badge } from '../../atoms';
 
-export default function HeroSection(props) {
+export default function FeatureHighlightSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
+    const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
@@ -24,48 +25,75 @@ export default function HeroSection(props) {
             className={classNames(
                 'sb-component',
                 'sb-component-section',
-                'sb-component-hero-section',
-                colors,
-                'flex',
-                'flex-col',
-                'justify-center',
-                'relative',
-                mapMinHeightStyles(sectionHeight),
-                sectionStyles.margin,
-                sectionPadding,
-                sectionStyles.borderColor,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null
+                'sb-component-feature-highlight-section',
+                bgSize === 'inset' ? 'flex': null,
+                bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
+                sectionStyles.margin
             )}
-            style={{
-                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
-            }}
-         >
-            {props.backgroundImage && heroBackgroundImage(props.backgroundImage)}
-            <div className={classNames('relative', 'flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
-                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
+        >
+            <div
+                className={classNames(
+                    colors,
+                    'flex',
+                    'flex-col',
+                    'justify-center',
+                    'relative',
+                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
+                    mapMinHeightStyles(sectionHeight),
+                    sectionPadding,
+                    sectionStyles.borderColor,
+                    sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
+                    sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
+                    sectionStyles.boxShadow ? mapStyles({ boxShadow: sectionStyles.boxShadow }) : null
+                )}
+                style={{
+                    borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
+                }}
+            >
+                <div
+                    className={classNames(
+                        'relative',
+                        'w-full',
+                        bgSize === 'full' ? 'flex': null,
+                        bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
+                    )}
+                >
                     <div
                         className={classNames(
-                            'flex',
-                            mapFlexDirectionStyles(sectionFlexDirection),
-                            mapStyles({ alignItems: sectionAlignItems }),
-                            'space-y-8',
-                            {
-                                'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
-                                'space-y-reverse lg:space-y-0 lg:space-x-8 lg:space-x-reverse': sectionFlexDirection === 'row-reverse',
-                                'space-y-reverse': sectionFlexDirection === 'col-reverse'
-                            }
+                            'w-full',
+                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
                         )}
                     >
-                        <div className="flex-1 w-full">
-                            {heroBody(props)}
-                            {heroActions(props)}
-                        </div>
-                        {props.media && (
+                        <div
+                            className={classNames(
+                                'flex',
+                                mapFlexDirectionStyles(sectionFlexDirection),
+                                mapStyles({ alignItems: sectionAlignItems }),
+                                'space-y-8',
+                                {
+                                    'space-y-reverse': sectionFlexDirection === 'col-reverse' || sectionFlexDirection === 'row-reverse',
+                                    'lg:space-y-0': sectionFlexDirection === 'row' || sectionFlexDirection === 'row-reverse'
+                                }
+                            )}
+                        >
                             <div className="flex-1 w-full">
-                                <div data-sb-field-path=".media">{heroMedia(props.media)}</div>
+                                <div
+                                    className={classNames({
+                                        'lg:pr-1/4': props.media && sectionFlexDirection === 'row',
+                                        'lg:pl-1/4': props.media && sectionFlexDirection === 'row-reverse',
+                                    })}
+                                >
+                                    {featureHighlightBody(props)}
+                                    {featureHighlightActions(props)}
+                                </div>
                             </div>
-                        )}
+                            {props.media && (
+                                <div className="flex-1 w-full">
+                                    <div data-sb-field-path=".media">{featureHighlightMedia(props.media)}</div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,7 +101,7 @@ export default function HeroSection(props) {
     );
 }
 
-function heroMedia(media) {
+function featureHighlightMedia(media) {
     const mediaType = media.type;
     if (!mediaType) {
         throw new Error(`hero section media does not have the 'type' property`);
@@ -85,31 +113,13 @@ function heroMedia(media) {
     return <Media {...media} />;
 }
 
-function heroBackgroundImage(image) {
-    const imageUrl = image.url;
-    if (!imageUrl) {
-        return null;
-    }
-    const imageStyles = image.styles?.self || {};
-    const imageOpacity = imageStyles.opacity || imageStyles.opacity === 0 ? imageStyles.opacity : 100;
-    return (
-        <div
-            className="bg-cover bg-center block absolute inset-0"
-            style={{
-                backgroundImage: `url('${imageUrl}')`,
-                opacity: imageOpacity * 0.01
-            }}
-        />
-    );
-}
-
-function heroBody(props) {
+function featureHighlightBody(props) {
     const styles = props.styles || {};
     return (
-        <div>
+        <>
             {props.badge && <Badge {...props.badge} data-sb-field-path=".badge" />}
             {props.title && (
-                <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null, { 'mt-4': props.badge?.label })} data-sb-field-path=".title">
+                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null, { 'mt-4': props.badge?.label })} data-sb-field-path=".title">
                     {props.title}
                 </h2>
             )}
@@ -130,11 +140,11 @@ function heroBody(props) {
                     {props.text}
                 </Markdown>
             )}
-        </div>
+        </>
     );
 }
 
-function heroActions(props) {
+function featureHighlightActions(props) {
     const actions = props.actions || [];
     if (actions.length === 0) {
         return null;
