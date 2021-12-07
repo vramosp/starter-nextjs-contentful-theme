@@ -9,17 +9,16 @@ featuredImage:
   altText: Function of design image
 bottomSections:
   - elementId: ''
-    variant: variant-a
+    variant: variant-c
     colors: colors-a
     title: Read next
-    actions: []
     recentCount: 3
     styles:
       self:
         height: auto
         width: wide
         margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0']
-        padding: ['pt-12', 'pb-24', 'pr-4', 'pl-4']
+        padding: ['pt-12', 'pb-56', 'pr-4', 'pl-4']
         justifyContent: center
       title:
         textAlign: center
@@ -28,43 +27,6 @@ bottomSections:
       actions:
         justifyContent: center
     type: RecentPostsSection
-  - type: CtaSection
-    colors: colors-f
-    backgroundSize: inset
-    title: Let's do this
-    text: >-
-      The Stackbit theme is flexible and scalable to every need. It can manage
-      any layout and any screen.
-    actions:
-      - type: Button
-        label: Get Started
-        url: 'https://www.stackbit.com/'
-        style: primary
-    styles:
-      self:
-        height: auto
-        width: wide
-        margin:
-          - mt-0
-          - mb-0
-          - ml-4
-          - mr-4
-        padding:
-          - pt-16
-          - pb-16
-          - pl-12
-          - pr-12
-        alignItems: center
-        justifyContent: center
-        flexDirection: row
-        borderRadius: xx-large
-        boxShadow: xx-large
-      title:
-        textAlign: left
-      text:
-        textAlign: left
-      actions:
-        justifyContent: flex-start
 layout: PostLayout
 ---
 
