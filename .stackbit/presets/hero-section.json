@@ -6,7 +6,6 @@
             "thumbnail": "images/hero-light-image-right.png",
             "data": {
                 "colors": "colors-a",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
@@ -53,7 +52,6 @@
             "thumbnail": "images/hero-light-image-left.png",
             "data": {
                 "colors": "colors-h",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
@@ -105,7 +103,6 @@
             "thumbnail": "images/hero-light-image-bottom.png",
             "data": {
                 "colors": "colors-h",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",

@@ -29,7 +29,6 @@ export default function HeroSection(props) {
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
                 mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
                 sectionPadding,
@@ -41,8 +40,7 @@ export default function HeroSection(props) {
                 borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
          >
-            {props.backgroundImage && heroBackgroundImage(props.backgroundImage)}
-            <div className={classNames('relative', 'flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     <div
                         className={classNames(
@@ -83,24 +81,6 @@ function heroMedia(media) {
         throw new Error(`no component matching the hero section media type: ${mediaType}`);
     }
     return <Media {...media} />;
-}
-
-function heroBackgroundImage(image) {
-    const imageUrl = image.url;
-    if (!imageUrl) {
-        return null;
-    }
-    const imageStyles = image.styles?.self || {};
-    const imageOpacity = imageStyles.opacity || imageStyles.opacity === 0 ? imageStyles.opacity : 100;
-    return (
-        <div
-            className="bg-cover bg-center block absolute inset-0"
-            style={{
-                backgroundImage: `url('${imageUrl}')`,
-                opacity: imageOpacity * 0.01
-            }}
-        />
-    );
 }
 
 function heroBody(props) {
