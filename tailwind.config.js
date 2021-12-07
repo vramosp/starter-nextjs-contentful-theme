@@ -48,7 +48,7 @@ module.exports = {
                 body: {
                     fontFamily: theme(`fontFamily.${themeStyle.fontBody}`)
                 },
-                'h1,h2,h3,h4,h5,h6,blockquote': {
+                'h1,h2,h3,h4,h5,h6,blockquote,.sb-header-logo,.sb-footer-logo': {
                     fontFamily: theme(`fontFamily.${themeStyle.fontHeadlines}`)
                 },
                 'h1,.h1': {

@@ -148,6 +148,7 @@ sections:
   - type: ContactSection
     customClass: 'overlap'
     colors: colors-f
+    backgroundSize: inset
     title: Get early access
     text: >
       Sign up your team today to be the first to try out our new product to
@@ -164,6 +165,9 @@ sections:
           width: full
           type: EmailFormControl
       submitLabel: Sign Up
+      styles:
+        submitLabel:
+          textAlign: center
     styles:
       self:
         height: auto
@@ -173,10 +177,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-24
-          - pb-24
-          - pr-64
-          - pl-64
+          - pt-12
+          - pb-12
         alignItems: center
         justifyContent: center
         flexDirection: row
@@ -185,8 +187,7 @@ sections:
         borderStyle: none
         borderColor: border-dark
       title:
-        textAlign: left
+        textAlign: center
       text:
-        textAlign: left
-    backgroundSize: inset
+        textAlign: center
 ---

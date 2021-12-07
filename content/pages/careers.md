@@ -22,8 +22,6 @@ sections:
         padding:
           - pt-36
           - pb-12
-          - pl-4
-          - pr-4
         alignItems: center
         justifyContent: center
         flexDirection: col
@@ -52,10 +50,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-36
+          - pt-24
           - pb-36
-          - pl-4
-          - pr-4
         justifyContent: center
       quote:
         textAlign: center
@@ -71,7 +67,7 @@ sections:
         url: /images/careers.jpg
         altText: People in the meeting room
       - type: ImageBlock
-        url: /images/careers.jpg
+        url: /images/post-2.jpg
         altText: People in the meeting room
     spacing: 3
     columns: 2
@@ -87,10 +83,8 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-12
+          - pt-24
           - pb-12
-          - pl-4
-          - pr-4
         justifyContent: center
       title:
         textAlign: center
@@ -196,12 +190,12 @@ sections:
         width: narrow
         margin:
           - mt-0
-          - mb-32
+          - mb-0
           - ml-0
           - mr-0
         padding:
           - pt-32
-          - pb-32
+          - pb-96
           - pl-4
           - pr-4
         justifyContent: center
@@ -271,8 +265,6 @@ sections:
         padding:
           - pt-24
           - pb-24
-          - pr-12
-          - pl-12
         alignItems: center
         justifyContent: center
         flexDirection: row
