@@ -12,7 +12,10 @@ export default function FaqSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
-    const sectionBorderWidth = styles.self?.borderWidth ? styles.self?.borderWidth : 0;
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionPadding = styles.self?.padding || 'py-12 px-4';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     const faqItems = props.items || [];
     const actions = props.actions || [];
     return (
@@ -27,20 +30,19 @@ export default function FaqSection(props) {
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
-                styles.self?.height ? mapMinHeightStyles(styles.self?.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 styles.self?.margin,
-                styles.self?.padding,
+                sectionPadding,
                 styles.self?.borderColor,
                 styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
                 styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', styles.self?.justifyContent ? mapStyles({ justifyContent: styles.self?.justifyContent }) : null)}>
-                <div className={classNames('w-full', styles.self?.width ? mapMaxWidthStyles(styles.self?.width) : null)}>
+            <div className={classNames('flex', 'w-full',  mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     <div className="flex flex-wrap">
                         {(props.title || props.subtitle || actions.length > 0) && (
                             <div className={classNames('w-full', { 'lg:w-1/3 lg:pr-3': faqItems.length > 0 })}>
@@ -65,15 +67,15 @@ export default function FaqSection(props) {
                                             'mt-6': props.title || props.subtitle
                                         })}
                                     >
-                                    <div
-                                        className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-                                        data-sb-field-path=".actions"
-                                    >
-                                        {actions.map((action, index) => (
-                                            <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-                                        ))}
+                                        <div
+                                            className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                                            data-sb-field-path=".actions"
+                                        >
+                                            {actions.map((action, index) => (
+                                                <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
                                 )}
                             </div>
                         )}

@@ -84,13 +84,15 @@ function postFeedActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div
-            className={classNames('flex', 'flex-wrap', 'items-center', 'mt-12', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-            data-sb-field-path=".actions"
-        >
-            {props.actions.map((action, index) => (
-                <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-            ))}
+        <div className="mt-12 overflow-x-hidden">
+            <div
+                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                data-sb-field-path=".actions"
+            >
+                {props.actions.map((action, index) => (
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                ))}
+            </div>
         </div>
     );
 }
