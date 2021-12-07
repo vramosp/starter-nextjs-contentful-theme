@@ -13,10 +13,10 @@ export default function PostFeedSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
-    const justifyContent = mapStyles({ justifyContent: sectionStyles.justifyContent || 'center' });
-    const width = mapMaxWidthStyles(sectionStyles.width || 'wide');
-
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -30,19 +30,19 @@ export default function PostFeedSection(props) {
                 'flex-col',
                 'justify-center',
                 'relative',
-                mapMinHeightStyles(sectionStyles.height || 'auto'),
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionStyles.padding || 'py-12 px-4',
+                sectionPadding,
                 sectionStyles.borderColor,
                 sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: sectionBorderWidth ? `${sectionBorderWidth}px` : undefined
+                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', justifyContent)}>
-                <div className={classNames('w-full', width)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     {postFeedHeader(props)}
                     {postFeedVariants(props)}
                     {postFeedActions(props)}

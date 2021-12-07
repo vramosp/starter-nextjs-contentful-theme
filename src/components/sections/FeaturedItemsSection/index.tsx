@@ -10,7 +10,10 @@ export default function FeaturedItemsSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
     const featuredItems = props.items || [];
     return (
         <div
@@ -24,20 +27,19 @@ export default function FeaturedItemsSection(props) {
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionStyles.padding,
+                sectionPadding,
                 sectionStyles.borderColor,
                 sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null)}>
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     {props.title && (
                         <h2 className={classNames(props?.styles?.title ? mapStyles(props?.styles?.title) : null)} data-sb-field-path=".title">
                             {props.title}

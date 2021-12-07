@@ -12,7 +12,10 @@ export default function TestimonialsSection(props) {
     const colors = props.colors || 'colors-a';
     const testimonials = props.testimonials || [];
     const styles = props.styles || {};
-    const sectionBorderWidth = styles.self?.borderWidth ? styles.self?.borderWidth : 0;
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionPadding = styles.self?.padding || 'py-12 px-4';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -26,19 +29,19 @@ export default function TestimonialsSection(props) {
                 'flex-col',
                 'justify-center',
                 'relative',
-                styles.self?.height ? mapMinHeightStyles(styles.self?.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 styles.self?.margin,
-                styles.self?.padding,
+                sectionPadding,
                 styles.self?.borderColor,
                 styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : null
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', styles.self?.justifyContent ? mapStyles({ justifyContent: styles.self?.justifyContent }) : null)}>
-                <div className={classNames('w-full', styles.self?.width ? mapMaxWidthStyles(styles.self?.width) : null)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     {props.title && (
                         <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                             {props.title}

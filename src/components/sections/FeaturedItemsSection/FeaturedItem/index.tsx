@@ -21,7 +21,7 @@ export default function FeaturedItem(props) {
                 styles.self?.padding,
                 styles.self?.borderColor,
                 styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : null,
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
                 styles.self?.textAlign ? mapStyles({ textAlign: styles.self?.textAlign }) : null
             )}
             style={{

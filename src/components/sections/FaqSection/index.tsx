@@ -35,7 +35,7 @@ export default function FaqSection(props) {
                 sectionPadding,
                 styles.self?.borderColor,
                 styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : null
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
             )}
             style={{
                 borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
