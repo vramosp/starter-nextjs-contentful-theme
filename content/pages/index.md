@@ -12,7 +12,6 @@ sections:
         label: Get Started
         url: 'https://www.stackbit.com/'
         style: primary
-        elementId: hero-main-button
       - type: Link
         label: Learn More
         url: /
@@ -79,6 +78,7 @@ sections:
         height: auto
         width: wide
         margin:
+          - mt-0
           - mb-20
           - ml-4
           - mr-4
@@ -87,9 +87,9 @@ sections:
           - pb-16
           - pl-16
           - pr-16
-        alignItems: center
         justifyContent: center
         flexDirection: row
+        alignItems: center
         borderRadius: xx-large
         boxShadow: xx-large
       title:
@@ -309,6 +309,8 @@ sections:
         margin:
           - mt-0
           - mb-0
+          - ml-0
+          - mr-0
         padding:
           - pt-36
           - pb-6
@@ -317,9 +319,6 @@ sections:
         alignItems: center
         justifyContent: center
         flexDirection: row
-        borderColor: border-primary
-        borderWidth: 0
-        borderStyle: solid
       title:
         textAlign: left
       subtitle:
@@ -358,6 +357,8 @@ sections:
         margin:
           - mt-0
           - mb-0
+          - ml-0
+          - mr-0
         padding:
           - pt-6
           - pb-36
@@ -399,7 +400,7 @@ sections:
           - ml-0
           - mr-0
         padding:
-          - pt-22
+          - pt-0
           - pb-36
           - pl-4
           - pr-4
@@ -478,7 +479,7 @@ sections:
     type: FaqSection
     actions:
       - altText: ''
-        url: /
+        url: /faq
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -523,14 +524,16 @@ sections:
     title: Get early access
     text: >
       Sign up your team today to be the first to try out our new product to
-      increae your team’s productivity
+      increase your team’s productivity
     form:
       type: FormBlock
-      elementId: contact-form
+      elementId: sign-up-form
       destination: ''
       action: /.netlify/functions/submission_created
       fields:
         - name: email
+          label: Email
+          hideLabel: true
           placeholder: Your email
           isRequired: true
           width: full
@@ -544,9 +547,10 @@ sections:
         height: auto
         width: wide
         margin:
+          - mt-0
           - mb-0
-          - ml-0
-          - mr-0
+          - ml-4
+          - mr-4
         padding:
           - pt-24
           - pb-24
@@ -556,9 +560,7 @@ sections:
         justifyContent: center
         flexDirection: row
         borderRadius: xx-large
-        borderWidth: 0
-        borderStyle: none
-        borderColor: border-dark
+        boxShadow: xx-large
       title:
         textAlign: center
       text:

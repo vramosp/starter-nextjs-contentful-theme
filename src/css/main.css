@@ -19,7 +19,7 @@
 }
 
 @layer components {
-    .overlap {
+    .sb-component.overlap {
         @apply -mt-72 relative z-10;
     }
     .sb-markdown {

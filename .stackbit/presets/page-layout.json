@@ -11,25 +11,33 @@
                         "type": "HeroSection",
                         "colors": "colors-a",
                         "title": "Love where you work, because work loves you",
-                        "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
+                        "subtitle": "One platform, one community.",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "Get Started",
+                                "url": "/",
+                                "style": "primary"
+                            },
+                            {
+                                "type": "Link",
+                                "label": "Learn More",
+                                "url": "/",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
                         "media": {
                             "type": "ImageBlock",
                             "url": "https://assets.stackbit.com/components/images/default/hero.png",
                             "altText": "Hero section image"
                         },
-                        "actions": [
-                            {
-                                "type": "Button",
-                                "label": "Sign up",
-                                "url": "/",
-                                "style": "primary"
-                            }
-                        ],
                         "styles": {
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
-                                "margin": ["mt-0", "mb-11", "ml-0", "mr-0"],
+                                "margin": ["mt-0", "mb-12", "ml-0", "mr-0"],
                                 "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
                                 "alignItems": "center",
                                 "justifyContent": "center",
@@ -39,8 +47,6 @@
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
                             },
                             "text": {
@@ -52,49 +58,58 @@
                         }
                     },
                     {
-                        "type": "HeroSection",
+                        "type": "FeatureHighlightSection",
                         "colors": "colors-f",
+                        "backgroundSize": "inset",
                         "title": "Where did everyone go?",
                         "text": "Learn how top tech companies have learned working remote using our product.",
-                        "media": {
-                            "type": "ImageBlock",
-                            "url": "/images/hero-3.jpg",
-                            "caption": "Team meeting",
-                            "altText": "Where did everyone go?"
+                        "badge": {
+                            "type": "Badge",
+                            "label": "Case study",
+                            "styles": {
+                                "self": {
+                                    "textAlign": "left"
+                                }
+                            }
                         },
                         "actions": [
                             {
                                 "type": "Button",
-                                "label": "Sign up",
+                                "label": "Get Started",
                                 "url": "/",
-                                "style": "secondary"
+                                "style": "primary"
                             },
                             {
-                                "type": "Button",
+                                "type": "Link",
                                 "label": "Watch Video",
                                 "url": "/",
                                 "style": "link",
                                 "showIcon": true,
-                                "icon": "arrowRight"
+                                "icon": "playCircle",
+                                "iconPosition": "left"
                             }
-
                         ],
+                        "media": {
+                            "type": "ImageBlock",
+                            "url": "/images/hero-3.jpg",
+                            "altText": "Team meeting"
+                        },
                         "styles": {
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
-                                "margin": ["mt-20", "mb-20", "ml-20", "mr-20"],
-                                "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
-                                "alignItems": "center",
+                                "margin": ["mt-0", "mb-20", "ml-4", "mr-4"],
+                                "padding": ["pt-16", "pb-16", "pl-16", "pr-16"],
                                 "justifyContent": "center",
-                                "flexDirection": "row"
+                                "flexDirection": "row",
+                                "alignItems": "center",
+                                "borderRadius": "xx-large",
+                                "boxShadow": "xx-large"
                             },
                             "title": {
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
                             },
                             "text": {
@@ -109,7 +124,7 @@
                         "type": "MediaGallerySection",
                         "colors": "colors-h",
                         "title": "",
-                        "subtitle": "",
+                        "subtitle": "Trusted by",
                         "images": [
                             {
                                 "type": "ImageBlock",
@@ -156,8 +171,8 @@
                         ],
                         "columns": 7,
                         "spacing": 3,
-                        "imageSizePx": 105,
-                        "aspectRatio": "1:1",
+                        "imageSizePx": 240,
+                        "aspectRatio": "auto",
                         "showCaption": false,
                         "enableHover": false,
                         "styles": {
@@ -165,22 +180,20 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-36", "pb-24", "pl-4", "pr-4"],
+                                "padding": ["pt-12", "pb-24", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
                                 "textAlign": "center"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
+                                "textAlign": "center"
                             }
                         }
                     },
                     {
                         "type": "FeaturedItemsSection",
-                        "colors": "colors-h",
+                        "colors": "colors-a",
                         "title": "Remote doesn’t mean alone. Here are so great features",
                         "subtitle": "These are all excellent features that will provide exactly the things you’re looking for.",
                         "items": [
@@ -194,14 +207,12 @@
                                     "altText": "Item image"
                                 },
                                 "styles": {
-                                    "title": {
-                                        "textAlign": "center"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "center"
-                                    },
-                                    "text": {
-                                        "textAlign": "center"
+                                    "self": {
+                                        "textAlign": "left",
+                                        "padding": ["pt-4", "pb-6", "pl-4", "pr-4"],
+                                        "borderColor": "border-dark",
+                                        "borderStyle": "solid",
+                                        "borderWidth": 1
                                     }
                                 }
                             },
@@ -215,14 +226,12 @@
                                     "altText": "Item image"
                                 },
                                 "styles": {
-                                    "title": {
-                                        "textAlign": "center"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "center"
-                                    },
-                                    "text": {
-                                        "textAlign": "center"
+                                    "self": {
+                                        "textAlign": "left",
+                                        "padding": ["pt-4", "pb-6", "pl-4", "pr-4"],
+                                        "borderColor": "border-dark",
+                                        "borderStyle": "solid",
+                                        "borderWidth": 1
                                     }
                                 }
                             },
@@ -236,45 +245,58 @@
                                     "altText": "Item image"
                                 },
                                 "styles": {
-                                    "title": {
-                                        "textAlign": "center"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "center"
-                                    },
-                                    "text": {
-                                        "textAlign": "center"
+                                    "self": {
+                                        "textAlign": "left",
+                                        "padding": ["pt-4", "pb-6", "pl-4", "pr-4"],
+                                        "borderColor": "border-dark",
+                                        "borderStyle": "solid",
+                                        "borderWidth": 1
                                     }
                                 }
                             }
                         ],
                         "columns": 3,
+                        "enableHover": false,
                         "styles": {
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
                                 "textAlign": "center"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "center"
                             }
                         }
                     },
                     {
-                        "type": "HeroSection",
+                        "type": "FeatureHighlightSection",
                         "colors": "colors-a",
                         "title": "A great feature, we’re proud of",
                         "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "Get Started",
+                                "url": "/",
+                                "style": "primary"
+                            },
+                            {
+                                "type": "Link",
+                                "label": "Learn More",
+                                "url": "/",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
                         "media": {
                             "type": "ImageBlock",
-                            "url": "/images/Image-on-the-right.svg",
+                            "url": "/images/hero-1.png",
                             "altText": "Hero section image"
                         },
                         "styles": {
@@ -283,16 +305,14 @@
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
                                 "padding": ["pt-36", "pb-6", "pl-4", "pr-4"],
-                                "alignItems": "center",
                                 "justifyContent": "center",
-                                "flexDirection": "row"
+                                "flexDirection": "row",
+                                "alignItems": "center"
                             },
                             "title": {
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
                             },
                             "text": {
@@ -304,10 +324,26 @@
                         }
                     },
                     {
-                        "type": "HeroSection",
+                        "type": "FeatureHighlightSection",
                         "colors": "colors-a",
                         "title": "And a strong value proposition",
                         "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
+                        "actions": [
+                            {
+                                "type": "Button",
+                                "label": "Get Started",
+                                "url": "/",
+                                "style": "primary"
+                            },
+                            {
+                                "type": "Link",
+                                "label": "Learn More",
+                                "url": "/",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
                         "media": {
                             "type": "ImageBlock",
                             "url": "/images/Image-on-the-left.svg",
@@ -319,16 +355,14 @@
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
                                 "padding": ["pt-6", "pb-36", "pl-4", "pr-4"],
-                                "alignItems": "center",
                                 "justifyContent": "center",
-                                "flexDirection": "row-reverse"
+                                "flexDirection": "row-reverse",
+                                "alignItems": "center"
                             },
                             "title": {
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
                             },
                             "text": {
@@ -340,37 +374,21 @@
                         }
                     },
                     {
-                        "type": "TextSection",
-                        "colors": "colors-a",
-                        "title": "",
-                        "text": "## We sometimes write things. You should read it, it might shed some  light on why we’re doing what we’re doing\n\n\n\n[See all posts](/blog)\n",
-                        "styles": {
-                            "self": {
-                                "height": "auto",
-                                "width": "wide",
-                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-22", "pb-0", "pl-4", "pr-4"],
-                                "justifyContent": "center"
-                            },
-                            "title": {
-                                "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
-                            },
-                            "text": {
-                                "textAlign": "left"
-                            }
-                        }
-                    },
-                    {
                         "type": "FeaturedPostsSection",
-                        "variant": "variant-b",
                         "colors": "colors-a",
-                        "title": "",
-                        "subtitle": "",
+                        "variant": "variant-b",
+                        "title": "We sometimes write things. You should read it, it might shed some  light on why we’re doing what we’re doing",
+                        "actions": [
+                            {
+                                "type": "Link",
+                                "label": "See all posts",
+                                "url": "/blog",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
+                        "showDate": true,
                         "posts": [
                             "content/pages/blog/post-four.md",
                             "content/pages/blog/post-three.md"
@@ -380,16 +398,17 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-36", "pl-4", "pr-4"],
+                                "padding": ["pt-0", "pb-36", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
+                            },
+                            "actions": {
+                                "justifyContent": "flex-start"
                             }
                         }
                     },
@@ -398,6 +417,16 @@
                         "colors": "colors-f",
                         "title": "Need Answers?",
                         "subtitle": "",
+                        "actions": [
+                            {
+                                "type": "Link",
+                                "label": "See all",
+                                "url": "/",
+                                "showIcon": true,
+                                "icon": "arrowRight",
+                                "iconPosition": "right"
+                            }
+                        ],
                         "items": [
                             {
                                 "question": "How it this different from what we have today?",
@@ -415,17 +444,15 @@
                         "styles": {
                             "self": {
                                 "height": "auto",
-                                "width": "narrow",
+                                "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "padding": ["pt-20", "pb-36", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
                                 "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
                                 "textAlign": "left"
                             }
                         }
@@ -433,6 +460,7 @@
                     {
                         "type": "TestimonialsSection",
                         "colors": "colors-a",
+                        "variant": "variant-a",
                         "title": "",
                         "subtitle": "",
                         "testimonials": [
@@ -444,21 +472,6 @@
                                     "type": "ImageBlock",
                                     "url": "/images/carla.jpg",
                                     "altText": "Photo of Carla Rogers"
-                                },
-                                "styles": {
-                                    "self": {
-                                        "margin": ["mt-0", "mb-0"],
-                                        "flexDirection": "row-reverse"
-                                    },
-                                    "quote": {
-                                        "textAlign": "left"
-                                    },
-                                    "name": {
-                                        "textAlign": "left"
-                                    },
-                                    "title": {
-                                        "textAlign": "left"
-                                    }
                                 }
                             }
                         ],
@@ -466,8 +479,8 @@
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
-                                "margin": ["mt-0", "mb-0"],
-                                "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                                "margin": ["mt-0", "mb-24", "ml-0", "mr-0"],
+                                "padding": ["pt-28", "pb-64", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
@@ -481,6 +494,7 @@
                     {
                         "type": "ContactSection",
                         "colors": "colors-f",
+                        "backgroundSize": "inset",
                         "title": "Get early access",
                         "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
                         "form": {
@@ -492,29 +506,38 @@
                                 {
                                     "type": "EmailFormControl",
                                     "name": "email",
+                                    "label": "Email",
+                                    "hideLabel": true,
                                     "placeholder": "Your email",
                                     "isRequired": "true",
                                     "width": "full"
                                 }
                             ],
-                            "submitLabel": "Sign Up"
+                            "submitLabel": "Sign Up",
+                            "styles": {
+                                "submitLabel": {
+                                    "textAlign": "center"
+                                }
+                            }
                         },
                         "media": null,
                         "styles": {
                             "self": {
                                 "height": "auto",
-                                "width": "narrow",
-                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "width": "wide",
+                                "margin": ["mt-0", "mb-0", "ml-4", "mr-4"],
+                                "padding": ["pt-24", "pb-24", "pl-12", "pr-12"],
                                 "alignItems": "center",
                                 "justifyContent": "center",
-                                "flexDirection": "row"
+                                "flexDirection": "row",
+                                "borderRadius": "xx-large", 
+                                "boxShadow": "xx-large"
                             },
                             "title": {
-                                "textAlign": "left"
+                                "textAlign": "center"
                             },
                             "text": {
-                                "textAlign": "left"
+                                "textAlign": "center"
                             }
                         }
                     }
