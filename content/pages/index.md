@@ -498,9 +498,6 @@ sections:
           type: ImageBlock
           url: /images/carla.jpg
           altText: Photo of Isabelle Parks
-        styles:
-          name:
-            fontWeight: '700'
     styles:
       self:
         height: auto

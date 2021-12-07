@@ -6,6 +6,6 @@ postFeed:
   showDate: true
   showAuthor: false
   showExcerpt: false
-  variant: variant-d
+  variant: variant-b
   colors: colors-h
 ---

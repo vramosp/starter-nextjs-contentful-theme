@@ -16,12 +16,7 @@ fields:
   - name: showAuthor
     default: true
   - name: variant
-    default: variant-d
-    options:
-      - label: Three columns grid
-        value: variant-a
-      - label: List
-        value: variant-d
+    default: variant-a
   - name: actions
     hidden: true
     default: []
