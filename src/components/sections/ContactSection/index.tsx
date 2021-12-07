@@ -81,8 +81,8 @@ export default function ContactSection(props) {
                             <div className="flex-1 w-full">
                                 {contactBody(props)}
                                 {props.form && (
-                                    <div className={classNames({ 'mt-12': props.title || props.text })} data-sb-field-path=".form">
-                                        <FormBlock {...props.form} />
+                                    <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })} data-sb-field-path=".form">
+                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" />
                                     </div>
                                 )}
                             </div>

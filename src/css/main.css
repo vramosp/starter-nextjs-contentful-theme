@@ -207,7 +207,19 @@
 
     /* Cards */
     .sb-card {
-        @apply border border-current rounded-2xl overflow-hidden;
+        @apply border border-current;
+    }
+
+    /* Sections */
+    .sb-component-hero-section .sb-component-image-block[src*='.jpg'],
+    .sb-component-feature-highlight-section .sb-component-image-block[src*='.jpg'],
+    .sb-component-media-gallery-section .sb-component-image-block[src*='.jpg'] {
+        @apply rounded-2xl;
+    }
+
+    .text-center + .sb-contact-section-form,
+    .sb-contact-section-form:only-child {
+        text-align: center;
     }
 
     /* Color palettes */

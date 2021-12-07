@@ -82,7 +82,7 @@ function testimonialVariantA(testimonial, index) {
         >
             {testimonial.image && (
                 <div className="flex-shrink-0 max-w-lg mb-8 md:mb-0 md:mr-8 md:w-2/5" data-sb-field-path=".image">
-                    <ImageBlock {...testimonial.image} className="w-full" />
+                    <ImageBlock {...testimonial.image} className="w-full rounded-2xl" />
                 </div>
             )}
             <div className="flex-grow">

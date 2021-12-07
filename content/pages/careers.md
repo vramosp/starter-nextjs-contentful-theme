@@ -271,8 +271,8 @@ sections:
         padding:
           - pt-24
           - pb-24
-          - pr-64
-          - pl-64
+          - pr-12
+          - pl-12
         alignItems: center
         justifyContent: center
         flexDirection: row
