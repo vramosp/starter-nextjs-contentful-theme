@@ -7,5 +7,16 @@ postFeed:
   showAuthor: false
   showExcerpt: false
   variant: variant-b
-  colors: colors-h
+  colors: colors-a
+  styles:
+    self:
+      width: wide
+      padding:
+        - pt-0
+        - pl-4
+        - pr-4
+        - pb-12
+styles:
+  title:
+    textAlign: center
 ---

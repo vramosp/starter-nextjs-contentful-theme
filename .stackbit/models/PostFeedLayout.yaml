@@ -40,3 +40,13 @@ fields:
       type: model
       groups:
         - sectionComponent
+  - type: style
+    name: styles
+    styles:
+      title:
+        fontWeight: ['400', '700']
+        fontStyle: ['normal', 'italic']
+        textAlign: ['left', 'center', 'right']
+    default:
+      title:
+        textAlign: center

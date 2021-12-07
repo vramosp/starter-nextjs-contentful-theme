@@ -4,11 +4,15 @@ import classNames from 'classnames';
 import Link from '../../atoms/Link';
 import { getComponent } from '../../components-registry';
 import { getBaseLayoutComponent } from '../../../utils/base-layout';
+import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 
 export default function PostFeedLayout(props) {
     const { page, site } = props;
     const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
     const { title, topSections = [], bottomSections = [], pageIndex, baseUrlPath, numOfPages, items, postFeed } = page;
+    const postFeedColors = postFeed?.colors || 'colors-a';
+    const postFeedWidth = postFeed?.styles?.self?.width || 'wide';
+    const postFeedJustifyContent = postFeed?.styles?.self?.justifyContent || 'center';
     const PostFeedSection = getComponent('PostFeedSection');
     const pageLinks = PageLinks({ pageIndex, baseUrlPath, numOfPages });
 
@@ -16,9 +20,11 @@ export default function PostFeedLayout(props) {
         <BaseLayout page={page} site={site}>
             <main id="main" className="layout page-layout">
                 {title && (
-                    <h1 className="max-w-screen-xl mx-auto text-center my-12" data-sb-field-path="title">
-                        {title}
-                    </h1>
+                    <div className={classNames('flex', 'py-12', 'lg:py-14', 'px-4', postFeedColors, mapStyles({ justifyContent: postFeedJustifyContent }))}>
+                        <h1 className={classNames('w-full', mapMaxWidthStyles(postFeedWidth), page?.styles?.title ? mapStyles(page?.styles?.title) : null)} data-sb-field-path="title">
+                            {title}
+                        </h1>
+                    </div>
                 )}
                 {renderSections(topSections, 'topSections')}
                 <PostFeedSection {...postFeed} posts={items} pageLinks={pageLinks} data-sb-field-path="postFeed" />
@@ -125,4 +131,16 @@ function Ellipsis() {
 
 function urlPathForPageAtIndex(pageIndex, baseUrlPath) {
     return pageIndex === 0 ? baseUrlPath : `${baseUrlPath}/page/${pageIndex + 1}`;
+}
+
+function mapMaxWidthStyles(width) {
+    switch (width) {
+        case 'narrow':
+            return 'max-w-screen-md';
+        case 'wide':
+            return 'max-w-screen-xl';
+        case 'full':
+            return 'max-w-full';
+    }
+    return null;
 }
