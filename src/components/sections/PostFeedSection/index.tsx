@@ -116,7 +116,7 @@ function postsVariantA(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })}>
+        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-3', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
             {posts.map((post, index) => (
                 <article key={index} data-sb-object-id={post.__metadata?.id}>
                     {post.featuredImage && (
@@ -150,7 +150,7 @@ function postsVariantB(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-5', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })}>
+        <div className={classNames('grid', 'gap-x-6', 'gap-y-12', 'md:grid-cols-5', 'lg:gap-x-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
             {posts.map((post, index) => (
                 <article
                     key={index}
@@ -192,7 +192,7 @@ function postsVariantC(props) {
         return null;
     }
     return (
-        <div className={classNames('grid', 'gap-6', 'md:grid-cols-3', 'lg:gap-8', { 'mt-12': props.title || props.subtitle })}>
+        <div className={classNames('grid', 'gap-6', 'md:grid-cols-3', 'lg:gap-8', { 'mt-12': props.title || props.subtitle })} data-sb-field-path=".posts">
             {posts.map((post, index) => {
                 return (
                     <article
