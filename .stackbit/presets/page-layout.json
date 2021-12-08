@@ -739,7 +739,7 @@
                                 "height": "auto",
                                 "width": "wide",
                                 "margin": ["mt-0", "mb-0"],
-                                "padding": ["pt-36", "pb-36", "pl-4", "pr-4"],
+                                "padding": ["pt-12", "pb-36", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "quote": {
@@ -754,81 +754,135 @@
                         }
                     },
                     {
-                        "type": "FeaturedItemsSection",
+                        "type": "MediaGallerySection",
                         "colors": "colors-a",
-                        "title": "Convinced? check out these open roles",
+                        "title": "",
                         "subtitle": "",
-                        "items": [
+                        "images": [
                             {
-                                "type": "FeaturedItem",
-                                "title": "Product",
-                                "text": "Director of product management\n\n**San Francisco**\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and\n",
-                                "featuredImage": null,
-                                "styles": {
-                                    "title": {
-                                        "textAlign": "left"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "left"
-                                    },
-                                    "text": {
-                                        "textAlign": "left"
-                                    }
-                                }
+                                "type": "ImageBlock",
+                                "url": "/images/careers.jpg",
+                                "caption": "Meeting room",
+                                "altText": "People in the meeting room"
                             },
                             {
-                                "type": "FeaturedItem",
-                                "title": "Engineering",
-                                "text": "Head of eng\n\n**San Francisco**\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and\n",
-                                "featuredImage": null,
-                                "styles": {
-                                    "title": {
-                                        "textAlign": "left"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "left"
-                                    },
-                                    "text": {
-                                        "textAlign": "left"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "FeaturedItem",
-                                "title": "Product",
-                                "text": "Director of product management\n\n**San Francisco**\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and\n",
-                                "featuredImage": null,
-                                "styles": {
-                                    "title": {
-                                        "textAlign": "left"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "left"
-                                    },
-                                    "text": {
-                                        "textAlign": "left"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "FeaturedItem",
-                                "title": "Product",
-                                "text": "Director of product management\n\n**San Francisco**\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and\n",
-                                "featuredImage": null,
-                                "styles": {
-                                    "title": {
-                                        "textAlign": "left"
-                                    },
-                                    "subtitle": {
-                                        "textAlign": "left"
-                                    },
-                                    "text": {
-                                        "textAlign": "left"
-                                    }
-                                }
+                                "type": "ImageBlock",
+                                "url": "/images/post-2.jpg",
+                                "caption": "Team meeting",
+                                "altText": "Team meeting"
                             }
                         ],
-                        "columns": 1,
+                        "columns": 2,
+                        "spacing": 3,
+                        "imageSizePx": 400,
+                        "aspectRatio": "1:1",
+                        "showCaption": false,
+                        "enableHover": false,
+                        "styles": {
+                            "self": {
+                                "height": "auto",
+                                "width": "wide",
+                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
+                                "padding": ["pt-12", "pb-24", "pl-4", "pr-4"],
+                                "justifyContent": "center"
+                            },
+                            "title": {
+                                "textAlign": "center"
+                            },
+                            "subtitle": {
+                                "textAlign": "center"
+                            }
+                        }
+                    },
+                    {
+                        "type": "JobsSection",
+                        "colors": "colors-a",
+                        "title": "Open roles",
+                        "subtitle": "",
+                        "jobLists": [
+                            {
+                                "type": "JobList",
+                                "title": "Product",
+                                "items": [
+                                    {
+                                        "type": "JobListItem",
+                                        "title": "Director of product management",
+                                        "location": "San Francisco",
+                                        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
+                                        "actions": [
+                                            {
+                                                "type": "Link",
+                                                "label": "Apply",
+                                                "url": "/",
+                                                "showIcon": true,
+                                                "icon": "arrowRight",
+                                                "iconPosition": "right"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "JobList",
+                                "title": "Engineering",
+                                "items": [
+                                    {
+                                        "type": "JobListItem",
+                                        "title": "Head of engineering",
+                                        "location": "San Francisco",
+                                        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
+                                        "actions": [
+                                            {
+                                                "type": "Link",
+                                                "label": "Apply",
+                                                "url": "/",
+                                                "showIcon": true,
+                                                "icon": "arrowRight",
+                                                "iconPosition": "right"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "JobListItem",
+                                        "title": "Senior Backend Engineer",
+                                        "location": "Remote",
+                                        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
+                                        "actions": [
+                                            {
+                                                "type": "Link",
+                                                "label": "Apply",
+                                                "url": "/",
+                                                "showIcon": true,
+                                                "icon": "arrowRight",
+                                                "iconPosition": "right"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "JobList",
+                                "title": "Sales",
+                                "items": [
+                                    {
+                                        "type": "JobListItem",
+                                        "title": "Sales Development Representative",
+                                        "location": "San Francisco",
+                                        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
+                                        "actions": [
+                                            {
+                                                "type": "Link",
+                                                "label": "Apply",
+                                                "url": "/",
+                                                "showIcon": true,
+                                                "icon": "arrowRight",
+                                                "iconPosition": "right"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
                         "styles": {
                             "self": {
                                 "height": "auto",
@@ -838,18 +892,17 @@
                                 "justifyContent": "center"
                             },
                             "title": {
-                                "textAlign": "center"
+                                "textAlign": "left"
                             },
                             "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "center"
+                                "textAlign": "left"
                             }
                         }
                     },
                     {
                         "type": "ContactSection",
                         "colors": "colors-f",
+                        "backgroundSize": "inset",
                         "title": "Not seeing the right role? Contact us",
                         "text": "We might have more roles soon, and we’ll contact you if we think there might be a good match",
                         "form": {
@@ -861,7 +914,6 @@
                                 {
                                     "type": "TextFormControl",
                                     "name": "name",
-                                    "label": "Name",
                                     "placeholder": "Your name",
                                     "isRequired": "true",
                                     "width": "1/2"
@@ -869,7 +921,6 @@
                                 {
                                     "type": "EmailFormControl",
                                     "name": "email",
-                                    "label": "Email",
                                     "placeholder": "Your email",
                                     "isRequired": "true",
                                     "width": "1/2"
@@ -877,7 +928,6 @@
                                 {
                                     "type": "TextFormControl",
                                     "name": "address",
-                                    "label": "Home address",
                                     "placeholder": "Your home address",
                                     "isRequired": "false",
                                     "width": "full"
@@ -896,18 +946,20 @@
                         "styles": {
                             "self": {
                                 "height": "auto",
-                                "width": "narrow",
-                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "width": "wide",
+                                "margin": ["mt-36", "mb-0", "ml-0", "mr-0"],
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
                                 "alignItems": "center",
                                 "justifyContent": "center",
-                                "flexDirection": "row"
+                                "flexDirection": "row",
+                                "borderRadius": "xx-large",
+                                "boxShadow": "xx-large"
                             },
                             "title": {
-                                "textAlign": "left"
+                                "textAlign": "center"
                             },
                             "text": {
-                                "textAlign": "left"
+                                "textAlign": "center"
                             }
                         }
                     }

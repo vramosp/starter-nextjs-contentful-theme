@@ -572,7 +572,7 @@ fields:
     group: color-palettes
   - type: color
     name: onLight
-    label: On light
+    label: Foreground over light
     group: color-palettes
   - type: color
     name: dark
@@ -580,7 +580,7 @@ fields:
     group: color-palettes
   - type: color
     name: onDark
-    label: On dark
+    label: Foreground over dark
     group: color-palettes
   - type: color
     name: primary
@@ -588,7 +588,7 @@ fields:
     group: color-palettes
   - type: color
     name: onPrimary
-    label: On primary
+    label: Foreground over primary
     group: color-palettes
   - type: color
     name: secondary
@@ -596,7 +596,7 @@ fields:
     group: color-palettes
   - type: color
     name: onSecondary
-    label: On secondary
+    label: Foreground over secondary
     group: color-palettes
   - type: color
     name: complementary
@@ -604,7 +604,7 @@ fields:
     group: color-palettes
   - type: color
     name: onComplementary
-    label: On complementary
+    label: Foreground over complementary
     group: color-palettes
   - type: object
     name: buttonPrimary
