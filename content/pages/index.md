@@ -498,7 +498,7 @@ sections:
         image:
           type: ImageBlock
           url: /images/carla.jpg
-          altText: Photo of Isabelle Parks
+          altText: Photo of Carla Rogers
     styles:
       self:
         height: auto
