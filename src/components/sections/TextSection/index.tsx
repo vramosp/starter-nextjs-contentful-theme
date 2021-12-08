@@ -7,9 +7,12 @@ import { getDataAttrs } from '../../../utils/get-data-attrs';
 
 export default function TextSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -18,23 +21,24 @@ export default function TextSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-text-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionStyles.padding,
+                sectionStyles.padding || 'py-12 px-4',
                 sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
+                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null)}>
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>{textBody(props)}</div>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{textBody(props)}</div>
             </div>
         </div>
     );
@@ -72,8 +76,6 @@ function textBody(props) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

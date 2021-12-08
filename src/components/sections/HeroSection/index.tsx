@@ -9,13 +9,13 @@ import { Action, Badge } from '../../atoms';
 
 export default function HeroSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
-    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
-    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
@@ -25,13 +25,14 @@ export default function HeroSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-hero-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
                 mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionPadding,
+                sectionStyles.padding || 'py-12 px-4',
                 sectionStyles.borderColor,
                 sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
                 sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null

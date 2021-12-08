@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import classNames from 'classnames';
 import Markdown from 'markdown-to-jsx';
 
@@ -9,12 +8,12 @@ import Action from '../../atoms/Action';
 
 export default function JobsSection(props) {
     const cssId = props.elementId || null;
-    const customClass = props.customClass || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
-    const sectionWidth = mapMaxWidthStyles(styles.self?.width || 'wide');
-    const sectionHeight = mapMinHeightStyles(styles.self?.height || 'auto');
-    const sectionJustifyContent = mapStyles({ justifyContent: styles.self?.justifyContent || 'center' });
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     const jobLists = props.jobLists || [];
     return (
         <div
@@ -24,24 +23,24 @@ export default function JobsSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-jobs-section',
-                customClass,
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                sectionHeight,
+                mapMinHeightStyles(sectionHeight),
                 styles.self?.margin,
                 styles.self?.padding || 'py-12 px-4',
                 styles.self?.borderColor,
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
                 borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionJustifyContent)}>
-                <div className={classNames('w-full', sectionWidth)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     {props.title && (
                         <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                             {props.title}

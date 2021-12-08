@@ -9,12 +9,12 @@ import ImageBlock from '../../molecules/ImageBlock';
 
 export default function FeaturedPeopleSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
-    const sectionStyles = props.styles?.self || {};
-    const sectionWidth = sectionStyles.width || 'wide';
-    const sectionHeight = sectionStyles.height || 'auto';
-    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
-    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const styles = props.styles || {};
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -23,54 +23,43 @@ export default function FeaturedPeopleSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-featured-people-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
                 mapMinHeightStyles(sectionHeight),
-                sectionStyles.margin,
-                sectionPadding,
-                sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none'
+                styles.self?.margin,
+                styles.self?.padding || 'py-12 px-4',
+                styles.self?.borderColor,
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
-                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
-                    {featuredPeopleHeader(props)}
+                    {props.title && (
+                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                            {props.title}
+                        </h2>
+                    )}
+                    {props.subtitle && (
+                        <p
+                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
+                                'mt-6': props.title
+                            })}
+                            data-sb-field-path=".subtitle"
+                        >
+                            {props.subtitle}
+                        </p>
+                    )}
                     {featuredPeopleVariants(props)}
                     {featuredPeopleActions(props)}
                 </div>
             </div>
-        </div>
-    );
-}
-
-function featuredPeopleHeader(props) {
-    if (!props.title && !props.subtitle) {
-        return null;
-    }
-    const styles = props.styles || {};
-    return (
-        <div>
-            {props.title && (
-                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                    {props.title}
-                </h2>
-            )}
-            {props.subtitle && (
-                <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
-                        'mt-2': props.title
-                    })}
-                    data-sb-field-path=".subtitle"
-                >
-                    {props.subtitle}
-                </p>
-            )}
         </div>
     );
 }

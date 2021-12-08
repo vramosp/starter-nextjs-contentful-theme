@@ -15,9 +15,8 @@ export default function FeatureHighlightSection(props) {
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
-    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
-    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
@@ -43,7 +42,7 @@ export default function FeatureHighlightSection(props) {
                     bgSize === 'inset' ? 'w-full': null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
-                    sectionPadding,
+                    sectionStyles.padding || 'py-12 px-4',
                     sectionStyles.borderColor,
                     sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
                     sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,

@@ -7,9 +7,12 @@ import { getDataAttrs } from '../../../utils/get-data-attrs';
 
 export default function QuoteSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -18,20 +21,21 @@ export default function QuoteSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-quote-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
                 'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionStyles.padding,
+                sectionStyles.padding || 'py-12 px-4',
                 sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
+                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
         >
             {props.backgroundImage && quoteBackgroundImage(props.backgroundImage)}
@@ -40,10 +44,10 @@ export default function QuoteSection(props) {
                     'flex',
                     'relative',
                     'w-full',
-                    sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null
+                    mapStyles({ justifyContent: sectionJustifyContent })
                 )}
             >
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>{quoteContent(props)}</div>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>{quoteContent(props)}</div>
             </div>
         </div>
     );

@@ -8,14 +8,14 @@ import Action from '../../atoms/Action';
 
 export default function CtaSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
-    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
-    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
     const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
@@ -25,6 +25,7 @@ export default function CtaSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-cta-section',
+                cssCustomClass,
                 bgSize === 'inset' ? 'flex': null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
@@ -40,7 +41,7 @@ export default function CtaSection(props) {
                     bgSize === 'inset' ? 'w-full': null,
                     bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
                     mapMinHeightStyles(sectionHeight),
-                    sectionPadding,
+                    sectionStyles.padding || 'py-12 px-4',
                     sectionStyles.borderColor,
                     sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
                     sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
@@ -153,8 +154,6 @@ function ctaActions(props) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

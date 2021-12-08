@@ -8,14 +8,14 @@ import ImageBlock from '../../molecules/ImageBlock';
 
 export default function TestimonialsSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const variant = props.variant || 'variant-a';
     const colors = props.colors || 'colors-a';
-    const testimonials = props.testimonials || [];
     const styles = props.styles || {};
     const sectionWidth = styles.self?.width || 'wide';
     const sectionHeight = styles.self?.height || 'auto';
-    const sectionPadding = styles.self?.padding || 'py-12 px-4';
     const sectionJustifyContent = styles.self?.justifyContent || 'center';
+    const testimonials = props.testimonials || [];
     return (
         <div
             id={cssId}
@@ -24,6 +24,7 @@ export default function TestimonialsSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-testimonials-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
@@ -31,10 +32,10 @@ export default function TestimonialsSection(props) {
                 'relative',
                 mapMinHeightStyles(sectionHeight),
                 styles.self?.margin,
-                sectionPadding,
+                styles.self?.padding || 'py-12 px-4',
                 styles.self?.borderColor,
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
                 borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
@@ -49,7 +50,7 @@ export default function TestimonialsSection(props) {
                     )}
                     {props.subtitle && (
                         <p
-                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': props.title })}
+                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
                             data-sb-field-path=".subtitle"
                         >
                             {props.subtitle}
@@ -202,8 +203,6 @@ function testimonialVariantC(testimonial, index) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

@@ -10,11 +10,11 @@ import ChevronIcon from '../../svgs/chevron-right';
 
 export default function FaqSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
     const sectionWidth = styles.self?.width || 'wide';
     const sectionHeight = styles.self?.height || 'auto';
-    const sectionPadding = styles.self?.padding || 'py-12 px-4';
     const sectionJustifyContent = styles.self?.justifyContent || 'center';
     const faqItems = props.items || [];
     const actions = props.actions || [];
@@ -26,16 +26,17 @@ export default function FaqSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-faq-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
                 mapMinHeightStyles(sectionHeight),
                 styles.self?.margin,
-                sectionPadding,
+                styles.self?.padding || 'py-12 px-4',
                 styles.self?.borderColor,
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
-                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none'
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
                 borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
@@ -118,8 +119,6 @@ function FaqItem(props) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

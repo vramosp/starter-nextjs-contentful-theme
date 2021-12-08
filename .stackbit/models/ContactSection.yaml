@@ -84,8 +84,8 @@ fields:
       self:
         height: ['auto', 'screen']
         width: ['narrow', 'wide', 'full']
-        margin: ['tw0:64']
-        padding: ['tw0:64']
+        margin: ['tw0:96']
+        padding: ['tw0:96']
         alignItems: ['flex-start', 'flex-end', 'center']
         justifyContent: ['flex-start', 'flex-end', 'center']
         flexDirection: ['row', 'row-reverse', 'col', 'col-reverse']

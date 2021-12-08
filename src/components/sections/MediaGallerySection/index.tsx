@@ -35,6 +35,7 @@ type MediaGalleryStyle = {
 type BaseSectionComponentProps = {
     type: string;
     elementId: string;
+    customClass: string;
     colors?: string;
     styles?: BaseSectionStyle & MediaGalleryStyle;
 };
@@ -59,13 +60,12 @@ export type MediaGallerySectionProps = BaseSectionComponentProps & {
 
 export default function MediaGallerySection(props: MediaGallerySectionProps) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self;
     const sectionWidth = sectionStyles?.width || 'wide';
     const sectionHeight = sectionStyles?.height || 'auto';
-    const sectionPadding = sectionStyles?.padding || 'py-12 px-4';
     const sectionJustifyContent = sectionStyles?.justifyContent || 'center';
-    const sectionBorderWidth = sectionStyles?.borderWidth || 0;
     return (
         <div
             id={cssId}
@@ -74,19 +74,20 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-media-gallery-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
                 mapMinHeightStyles(sectionHeight),
                 sectionStyles?.margin,
-                sectionPadding,
+                sectionStyles?.padding || 'py-12 px-4',
                 sectionStyles?.borderColor,
                 sectionStyles?.borderRadius ? mapStyles({ borderRadius: sectionStyles?.borderRadius }) : null,
                 sectionStyles?.borderStyle ? mapStyles({ borderStyle: sectionStyles?.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: sectionBorderWidth ? `${sectionBorderWidth}px` : null
+                borderWidth: sectionStyles?.borderWidth ? `${sectionStyles?.borderWidth}px` : null
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
@@ -123,7 +124,7 @@ function MediaGalleryHeader(props: MediaGallerySectionProps) {
             )}
             {props.subtitle && (
                 <p
-                    className={classNames('text-lg', 'sm:text-xl', styles?.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': props.title })}
+                    className={classNames('text-lg', 'sm:text-xl', styles?.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
                     data-sb-field-path=".subtitle"
                 >
                     {props.subtitle}
@@ -198,8 +199,6 @@ function MediaGalleryImageGrid(props: MediaGallerySectionProps) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

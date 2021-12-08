@@ -20,8 +20,8 @@ export default function FeaturedItem(props) {
                 props.enableHover ? 'sb-component-item-hover' : null,
                 styles.self?.padding,
                 styles.self?.borderColor,
-                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
                 styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null,
                 styles.self?.textAlign ? mapStyles({ textAlign: styles.self?.textAlign }) : null
             )}
             style={{

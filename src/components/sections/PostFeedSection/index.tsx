@@ -11,11 +11,11 @@ import getPageUrlPath from '../../../utils/get-page-url-path';
 
 export default function PostFeedSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
     const sectionWidth = sectionStyles.width || 'wide';
     const sectionHeight = sectionStyles.height || 'auto';
-    const sectionPadding = sectionStyles.padding || 'py-12 px-4';
     const sectionJustifyContent = sectionStyles.justifyContent || 'center';
     return (
         <div
@@ -25,6 +25,7 @@ export default function PostFeedSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-post-feed-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
@@ -32,7 +33,7 @@ export default function PostFeedSection(props) {
                 'relative',
                 mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionPadding,
+                sectionStyles.padding || 'py-12 px-4',
                 sectionStyles.borderColor,
                 sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
                 sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none'
@@ -67,7 +68,7 @@ function postFeedHeader(props) {
             )}
             {props.subtitle && (
                 <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': props.title })}
+                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
                     data-sb-field-path=".subtitle"
                 >
                     {props.subtitle}
