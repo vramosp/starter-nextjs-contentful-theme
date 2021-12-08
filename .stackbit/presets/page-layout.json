@@ -530,7 +530,7 @@
                                 "alignItems": "center",
                                 "justifyContent": "center",
                                 "flexDirection": "row",
-                                "borderRadius": "xx-large", 
+                                "borderRadius": "xx-large",
                                 "boxShadow": "xx-large"
                             },
                             "title": {
@@ -567,14 +567,30 @@
                             {
                                 "question": "How it this different from what we have today?",
                                 "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                            },
+                            {
+                                "question": "How it this different from what we have today?",
+                                "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                            },
+                            {
+                                "question": "How it this different from what we have today?",
+                                "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                            },
+                            {
+                                "question": "How it this different from what we have today?",
+                                "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                            },
+                            {
+                                "question": "How it this different from what we have today?",
+                                "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
                             }
                         ],
                         "styles": {
                             "self": {
                                 "height": "auto",
-                                "width": "narrow",
+                                "width": "wide",
                                 "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
-                                "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
+                                "padding": ["pt-24", "pb-12", "pl-4", "pr-4"],
                                 "justifyContent": "center"
                             },
                             "title": {
@@ -591,8 +607,9 @@
                         "type": "FeaturedPostsSection",
                         "variant": "variant-b",
                         "colors": "colors-a",
-                        "title": "",
+                        "title": "Recent posts",
                         "subtitle": "",
+                        "showDate": "true",
                         "posts": [
                             "content/pages/blog/post-four.md",
                             "content/pages/blog/post-three.md"
@@ -616,56 +633,52 @@
                         }
                     },
                     {
-                        "type": "HeroSection",
+                        "type": "ContactSection",
                         "colors": "colors-f",
-                        "title": "Where did everyone go?",
-                        "text": "Learn how top tech companies have learned working remote using our product.",
-                        "media": {
-                            "type": "ImageBlock",
-                            "url": "/images/hero-3.jpg",
-                            "caption": "Team meeting",
-                            "altText": "Where did everyone go?"
-                        },
-                        "actions": [
-                            {
-                                "type": "Button",
-                                "label": "Sign up",
-                                "url": "/",
-                                "style": "secondary"
-                            },
-                            {
-                                "type": "Button",
-                                "label": "Watch Video",
-                                "url": "/",
-                                "style": "link",
-                                "showIcon": true,
-                                "icon": "arrowRight"
+                        "backgroundSize": "inset",
+                        "title": "Get early access",
+                        "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
+                        "form": {
+                            "type": "FormBlock",
+                            "elementId": "sign-up-form",
+                            "action": "/.netlify/functions/submission_created",
+                            "destination": "",
+                            "fields": [
+                                {
+                                    "type": "EmailFormControl",
+                                    "name": "email",
+                                    "label": "Email",
+                                    "hideLabel": true,
+                                    "placeholder": "Your email",
+                                    "isRequired": "true",
+                                    "width": "full"
+                                }
+                            ],
+                            "submitLabel": "Sign Up",
+                            "styles": {
+                                "submitLabel": {
+                                    "textAlign": "center"
+                                }
                             }
-
-                        ],
+                        },
+                        "media": null,
                         "styles": {
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
-                                "margin": ["mt-20", "mb-20", "ml-20", "mr-20"],
-                                "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
+                                "margin": ["mt-24", "mb-0", "ml-4", "mr-4"],
+                                "padding": ["pt-24", "pb-24", "pl-4", "pr-4"],
                                 "alignItems": "center",
                                 "justifyContent": "center",
-                                "flexDirection": "row"
+                                "flexDirection": "row",
+                                "borderRadius": "xx-large",
+                                "boxShadow": "xx-large"
                             },
                             "title": {
-                                "textAlign": "left"
-                            },
-                            "subtitle": {
-                                "fontWeight": 400,
-                                "fontStyle": "normal",
-                                "textAlign": "left"
+                                "textAlign": "center"
                             },
                             "text": {
-                                "textAlign": "left"
-                            },
-                            "actions": {
-                                "justifyContent": "flex-start"
+                                "textAlign": "center"
                             }
                         }
                     }
@@ -680,7 +693,7 @@
                 "sections": [
                     {
                         "type": "HeroSection",
-                        "colors": "colors-f",
+                        "colors": "colors-h",
                         "title": "We’re growing fast",
                         "text": "You should join us.",
                         "media": {
@@ -693,7 +706,7 @@
                             "self": {
                                 "height": "auto",
                                 "width": "wide",
-                                "margin": ["mt-0", "mb-20", "ml-0", "mr-0"],
+                                "margin": ["mt-0", "mb-0", "ml-0", "mr-0"],
                                 "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
                                 "alignItems": "center",
                                 "justifyContent": "center",
@@ -717,7 +730,7 @@
                     },
                     {
                         "type": "QuoteSection",
-                        "colors": "colors-a",
+                        "colors": "colors-h",
                         "quote": "## Being part of this team has been incredible. We’ve fill each other’s gaps, and we go to lunch together :)",
                         "name": "Carla Rogers",
                         "title": "Someone from the team",
