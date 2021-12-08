@@ -5,13 +5,18 @@ import classNames from 'classnames';
 import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
-import Action from '../../atoms/Action';
+import { Action, Badge } from '../../atoms';
 
 export default function HeroSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
+    const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
             id={cssId}
@@ -20,46 +25,43 @@ export default function HeroSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-hero-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles.margin,
-                sectionStyles.padding,
+                sectionStyles.padding || 'py-12 px-4',
                 sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
+                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
             }}
-        >
-            {props.backgroundImage && heroBackgroundImage(props.backgroundImage)}
-            <div
-                className={classNames(
-                    'flex',
-                    'relative',
-                    'w-full',
-                    sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null
-                )}
-            >
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>
+         >
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     <div
                         className={classNames(
                             'flex',
-                            '-mx-4',
-                            sectionStyles.flexDirection ? mapFlexDirectionStyles(sectionStyles.flexDirection) : null,
-                            sectionStyles.alignItems ? mapStyles({ alignItems: sectionStyles.alignItems }) : null
+                            mapFlexDirectionStyles(sectionFlexDirection),
+                            mapStyles({ alignItems: sectionAlignItems }),
+                            'space-y-8',
+                            {
+                                'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
+                                'space-y-reverse lg:space-y-0 lg:space-x-8 lg:space-x-reverse': sectionFlexDirection === 'row-reverse',
+                                'space-y-reverse': sectionFlexDirection === 'col-reverse'
+                            }
                         )}
                     >
-                        <div className="my-3 flex-1 px-4 w-full">
+                        <div className="flex-1 w-full">
                             {heroBody(props)}
                             {heroActions(props)}
                         </div>
                         {props.media && (
-                            <div className="my-3 flex-1 px-4 w-full">
+                            <div className="flex-1 w-full">
                                 <div data-sb-field-path=".media">{heroMedia(props.media)}</div>
                             </div>
                         )}
@@ -82,30 +84,13 @@ function heroMedia(media) {
     return <Media {...media} />;
 }
 
-function heroBackgroundImage(image) {
-    const imageUrl = image.url;
-    if (!imageUrl) {
-        return null;
-    }
-    const imageStyles = image.styles?.self || {};
-    const imageOpacity = imageStyles.opacity || imageStyles.opacity === 0 ? imageStyles.opacity : 100;
-    return (
-        <div
-            className="bg-cover bg-center block absolute inset-0"
-            style={{
-                backgroundImage: `url('${imageUrl}')`,
-                opacity: imageOpacity * 0.01
-            }}
-        />
-    );
-}
-
 function heroBody(props) {
     const styles = props.styles || {};
     return (
         <div>
+            {props.badge && <Badge {...props.badge} data-sb-field-path=".badge" />}
             {props.title && (
-                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null, { 'mt-4': props.badge?.label })} data-sb-field-path=".title">
                     {props.title}
                 </h2>
             )}
@@ -138,22 +123,24 @@ function heroActions(props) {
     const styles = props.styles || {};
     return (
         <div
-            className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null, {
-                'mt-8': props.title || props.subtitle || props.text
+            className={classNames('overflow-x-hidden', {
+                'mt-8': props.title || props.subtitle || props.text || props.badge
             })}
-            data-sb-field-path=".actions"
         >
-            {actions.map((action, index) => (
-                <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-            ))}
+            <div
+                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                data-sb-field-path=".actions"
+            >
+                {actions.map((action, index) => (
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                ))}
+            </div>
         </div>
     );
 }
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

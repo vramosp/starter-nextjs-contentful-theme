@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import CloseIcon from '../../svgs/close';
-import HamburgerIcon from '../../svgs/hamburger';
+import MenuIcon from '../../svgs/menu';
 
 export default function Header(props) {
     const primaryColors = props.primaryColors || 'colors-a';
@@ -173,7 +173,7 @@ function MobileMenu(props) {
         <div className="ml-auto lg:hidden">
             <button aria-label="Open Menu" title="Open Menu" className="p-2 -mr-1 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
                 <span className="sr-only">Open Menu</span>
-                <HamburgerIcon className="fill-current h-6 w-6" />
+                <MenuIcon className="fill-current h-6 w-6" />
             </button>
             {isMenuOpen && (
                 <div className={classNames(secondaryColors, 'fixed', 'inset-0', 'px-4', 'sm:px-8', 'py-5', 'overflow-y-auto', 'z-10')}>
@@ -203,7 +203,7 @@ function MobileMenu(props) {
 
 function siteLogoLink(props) {
     return (
-        <Link href="/" aria-label={props.title} className="flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
+        <Link href="/" aria-label={props.title} className="sb-header-logo flex items-center" data-sb-field-path=".title#span[1] .logo#img[1]">
             {props.logo && <ImageBlock {...props.logo} className={classNames('max-h-12', { 'mr-2': props.isTitleVisible })} />}
             {props.title && props.isTitleVisible && <span className="text-2xl tracking-wide">{props.title}</span>}
         </Link>

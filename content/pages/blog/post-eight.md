@@ -2,39 +2,30 @@
 title: What Great Startups Do Differently
 date: '2020-09-26'
 excerpt: Ut expedita iure et iste placeat id consequatur veritatis et saepe voluptas non voluptas nesciunt sed voluptate rerum. Ea deleniti unde et exercitationem voluptatibus non doloribus officiis qui harum eaque.
-category: content/pages/blog/category/business.md
 featuredImage:
   type: ImageBlock
   url: /images/post-8.jpg
   altText: Function of design image
 bottomSections:
   - elementId: ''
-    variant: variant-a
+    variant: variant-c
     colors: colors-a
     title: Read next
-    actions: []
-    posts:
-      - content/pages/blog/post-one.md
-      - content/pages/blog/post-three.md
-      - content/pages/blog/post-five.md
+    recentCount: 3
     styles:
       self:
         height: auto
         width: wide
         margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0']
-        padding: ['pt-12', 'pb-12', 'pr-4', 'pl-4']
+        padding: ['pt-12', 'pb-56', 'pr-4', 'pl-4']
         justifyContent: center
       title:
-        fontWeight: '700'
-        fontStyle: normal
         textAlign: center
       subtitle:
-        fontWeight: '400'
-        fontStyle: normal
         textAlign: center
       actions:
         justifyContent: center
-    type: FeaturedPostsSection
+    type: RecentPostsSection
 layout: PostLayout
 ---
 

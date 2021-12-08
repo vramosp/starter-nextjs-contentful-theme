@@ -35,6 +35,7 @@ type MediaGalleryStyle = {
 type BaseSectionComponentProps = {
     type: string;
     elementId: string;
+    customClass: string;
     colors?: string;
     styles?: BaseSectionStyle & MediaGalleryStyle;
 };
@@ -59,10 +60,12 @@ export type MediaGallerySectionProps = BaseSectionComponentProps & {
 
 export default function MediaGallerySection(props: MediaGallerySectionProps) {
     const cssId = props.elementId || null;
-    const sectionStyles = props.styles?.self;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
-    const sectionBorderWidth = sectionStyles?.borderWidth || 0;
-
+    const sectionStyles = props.styles?.self;
+    const sectionWidth = sectionStyles?.width || 'wide';
+    const sectionHeight = sectionStyles?.height || 'auto';
+    const sectionJustifyContent = sectionStyles?.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -71,28 +74,29 @@ export default function MediaGallerySection(props: MediaGallerySectionProps) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-media-gallery-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                sectionStyles?.height ? mapMinHeightStyles(sectionStyles?.height) : null,
+                mapMinHeightStyles(sectionHeight),
                 sectionStyles?.margin,
-                sectionStyles?.padding,
+                sectionStyles?.padding || 'py-12 px-4',
                 sectionStyles?.borderColor,
                 sectionStyles?.borderRadius ? mapStyles({ borderRadius: sectionStyles?.borderRadius }) : null,
-                sectionStyles?.borderStyle ? mapStyles({ borderStyle: sectionStyles?.borderStyle }) : null
+                sectionStyles?.borderStyle ? mapStyles({ borderStyle: sectionStyles?.borderStyle }) : 'border-none'
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: sectionStyles?.borderWidth ? `${sectionStyles?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionStyles?.justifyContent ? mapStyles({ justifyContent: sectionStyles?.justifyContent }) : null)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
                 <div
                     className={classNames(
                         'flex',
                         'w-full',
-                        sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null,
-                        sectionStyles?.justifyContent ? mapStyles({ justifyContent: sectionStyles?.justifyContent }) : null
+                        mapMaxWidthStyles(sectionWidth),
+                        mapStyles({ justifyContent: sectionJustifyContent })
                     )}
                 >
                     <div className="inline-block max-w-full">
@@ -120,7 +124,7 @@ function MediaGalleryHeader(props: MediaGallerySectionProps) {
             )}
             {props.subtitle && (
                 <p
-                    className={classNames('text-lg', 'sm:text-xl', styles?.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': props.title })}
+                    className={classNames('text-lg', 'sm:text-xl', styles?.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': props.title })}
                     data-sb-field-path=".subtitle"
                 >
                     {props.subtitle}
@@ -195,8 +199,6 @@ function MediaGalleryImageGrid(props: MediaGallerySectionProps) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

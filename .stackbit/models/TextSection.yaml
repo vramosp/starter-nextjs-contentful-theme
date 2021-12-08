@@ -39,8 +39,8 @@ fields:
       self:
         height: ['auto', 'screen']
         width: ['narrow', 'wide', 'full']
-        margin: ['tw0:36']
-        padding: ['tw4:36']
+        margin: ['tw0:96']
+        padding: ['tw0:96']
         justifyContent: ['flex-start', 'flex-end', 'center']
         borderRadius: '*'
         borderWidth: ['0:8']
@@ -58,9 +58,6 @@ fields:
           - value: 'border-complementary'
             label: 'Complementary color'
             color: '$complementary'
-          - value: 'border-complementary-alt'
-            label: 'Complementary alt color'
-            color: '$complementaryAlt'
       title:
         fontWeight: ['400', '700']
         fontStyle: ['normal', 'italic']

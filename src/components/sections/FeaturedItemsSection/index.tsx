@@ -8,9 +8,13 @@ import FeaturedItem from './FeaturedItem';
 
 export default function FeaturedItemsSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
-    const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const styles = props.styles || {};
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
+    const featuredItems = props.items || [];
     return (
         <div
             id={cssId}
@@ -19,48 +23,46 @@ export default function FeaturedItemsSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-featured-items-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
-                sectionStyles.margin,
-                sectionStyles.padding,
-                sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                mapMinHeightStyles(sectionHeight),
+                styles.self?.margin,
+                styles.self?.padding || 'py-12 px-4',
+                styles.self?.borderColor,
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null)}>
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
                     {props.title && (
-                        <h2 className={classNames(props?.styles?.title ? mapStyles(props?.styles?.title) : null)} data-sb-field-path=".title">
+                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                             {props.title}
                         </h2>
                     )}
                     {props.subtitle && (
                         <p
-                            className={classNames('text-lg', 'sm:text-xl', props?.styles?.subtitle ? mapStyles(props?.styles?.subtitle) : null, {
-                                'mt-2': props.title
+                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
+                                'mt-6': props.title
                             })}
                             data-sb-field-path=".subtitle"
                         >
                             {props.subtitle}
                         </p>
                     )}
-                    {props?.items && (
+                    {featuredItems.length > 0 && (
                         <div
                             className={classNames('grid', 'gap-6', 'lg:gap-8', mapColStyles(props?.columns || 3), { 'mt-12': props.title || props.subtitle })}
                             data-sb-field-path=".items"
                         >
                             {props.items.map((item, index) => (
-                                <div key={index} data-sb-field-path={`.${index}`}>
-                                    <FeaturedItem {...item} />
-                                </div>
+                                <FeaturedItem key={index} {...item} enableHover={props.enableHover} data-sb-field-path={`.${index}`} />
                             ))}
                         </div>
                     )}
@@ -78,13 +80,15 @@ function featuredItemActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div
-            className={classNames('flex', 'flex-wrap', 'items-center', 'mt-12', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-            data-sb-field-path=".actions"
-        >
-            {actions.map((action, index) => (
-                <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-            ))}
+        <div className="mt-12 overflow-x-hidden">
+            <div
+                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                data-sb-field-path=".actions"
+            >
+                {actions.map((action, index) => (
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                ))}
+            </div>
         </div>
     );
 }
@@ -103,8 +107,6 @@ function mapColStyles(columns) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

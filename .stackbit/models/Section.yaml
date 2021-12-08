@@ -54,15 +54,16 @@ fields:
         textColor: '$onComplementary'
         backgroundColor: '$complementary'
         borderColor: '#ececec'
-      - label: Colors I
-        value: colors-i
-        textColor: '$onComplementaryAlt'
-        backgroundColor: '$complementaryAlt'
-        borderColor: '#ececec'
     default: colors-a
   - type: string
     name: elementId
     group: settings
     label: Element ID
     description: The unique ID for an HTML element, must not contain whitespace
+    default: ''
+  - type: string
+    name: customClass
+    group: settings
+    label: Element custom class
+    description: A custom class for an HTML element, must not contain whitespace
     default: ''

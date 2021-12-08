@@ -27,6 +27,10 @@ fields:
     label: Show post author
     description: Show the author of the post
     default: false
+  - type: boolean
+    name: showExcerpt
+    label: Show post excerpt
+    default: false
   - type: enum
     name: variant
     group: styles
@@ -37,10 +41,8 @@ fields:
         value: variant-a
       - label: Two columns grid
         value: variant-b
-      - label: Mixed grid
+      - label: Three columns cards grid
         value: variant-c
-      - label: List
-        value: variant-d
   - type: list
     name: actions
     label: Actions
@@ -60,8 +62,8 @@ fields:
       self:
         height: ['auto', 'screen']
         width: ['narrow', 'wide', 'full']
-        margin: ['tw0:36']
-        padding: ['tw4:36']
+        margin: ['tw0:96']
+        padding: ['tw0:96']
         justifyContent: ['flex-start', 'flex-end', 'center']
         borderRadius: '*'
         borderWidth: ['0:8']
@@ -79,9 +81,6 @@ fields:
           - value: 'border-complementary'
             label: 'Complementary color'
             color: '$complementary'
-          - value: 'border-complementary-alt'
-            label: 'Complementary alt color'
-            color: '$complementaryAlt'
       title:
         fontWeight: ['400', '700']
         fontStyle: ['normal', 'italic']

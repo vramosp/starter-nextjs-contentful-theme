@@ -67,5 +67,5 @@ fields:
       submitLabel:
         textAlign: ['left', 'center', 'right']
     default:
-      title:
+      submitLabel:
         textAlign: left

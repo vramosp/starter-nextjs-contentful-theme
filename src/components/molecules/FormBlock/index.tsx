@@ -64,7 +64,7 @@ export default class FormBlock extends React.Component<any> {
         const formHoneypotName = `${elementId}-bot-field`;
         return (
             <form
-                className={className}
+                className={classNames('sb-component', 'sb-component-block', 'sb-component-form-block', className)}
                 name={elementId}
                 id={elementId}
                 onSubmit={(e) => this.handleSubmit(e, action)}

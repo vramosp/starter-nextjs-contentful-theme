@@ -24,12 +24,11 @@ module.exports = {
                 secondary: themeStyle.secondary,
                 'on-secondary': themeStyle.onSecondary,
                 complementary: themeStyle.complementary,
-                'on-complementary': themeStyle.onComplementary,
-                'complementary-alt': themeStyle.complementaryAlt,
-                'on-complementary-alt': themeStyle.onComplementaryAlt
+                'on-complementary': themeStyle.onComplementary
             },
             spacing: {
                 '1/1': '100%',
+                '1/4': '25%',
                 '2/3': '66.666%',
                 '3/2': '150%',
                 '3/4': '75%',
@@ -37,8 +36,8 @@ module.exports = {
                 '9/16': '56.25%'
             },
             fontFamily: {
-                'sans': ['Poppins', 'sans-serif'],
-                'serif': ['"Noto Serif"', 'serif']
+                sans: ['Poppins', 'sans-serif'],
+                sansAlt: ['Noto Sans Display', 'sans-serif']
             }
         }
     },
@@ -51,10 +50,10 @@ module.exports = {
                 body: {
                     fontFamily: theme(`fontFamily.${themeStyle.fontBody}`)
                 },
-                'h1,h2,h3,h4,h5,h6': {
+                'h1,h2,h3,h4,h5,h6,blockquote,.sb-header-logo,.sb-footer-logo': {
                     fontFamily: theme(`fontFamily.${themeStyle.fontHeadlines}`)
                 },
-                h1: {
+                'h1,.h1': {
                     fontSize: theme(`fontSize.${themeStyle.h1.size}`),
                     fontWeight: theme(`fontWeight.${themeStyle.h1.weight}`),
                     letterSpacing: theme(`letterSpacing.${themeStyle.h1.letterSpacing}`),

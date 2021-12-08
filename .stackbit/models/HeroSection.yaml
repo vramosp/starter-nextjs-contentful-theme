@@ -23,6 +23,11 @@ fields:
     name: subtitle
     label: Subtitle
     default: The section subtitle
+  - type: model
+    name: badge
+    label: Badge
+    models:
+      - Badge
   - type: markdown
     name: text
     label: Text
@@ -60,20 +65,14 @@ fields:
       type: ImageBlock
       url: https://assets.stackbit.com/components/images/default/hero.png
       altText: Hero section image
-  - type: model
-    name: backgroundImage
-    group: styles
-    label: Background image
-    models:
-      - ImageBlock
   - type: style
     name: styles
     styles:
       self:
         height: ['auto', 'screen']
         width: ['narrow', 'wide', 'full']
-        margin: ['tw0:36']
-        padding: ['tw4:36']
+        margin: ['tw0:96']
+        padding: ['tw0:96']
         alignItems: ['flex-start', 'flex-end', 'center']
         justifyContent: ['flex-start', 'flex-end', 'center']
         flexDirection: ['row', 'row-reverse', 'col', 'col-reverse']
@@ -93,9 +92,6 @@ fields:
           - value: 'border-complementary'
             label: 'Complementary color'
             color: '$complementary'
-          - value: 'border-complementary-alt'
-            label: 'Complementary alt color'
-            color: '$complementaryAlt'
       title:
         fontWeight: ['400', '700']
         fontStyle: ['normal', 'italic']

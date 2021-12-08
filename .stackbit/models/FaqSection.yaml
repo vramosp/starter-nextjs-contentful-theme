@@ -22,29 +22,26 @@ fields:
     label: Subtitle
     default: The section subtitle
   - type: list
-    name: items
-    label: FAQ Items
+    name: actions
+    label: Actions
     items:
-      type: object
-      labelField: question
-      fields:
-        - type: string
-          name: question
-          label: Question
-          default: How it this different from what we have today?
-        - type: markdown
-          name: answer
-          label: Answer
-          default: At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation.
-        - type: style
-          name: styles
-          styles:
-            question:
-              fontWeight: ['400', '700']
-              fontStyle: ['normal', 'italic']
-              textAlign: ['left', 'center', 'right']
-            answer:
-              textAlign: ['left', 'center', 'right']
+      type: model
+      models:
+        - Button
+        - Link
+    default:
+      - type: Link
+        label: See all
+        url: '/'
+        showIcon: true
+        icon: arrowRight
+  - type: list
+    name: items
+    label: Items
+    items:
+      type: model
+      models:
+        - FaqItem
     default:
       - question: How it this different from what we have today?
         answer: At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation.
@@ -58,8 +55,8 @@ fields:
       self:
         height: ['auto', 'screen']
         width: ['narrow', 'wide', 'full']
-        margin: ['tw0:36']
-        padding: ['tw4:36']
+        margin: ['tw0:96']
+        padding: ['tw0:96']
         justifyContent: ['flex-start', 'flex-end', 'center']
         borderRadius: '*'
         borderWidth: ['0:8']
@@ -77,9 +74,6 @@ fields:
           - value: 'border-complementary'
             label: 'Complementary color'
             color: '$complementary'
-          - value: 'border-complementary-alt'
-            label: 'Complementary alt color'
-            color: '$complementaryAlt'
       title:
         fontWeight: ['400', '700']
         fontStyle: ['normal', 'italic']
@@ -88,6 +82,8 @@ fields:
         fontWeight: ['400', '700']
         fontStyle: ['normal', 'italic']
         textAlign: ['left', 'center', 'right']
+      actions:
+        justifyContent: ['flex-start', 'flex-end', 'center']
     default:
       self:
         height: auto
@@ -105,3 +101,5 @@ fields:
         fontWeight: 400
         fontStyle: normal
         textAlign: center
+      actions:
+        justifyContent: center

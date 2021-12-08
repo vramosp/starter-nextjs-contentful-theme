@@ -8,9 +8,15 @@ import Action from '../../atoms/Action';
 
 export default function CtaSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
+    const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const sectionWidth = sectionStyles.width || 'wide';
+    const sectionHeight = sectionStyles.height || 'auto';
+    const sectionJustifyContent = sectionStyles.justifyContent || 'center';
+    const sectionFlexDirection = sectionStyles.flexDirection || 'row';
+    const sectionAlignItems = sectionStyles.alignItems || 'center';
     return (
         <div
             id={cssId}
@@ -19,42 +25,61 @@ export default function CtaSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-cta-section',
-                colors,
-                'flex',
-                'flex-col',
-                'justify-center',
-                'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
-                sectionStyles.margin,
-                sectionStyles.padding,
-                sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                cssCustomClass,
+                bgSize === 'inset' ? 'flex': null,
+                bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
+                sectionStyles.margin
             )}
-            style={{
-                borderWidth: `${sectionBorderWidth}px`
-            }}
         >
-            {props.backgroundImage && ctaBackgroundImage(props.backgroundImage)}
             <div
                 className={classNames(
+                    colors,
                     'flex',
+                    'flex-col',
+                    'justify-center',
                     'relative',
-                    'w-full',
-                    sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null
+                    bgSize === 'inset' ? 'w-full': null,
+                    bgSize === 'inset' ? mapMaxWidthStyles(sectionWidth) : null,
+                    mapMinHeightStyles(sectionHeight),
+                    sectionStyles.padding || 'py-12 px-4',
+                    sectionStyles.borderColor,
+                    sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : 'border-none',
+                    sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
+                    sectionStyles.boxShadow ? mapStyles({ boxShadow: sectionStyles.boxShadow }) : null
                 )}
+                style={{
+                    borderWidth: sectionStyles.borderWidth ? `${sectionStyles.borderWidth}px` : null
+                }}
             >
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>
+                {props.backgroundImage && ctaBackgroundImage(props.backgroundImage)}
+                <div
+                    className={classNames(
+                        'relative',
+                        'w-full',
+                        bgSize === 'full' ? 'flex': null,
+                        bgSize === 'full' ? mapStyles({ justifyContent: sectionJustifyContent }) : null
+                    )}
+                >
                     <div
                         className={classNames(
-                            'flex',
-                            '-mx-4',
-                            sectionStyles.flexDirection ? mapFlexDirectionStyles(sectionStyles.flexDirection) : null,
-                            sectionStyles.alignItems ? mapStyles({ alignItems: sectionStyles.alignItems }) : null
+                            'w-full',
+                            bgSize === 'full' ? mapMaxWidthStyles(sectionWidth) : null
                         )}
                     >
-                        {ctaBody(props)}
-                        {ctaActions(props)}
+                        <div
+                            className={classNames(
+                                'flex',
+                                mapFlexDirectionStyles(sectionFlexDirection),
+                                mapStyles({ alignItems: sectionAlignItems }),
+                                'space-y-8',
+                                {
+                                    'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row'
+                                }
+                            )}
+                        >
+                            {ctaBody(props)}
+                            {ctaActions(props)}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,7 +111,7 @@ function ctaBody(props) {
     }
     const styles = props.styles || {};
     return (
-        <div className="my-3 px-4 w-full lg:flex-grow">
+        <div className="w-full lg:flex-grow">
             {props.title && (
                 <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
                     {props.title}
@@ -112,14 +137,16 @@ function ctaActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div className={classNames('my-3', 'px-4', 'w-full', styles.self?.flexDirection === 'row' ? 'lg:w-auto' : null)}>
-            <div
-                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', 'lg:flex-nowrap', styles.actions ? mapStyles(styles.actions) : null)}
-                data-sb-field-path=".actions"
-            >
-                {actions.map((action, index) => (
-                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-                ))}
+        <div className={classNames('w-full', styles.self?.flexDirection === 'row' ? 'lg:w-auto' : null)}>
+            <div className="overflow-x-hidden">
+                <div
+                    className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', 'lg:flex-nowrap', styles.actions ? mapStyles(styles.actions) : null)}
+                    data-sb-field-path=".actions"
+                >
+                    {actions.map((action, index) => (
+                        <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -127,8 +154,6 @@ function ctaActions(props) {
 
 function mapMinHeightStyles(height) {
     switch (height) {
-        case 'auto':
-            return 'min-h-0';
         case 'screen':
             return 'min-h-screen';
     }

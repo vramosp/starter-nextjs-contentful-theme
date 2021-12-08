@@ -9,9 +9,12 @@ import ImageBlock from '../../molecules/ImageBlock';
 
 export default function FeaturedPeopleSection(props) {
     const cssId = props.elementId || null;
+    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
-    const sectionStyles = props.styles?.self || {};
-    const sectionBorderWidth = sectionStyles.borderWidth ? sectionStyles.borderWidth : 0;
+    const styles = props.styles || {};
+    const sectionWidth = styles.self?.width || 'wide';
+    const sectionHeight = styles.self?.height || 'auto';
+    const sectionJustifyContent = styles.self?.justifyContent || 'center';
     return (
         <div
             id={cssId}
@@ -20,55 +23,43 @@ export default function FeaturedPeopleSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-featured-people-section',
+                cssCustomClass,
                 colors,
                 'flex',
                 'flex-col',
                 'justify-center',
-                'relative',
-                sectionStyles.height ? mapMinHeightStyles(sectionStyles.height) : null,
-                sectionStyles.margin,
-                sectionStyles.padding,
-                sectionStyles.borderColor,
-                sectionStyles.borderRadius ? mapStyles({ borderRadius: sectionStyles.borderRadius }) : null,
-                sectionStyles.borderStyle ? mapStyles({ borderStyle: sectionStyles.borderStyle }) : null
+                mapMinHeightStyles(sectionHeight),
+                styles.self?.margin,
+                styles.self?.padding || 'py-12 px-4',
+                styles.self?.borderColor,
+                styles.self?.borderStyle ? mapStyles({ borderStyle: styles.self?.borderStyle }) : 'border-none',
+                styles.self?.borderRadius ? mapStyles({ borderRadius: styles.self?.borderRadius }) : null
             )}
             style={{
-                borderWidth: `${sectionBorderWidth}px`
+                borderWidth: styles.self?.borderWidth ? `${styles.self?.borderWidth}px` : null
             }}
         >
-            <div className={classNames('flex', 'w-full', sectionStyles.justifyContent ? mapStyles({ justifyContent: sectionStyles.justifyContent }) : null)}>
-                <div className={classNames('w-full', sectionStyles.width ? mapMaxWidthStyles(sectionStyles.width) : null)}>
-                    {featuredPeopleHeader(props)}
+            <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: sectionJustifyContent }))}>
+                <div className={classNames('w-full', mapMaxWidthStyles(sectionWidth))}>
+                    {props.title && (
+                        <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
+                            {props.title}
+                        </h2>
+                    )}
+                    {props.subtitle && (
+                        <p
+                            className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
+                                'mt-6': props.title
+                            })}
+                            data-sb-field-path=".subtitle"
+                        >
+                            {props.subtitle}
+                        </p>
+                    )}
                     {featuredPeopleVariants(props)}
                     {featuredPeopleActions(props)}
                 </div>
             </div>
-        </div>
-    );
-}
-
-function featuredPeopleHeader(props) {
-    if (!props.title && !props.subtitle) {
-        return null;
-    }
-    const styles = props.styles || {};
-    return (
-        <div>
-            {props.title && (
-                <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)} data-sb-field-path=".title">
-                    {props.title}
-                </h2>
-            )}
-            {props.subtitle && (
-                <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
-                        'mt-2': props.title
-                    })}
-                    data-sb-field-path=".subtitle"
-                >
-                    {props.subtitle}
-                </p>
-            )}
         </div>
     );
 }
@@ -80,13 +71,15 @@ function featuredPeopleActions(props) {
     }
     const styles = props.styles || {};
     return (
-        <div
-            className={classNames('flex', 'flex-wrap', 'items-center', 'mt-12', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
-            data-sb-field-path=".actions"
-        >
-            {props.actions.map((action, index) => (
-                <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
-            ))}
+        <div className="mt-12 overflow-x-hidden">
+            <div
+                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                data-sb-field-path=".actions"
+            >
+                {props.actions.map((action, index) => (
+                    <Action key={index} {...action} className="mb-3 mx-2 lg:whitespace-nowrap" data-sb-field-path={`.${index}`} />
+                ))}
+            </div>
         </div>
     );
 }

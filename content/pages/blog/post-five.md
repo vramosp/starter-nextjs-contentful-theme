@@ -7,9 +7,29 @@ featuredImage:
   type: ImageBlock
   url: /images/post-5.jpg
   altText: Post thumbnail image
-bottomSections: []
+bottomSections:
+  - elementId: ''
+    variant: variant-c
+    colors: colors-a
+    title: Read next
+    recentCount: 3
+    styles:
+      self:
+        height: auto
+        width: wide
+        margin: ['mt-0', 'mb-0', 'ml-0', 'mr-0']
+        padding: ['pt-12', 'pb-56', 'pr-4', 'pl-4']
+        justifyContent: center
+      title:
+        textAlign: center
+      subtitle:
+        textAlign: center
+      actions:
+        justifyContent: center
+    type: RecentPostsSection
 layout: PostLayout
 ---
+
 Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.
 
 ![](/images/work-book-cover-2.jpeg)
