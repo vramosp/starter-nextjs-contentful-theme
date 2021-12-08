@@ -4,7 +4,7 @@
         "headerVariant": "variant-c",
         "primaryColors": "colors-a",
         "secondaryColors": "colors-f",
-        "title": "Startup.io",
+        "title": "Starter",
         "isTitleVisible": true,
         "primaryLinks": [
             {
@@ -79,7 +79,7 @@
             "type": "ImageBlock",
             "url": "/images/logo.svg"
         },
-        "title": "Startup.io",
+        "title": "Starter",
         "contacts": {
             "phoneNumber": "850-123-5021",
             "phoneAltText": "Our phone",
