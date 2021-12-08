@@ -6,7 +6,6 @@
             "thumbnail": "images/hero-light-image-right.png",
             "data": {
                 "colors": "colors-a",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
@@ -20,7 +19,7 @@
                 ],
                 "media": {
                     "type": "ImageBlock",
-                    "url": "/images/hero-1.png",
+                    "url": "/images/hero.png",
                     "altText": "Hero image"
                 },
                 "styles": {
@@ -53,7 +52,6 @@
             "thumbnail": "images/hero-light-image-left.png",
             "data": {
                 "colors": "colors-h",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
@@ -72,7 +70,7 @@
                 ],
                 "media": {
                     "type": "ImageBlock",
-                    "url": "/images/hero-1.png",
+                    "url": "/images/hero.png",
                     "altText": "Hero image"
                 },
                 "styles": {
@@ -105,7 +103,6 @@
             "thumbnail": "images/hero-light-image-bottom.png",
             "data": {
                 "colors": "colors-h",
-                "backgroundImage": null,
                 "title": "Love where you work",
                 "subtitle": "",
                 "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
@@ -137,61 +134,6 @@
                         "alignItems": "center",
                         "justifyContent": "center",
                         "flexDirection": "col"
-                    },
-                    "title": {
-                        "textAlign": "left"
-                    },
-                    "subtitle": {
-                        "textAlign": "left"
-                    },
-                    "text": {
-                        "textAlign": "left"
-                    },
-                    "actions": {
-                        "justifyContent": "flex-start"
-                    }
-                }
-            }
-        },
-        {
-            "label": "Hero dark - image right",
-            "thumbnail": "images/hero-dark-image-right.png",
-            "data": {
-                "colors": "colors-f",
-                "backgroundImage": null,
-                "title": "Love where you work",
-                "subtitle": "",
-                "text": "One platform, one community, getting to the bottom line of everything employment.  Figure out your benefits, practice for interviews, get mentored, help peers, get helped in return.",
-                "actions": [
-                    {
-                        "type": "Button",
-                        "label": "Sign Up",
-                        "url": "/",
-                        "style": "primary"
-                    },
-                    {
-                        "type": "Link",
-                        "label": "Learn More",
-                        "url": "/",
-                        "showIcon": true,
-                        "icon": "arrowRight",
-                        "iconPosition": "right"
-                    }
-                ],
-                "media": {
-                    "type": "ImageBlock",
-                    "url": "/images/hero-3.jpg",
-                    "altText": "Hero image"
-                },
-                "styles": {
-                    "self": {
-                        "height": "auto",
-                        "width": "wide",
-                        "margin": ["mt-12", "mb-12", "ml-12", "mr-12"],
-                        "padding": ["pt-12", "pb-12", "pl-4", "pr-4"],
-                        "alignItems": "center",
-                        "justifyContent": "center",
-                        "flexDirection": "row"
                     },
                     "title": {
                         "textAlign": "left"
