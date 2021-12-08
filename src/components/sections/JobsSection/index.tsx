@@ -15,7 +15,7 @@ export default function JobsSection(props) {
     const sectionWidth = mapMaxWidthStyles(styles.self?.width || 'wide');
     const sectionHeight = mapMinHeightStyles(styles.self?.height || 'auto');
     const sectionJustifyContent = mapStyles({ justifyContent: styles.self?.justifyContent || 'center' });
-    const jobCategories = props.categories || [];
+    const jobLists = props.jobLists || [];
     return (
         <div
             id={cssId}
@@ -57,10 +57,10 @@ export default function JobsSection(props) {
                             {props.subtitle}
                         </p>
                     )}
-                    {jobCategories.length > 0 && (
-                        <div className={classNames('space-y-16 lg:space-y-24', { 'mt-12 lg:mt-16': props.title || props.subtitle })} data-sb-field-path=".jobCategories">
-                            {jobCategories.map((jobCategory, index) => (
-                                <JobCategory key={index} {...jobCategory} data-sb-field-path={`.${index}`} />
+                    {jobLists.length > 0 && (
+                        <div className={classNames('space-y-16 lg:space-y-24', { 'mt-12 lg:mt-16': props.title || props.subtitle })} data-sb-field-path=".jobLists">
+                            {jobLists.map((jobList, index) => (
+                                <JobList key={index} {...jobList} data-sb-field-path={`.${index}`} />
                                 ))}
                         </div>
                     )}
@@ -70,7 +70,7 @@ export default function JobsSection(props) {
     );
 }
 
-function JobCategory(props) {
+function JobList(props) {
     const jobItems = props.items || [];
     return (
         <div className="border-b border-current pb-12 lg:pb-20" data-sb-field-path={props['data-sb-field-path']}>
@@ -80,7 +80,7 @@ function JobCategory(props) {
             {jobItems.length > 0 && (
                 <div className="space-y-16 lg:space-y-24" data-sb-field-path=".items">
                     {jobItems.map((jobItem, index) => (
-                        <JobItem key={index} {...jobItem} data-sb-field-path={`.${index}`} />
+                        <JobListItem key={index} {...jobItem} data-sb-field-path={`.${index}`} />
                     ))}
                 </div>
             )}
@@ -88,7 +88,7 @@ function JobCategory(props) {
     );
 }
 
-function JobItem(props) {
+function JobListItem(props) {
     const actions = props.actions || [];
     return (
         <div className="max-w-screen-sm" data-sb-field-path={props['data-sb-field-path']}>

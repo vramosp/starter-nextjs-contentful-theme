@@ -1,16 +1,16 @@
 type: object
-name: JobItem
+name: JobListItem
 label: Item
 labelField: title
 fields:
   - type: string
     name: title
-    label: Job title
-    default: Backend Engineer
+    label: Title
+    default: Role Title
   - type: string
     name: location
     label: Location
-    default: Remote
+    default: Role location
   - type: markdown
     name: text
     label: Text
@@ -23,3 +23,10 @@ fields:
       models:
         - Button
         - Link
+    default:
+      - type: Link
+        label: Apply
+        url: /
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right

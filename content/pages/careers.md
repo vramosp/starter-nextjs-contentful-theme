@@ -94,11 +94,11 @@ sections:
   - colors: colors-a
     elementId: ''
     title: Open roles
-    categories:
-      - type: JobCategory
+    jobLists:
+      - type: JobList
         title: Product
         items:
-          - type: JobItem
+          - type: JobListItem
             title: Director of product managment
             location: San Francisco
             text: >
@@ -112,10 +112,10 @@ sections:
                 iconPosition: right
                 elementId: ''
                 type: Link
-      - type: JobCategory
+      - type: JobList
         title: Engineering
         items:
-          - type: JobItem
+          - type: JobListItem
             title: Head of engineering
             location: San Francisco
             text: >
@@ -129,7 +129,7 @@ sections:
                 iconPosition: right
                 elementId: ''
                 type: Link
-          - type: JobItem
+          - type: JobListItem
             title: Senior Backend Engineer
             location: Remote
             text: >
@@ -143,10 +143,10 @@ sections:
                 iconPosition: right
                 elementId: ''
                 type: Link
-      - type: JobCategory
+      - type: JobList
         title: Sales
         items:
-          - type: JobItem
+          - type: JobListItem
             title: Sales Development Representative
             location: San Francisco
             text: >
