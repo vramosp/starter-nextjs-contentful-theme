@@ -94,100 +94,76 @@ sections:
   - colors: colors-a
     elementId: ''
     title: Open roles
-    items:
-      - type: FeaturedItem
+    categories:
+      - type: JobCategory
         title: Product
-        text: >
-          Director of product managment
-
-
-          **San Francisco**
-
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        styles:
-          self:
-            textAlign: left
-        actions:
-          - label: Apply
-            altText: Apply
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            elementId: ''
-            type: Link
-      - type: FeaturedItem
+        items:
+          - type: JobItem
+            title: Director of product managment
+            location: San Francisco
+            text: >
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            actions:
+              - label: Apply
+                altText: Apply
+                url: /
+                showIcon: true
+                icon: arrowRight
+                iconPosition: right
+                elementId: ''
+                type: Link
+      - type: JobCategory
         title: Engineering
-        text: >
-          Head of eng
-
-
-          **San Francisco**
-
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        styles:
-          self:
-            textAlign: left
-        actions:
-          - label: Apply
-            altText: Apply
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            elementId: ''
-            type: Link
-      - type: FeaturedItem
-        title: Product
-        text: >
-          Director of product managment
-
-
-          **San Francisco**
-
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        styles:
-          self:
-            textAlign: left
-        actions:
-          - label: Apply
-            altText: Apply
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            elementId: ''
-            type: Link
-      - type: FeaturedItem
-        title: Product
-        text: >
-          Director of product managment
-
-
-          **San Francisco**
-
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        styles:
-          self:
-            textAlign: left
-        actions:
-          - label: Apply
-            altText: Apply
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            elementId: ''
-            type: Link
-    columns: 1
+        items:
+          - type: JobItem
+            title: Head of engineering
+            location: San Francisco
+            text: >
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            actions:
+              - label: Apply
+                altText: Apply
+                url: /
+                showIcon: true
+                icon: arrowRight
+                iconPosition: right
+                elementId: ''
+                type: Link
+          - type: JobItem
+            title: Senior Backend Engineer
+            location: Remote
+            text: >
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            actions:
+              - label: Apply
+                altText: Apply
+                url: /
+                showIcon: true
+                icon: arrowRight
+                iconPosition: right
+                elementId: ''
+                type: Link
+      - type: JobCategory
+        title: Sales
+        items:
+          - type: JobItem
+            title: Sales Development Representative
+            location: San Francisco
+            text: >
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            actions:
+              - label: Apply
+                altText: Apply
+                url: /
+                showIcon: true
+                icon: arrowRight
+                iconPosition: right
+                elementId: ''
+                type: Link
     styles:
       self:
         height: auto
-        width: narrow
+        width: wide
         margin:
           - mt-0
           - mb-0
@@ -207,9 +183,7 @@ sections:
         textAlign: left
       subtitle:
         textAlign: center
-      actions:
-        justifyContent: flex-start
-    type: FeaturedItemsSection
+    type: JobsSection
   - elementId: contact-form
     customClass: 'overlap'
     colors: colors-f

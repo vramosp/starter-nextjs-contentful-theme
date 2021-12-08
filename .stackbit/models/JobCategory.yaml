@@ -1,0 +1,16 @@
+type: object
+name: JobCategory
+label: Category
+labelField: title
+fields:
+  - type: string
+    name: title
+    label: Title
+    default: Engineering
+  - type: list
+    name: items
+    label: Items
+    items:
+      type: model
+      models:
+        - JobItem
