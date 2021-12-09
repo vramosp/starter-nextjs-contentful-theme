@@ -142,7 +142,8 @@ function MediaGalleryImage({ image, enableHover, aspectRatio }: { image: Image; 
     return (
         <ImageBlock
             {...image}
-            className={classNames('sb-media-gallery-image', aspectRatio === 'auto' ? 'mx-auto' : 'absolute left-0 top-0 h-full w-full object-cover', {
+            className={classNames('sb-media-gallery-image', 'w-full', {
+                'h-full absolute left-0 top-0 object-cover': aspectRatio !== 'auto',
                 'transition-transform hover:scale-105': enableHover
             })}
         />
