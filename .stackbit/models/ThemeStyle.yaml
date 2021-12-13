@@ -202,6 +202,7 @@ fields:
   - type: object
     name: h3
     label: H3
+    labelField: size
     group: text-styles
     readOnly: true
     fields:
@@ -291,6 +292,7 @@ fields:
   - type: object
     name: h4
     label: H4
+    labelField: size
     group: text-styles
     readOnly: true
     fields:
@@ -380,6 +382,7 @@ fields:
   - type: object
     name: h5
     label: H5
+    labelField: size
     group: text-styles
     readOnly: true
     fields:
