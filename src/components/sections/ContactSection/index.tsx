@@ -80,14 +80,14 @@ export default function ContactSection(props) {
                             <div className="flex-1 w-full">
                                 {contactBody(props)}
                                 {props.form && (
-                                    <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })} data-sb-field-path=".form">
-                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" />
+                                    <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })}>
+                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" data-sb-field-path=".form" />
                                     </div>
                                 )}
                             </div>
                             {props.media && (
                                 <div className="flex-1 w-full">
-                                    <div data-sb-field-path=".media">{contactMedia(props.media)}</div>
+                                    <div>{contactMedia(props.media)}</div>
                                 </div>
                             )}
                         </div>
@@ -107,7 +107,7 @@ function contactMedia(media) {
     if (!Media) {
         throw new Error(`no component matching the contact section media type: ${mediaType}`);
     }
-    return <Media {...media} />;
+    return <Media {...media} data-sb-field-path=".media" />;
 }
 
 function contactBody(props) {

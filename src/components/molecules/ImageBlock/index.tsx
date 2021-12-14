@@ -10,6 +10,13 @@ export default function ImageBlock(props) {
     const cssId = props.elementId || null;
     const styles = props.styles?.self || {};
     const imageOpacity = styles.opacity || styles.opacity === 0 ? styles.opacity : 100;
+    const annotationPrefix = props['data-sb-field-path'] || '';
+    const annotations = [
+        `${annotationPrefix}`,
+        `${annotationPrefix}.url#@src`,
+        `${annotationPrefix}.altText#@alt`,
+        `${annotationPrefix}.elementId#@id`
+    ];
 
     return (
         <img
@@ -18,7 +25,7 @@ export default function ImageBlock(props) {
             src={url}
             alt={altText || ''}
             style={{ opacity: imageOpacity * 0.01 }}
-            data-sb-field-path=".url#@src .altText#@alt .elementId#@id"
+            data-sb-field-path={annotations.join(' ').trim()}
         />
     );
 }

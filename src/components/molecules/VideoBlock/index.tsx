@@ -8,7 +8,12 @@ export default function VideoBlock(props) {
     }
     const cssClasses = props.className || null;
     const cssId = props.elementId || null;
-
+    const annotationPrefix = props['data-sb-field-path'] || '';
+    const annotations = [
+        `${annotationPrefix}`,
+        `${annotationPrefix}.elementId#@id`,
+        `${annotationPrefix}.thumbnailUrl#@poster`
+    ];
     return (
         <video
             id={cssId}
@@ -19,9 +24,9 @@ export default function VideoBlock(props) {
             playsInline
             poster={thumbnailUrl}
             className={classNames('sb-component', 'sb-component-block', 'sb-component-video-block', cssClasses)}
-            data-sb-field-path=".elementId#@id .thumbnailUrl#@poster"
+            data-sb-field-path={annotations.join(' ').trim()}
         >
-            <source src={url} type="video/mp4" data-sb-field-path=".url" />
+            <source src={url} type="video/mp4" data-sb-field-path=".url#@src" />
         </video>
     );
 }

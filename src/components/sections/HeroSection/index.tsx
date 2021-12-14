@@ -62,7 +62,7 @@ export default function HeroSection(props) {
                         </div>
                         {props.media && (
                             <div className="flex-1 w-full">
-                                <div data-sb-field-path=".media">{heroMedia(props.media)}</div>
+                                {heroMedia(props.media)}
                             </div>
                         )}
                     </div>
@@ -81,7 +81,7 @@ function heroMedia(media) {
     if (!Media) {
         throw new Error(`no component matching the hero section media type: ${mediaType}`);
     }
-    return <Media {...media} />;
+    return <Media {...media} data-sb-field-path=".media" />;
 }
 
 function heroBody(props) {
