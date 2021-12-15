@@ -9,7 +9,6 @@ import FormBlock from '../../molecules/FormBlock';
 
 export default function ContactSection(props) {
     const cssId = props.elementId || null;
-    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
@@ -26,7 +25,6 @@ export default function ContactSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-contact-section',
-                cssCustomClass,
                 bgSize === 'inset' ? 'flex': null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
@@ -80,14 +78,14 @@ export default function ContactSection(props) {
                             <div className="flex-1 w-full">
                                 {contactBody(props)}
                                 {props.form && (
-                                    <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })} data-sb-field-path=".form">
-                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" />
+                                    <div className={classNames('sb-contact-section-form', { 'mt-12': props.title || props.text })}>
+                                        <FormBlock {...props.form} className="inline-block w-full max-w-screen-sm" data-sb-field-path=".form" />
                                     </div>
                                 )}
                             </div>
                             {props.media && (
                                 <div className="flex-1 w-full">
-                                    <div data-sb-field-path=".media">{contactMedia(props.media)}</div>
+                                    <div>{contactMedia(props.media)}</div>
                                 </div>
                             )}
                         </div>
@@ -107,7 +105,7 @@ function contactMedia(media) {
     if (!Media) {
         throw new Error(`no component matching the contact section media type: ${mediaType}`);
     }
-    return <Media {...media} />;
+    return <Media {...media} data-sb-field-path=".media" />;
 }
 
 function contactBody(props) {

@@ -9,7 +9,6 @@ import { Action, Badge } from '../../atoms';
 
 export default function FeatureHighlightSection(props) {
     const cssId = props.elementId || null;
-    const cssCustomClass = props.customClass || null;
     const colors = props.colors || 'colors-a';
     const bgSize = props.backgroundSize || 'full';
     const sectionStyles = props.styles?.self || {};
@@ -26,7 +25,6 @@ export default function FeatureHighlightSection(props) {
                 'sb-component',
                 'sb-component-section',
                 'sb-component-feature-highlight-section',
-                cssCustomClass,
                 bgSize === 'inset' ? 'flex': null,
                 bgSize === 'inset' ? mapStyles({ justifyContent: sectionJustifyContent }) : null,
                 sectionStyles.margin
@@ -91,7 +89,7 @@ export default function FeatureHighlightSection(props) {
                             </div>
                             {props.media && (
                                 <div className="flex-1 w-full">
-                                    <div data-sb-field-path=".media">{featureHighlightMedia(props.media)}</div>
+                                    {featureHighlightMedia(props.media)}
                                 </div>
                             )}
                         </div>
@@ -111,7 +109,7 @@ function featureHighlightMedia(media) {
     if (!Media) {
         throw new Error(`no component matching the hero section media type: ${mediaType}`);
     }
-    return <Media {...media} />;
+    return <Media {...media} data-sb-field-path=".media" />;
 }
 
 function featureHighlightBody(props) {

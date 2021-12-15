@@ -57,7 +57,7 @@ export default class FormBlock extends React.Component<any> {
     }
 
     render() {
-        const { fields = [], elementId, action, destination, submitLabel, className, styles = {} } = this.props;
+        const { fields = [], elementId, action, destination, submitLabel, className, styles = {}, 'data-sb-field-path': annotation } = this.props;
         if (fields.length === 0) {
             return null;
         }
@@ -71,7 +71,7 @@ export default class FormBlock extends React.Component<any> {
                 data-netlify="true"
                 ref={this.formRef}
                 data-netlify-honeypot={formHoneypotName}
-                data-sb-field-path=".elementId#@name .elementId#@id .action#@action"
+                data-sb-field-path={annotation}
             >
                 <div className="grid sm:grid-cols-2 sm:gap-x-4" data-sb-field-path=".fields">
                     <input type="hidden" name="form-name" value={elementId} />
