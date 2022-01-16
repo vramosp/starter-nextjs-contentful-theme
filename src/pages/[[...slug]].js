@@ -7,14 +7,13 @@ import { resolveStaticPaths } from '../utils/static-paths-resolvers';
 
 function Page(props) {
     const { page, site } = props;
-    const { layout } = page;
-
-    if (!layout) {
+    const { modelName } = page.__metadata;
+    if (!modelName) {
         throw new Error(`page has no layout, page '${props.path}'`);
     }
-    const PageLayout = getComponent(layout);
+    const PageLayout = getComponent(modelName);
     if (!PageLayout) {
-        throw new Error(`no page layout matching the layout: ${layout}`);
+        throw new Error(`no page layout matching the page model: ${modelName}`);
     }
     return <PageLayout page={page} site={site} />;
 }

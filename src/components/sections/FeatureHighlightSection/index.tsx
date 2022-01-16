@@ -101,7 +101,7 @@ export default function FeatureHighlightSection(props) {
 }
 
 function featureHighlightMedia(media) {
-    const mediaType = media.type;
+    const mediaType = media.__metadata.modelName;
     if (!mediaType) {
         throw new Error(`hero section media does not have the 'type' property`);
     }

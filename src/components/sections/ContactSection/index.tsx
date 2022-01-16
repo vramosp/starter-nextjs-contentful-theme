@@ -97,7 +97,7 @@ export default function ContactSection(props) {
 }
 
 function contactMedia(media) {
-    const mediaType = media.type;
+    const mediaType = media.__metadata.modelName;
     if (!mediaType) {
         throw new Error(`contact section media does not have the 'type' property`);
     }

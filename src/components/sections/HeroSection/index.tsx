@@ -71,7 +71,7 @@ export default function HeroSection(props) {
 }
 
 function heroMedia(media) {
-    const mediaType = media.type;
+    const mediaType = media.__metadata.modelName;
     if (!mediaType) {
         throw new Error(`hero section media does not have the 'type' property`);
     }

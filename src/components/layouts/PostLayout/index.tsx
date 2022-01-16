@@ -4,7 +4,6 @@ import Markdown from 'markdown-to-jsx';
 
 import { getBaseLayoutComponent } from '../../../utils/base-layout';
 import { getComponent } from '../../components-registry';
-import getPageUrlPath from '../../../utils/get-page-url-path';
 import Link from '../../atoms/Link';
 
 export default function PostLayout(props) {
@@ -28,9 +27,9 @@ export default function PostLayout(props) {
                             {page.title && <h1 data-sb-field-path="title">{page.title}</h1>}
                             <PostAttribution post={page} />
                         </header>
-                        {page.markdown_content && (
-                            <Markdown options={{ forceBlock: true }} className="sb-markdown max-w-screen-md mx-auto" data-sb-field-path="markdown_content">
-                                {page.markdown_content}
+                        {page.content && (
+                            <Markdown options={{ forceBlock: true }} className="sb-markdown max-w-screen-md mx-auto" data-sb-field-path="content">
+                                {page.content}
                             </Markdown>
                         )}
                     </div>
@@ -38,9 +37,9 @@ export default function PostLayout(props) {
                 {sections.length > 0 && (
                     <div data-sb-field-path="bottomSections">
                         {sections.map((section, index) => {
-                            const Component = getComponent(section.type);
+                            const Component = getComponent(section.__metadata.modelName);
                             if (!Component) {
-                                throw new Error(`no component matching the page section's type: ${section.type}`);
+                                throw new Error(`no component matching the page section's type: ${section.__metadata.modelName}`);
                             }
                             return <Component key={index} {...section} data-sb-field-path={`bottomSections.${index}`} />;
                         })}
@@ -93,7 +92,7 @@ function postAuthor(author) {
 
 function postCategory(category) {
     return (
-        <Link data-sb-field-path="category" href={getPageUrlPath(category)}>
+        <Link data-sb-field-path="category" href={category.__metadata?.urlPath}>
             {category.title}
         </Link>
     );

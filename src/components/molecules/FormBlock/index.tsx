@@ -91,7 +91,7 @@ export default class FormBlock extends React.Component<any> {
                         <input type="hidden" name="form-name" value={elementId} />
                         <input type="hidden" name="form-destination" value={destination} />
                         {fields.map((field, index) => {
-                            const fieldType = field.type;
+                            const fieldType = field.__metadata.modelName;
                             if (!fieldType) {
                                 throw new Error(`form field does not have the 'type' property`);
                             }
