@@ -1,12 +1,13 @@
 stackbitVersion: ~0.4.0
 ssgName: nextjs
 nodeVersion: '14'
+buildCommand: npm run build
+publishDir: public
 import:
   type: contentful
   contentFile: contentful-export/export.json
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_DELIVERY_TOKEN
-  uploadAssets: true
 assets:
   referenceType: static
   staticDir: public
