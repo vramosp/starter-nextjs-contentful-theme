@@ -19,7 +19,8 @@ module.exports = {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
                 environment: process.env.CONTENTFUL_ENVIRONMENT || 'master',
                 preview: isDev,
-                watch: isDev
+                watch: isDev,
+                host: 'preview.contentful.com'
             }
         },
 
