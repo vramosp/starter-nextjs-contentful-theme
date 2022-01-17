@@ -8,6 +8,7 @@ import:
   contentFile: contentful-export/export.json
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_DELIVERY_TOKEN
+  assetsDirectory: contentful-export
 assets:
   referenceType: static
   staticDir: public
