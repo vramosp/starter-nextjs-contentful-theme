@@ -44,7 +44,21 @@ module.exports = {
                     return { site };
                 },
                 pages: (objects) => {
-                    const pageObjects = objects.filter((page) => ['PageLayout'].includes(page.__metadata.modelName));
+                    // const personObjects = objects.filter((object) => object.__metadata.modelName === 'Person' && !!object.slug);
+                    // const personPages = personObjects.map((person) => {
+                    //     const { __metadata, ...restProps } = person;
+                    //     const urlPath = `/blog/author/${person.slug}`;
+                    //     return {
+                    //         __metadata: {
+                    //             ...__metadata,
+                    //             urlPath,
+                    //             pageCssClasses: cssClassesFromUrlPath(urlPath)
+                    //         },
+                    //         ...restProps
+                    //     };
+                    // });
+
+                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostLayout', 'PostFeedLayout', 'PostFeedCategoryLayout'].includes(page.__metadata.modelName));
                     const pages = pageObjects.map((page) => {
                         const { __metadata, ...restProps } = page;
                         const urlPath = page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
