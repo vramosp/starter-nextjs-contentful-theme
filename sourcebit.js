@@ -45,21 +45,21 @@ module.exports = {
                     return { site };
                 },
                 pages: (objects) => {
-                    // const personObjects = objects.filter((object) => object.__metadata.modelName === 'Person' && !!object.slug);
-                    // const personPages = personObjects.map((person) => {
-                    //     const { __metadata, ...restProps } = person;
-                    //     const urlPath = `/blog/author/${person.slug}`;
-                    //     return {
-                    //         __metadata: {
-                    //             ...__metadata,
-                    //             urlPath,
-                    //             pageCssClasses: cssClassesFromUrlPath(urlPath)
-                    //         },
-                    //         ...restProps
-                    //     };
-                    // });
+                    const personObjects = objects.filter((object) => object.__metadata.modelName === 'Person');
+                    const personPages = personObjects.map((person) => {
+                        const { __metadata, ...restProps } = person;
+                        const urlPath = `/blog/author/${person.firstName}-${person.lastName}`;
+                        return {
+                            __metadata: {
+                                ...__metadata,
+                                urlPath,
+                                pageCssClasses: cssClassesFromUrlPath(urlPath)
+                            },
+                            ...restProps
+                        };
+                    });
 
-                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostLayout', 'PostFeedLayout', 'PostFeedCategoryLayout'].includes(page.__metadata.modelName));
+                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout'].includes(page.__metadata.modelName));
                     const pages = pageObjects.map((page) => {
                         const { __metadata, ...restProps } = page;
                         const urlPath = page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
@@ -73,7 +73,21 @@ module.exports = {
                         };
                     });
 
-                    return [...pages];
+                    const postObjects = objects.filter((page) => ['PostLayout'].includes(page.__metadata.modelName));
+                    const posts = postObjects.map((page) => {
+                        const { __metadata, ...restProps } = page;
+                        const urlPath = `/blog/${page.slug.replace('^/', '')}`;
+                        return {
+                            __metadata: {
+                                ...__metadata,
+                                urlPath,
+                                pageCssClasses: cssClassesFromUrlPath(urlPath)
+                            },
+                            ...restProps
+                        };
+                    });
+
+                    return [...pages, ...posts, ...personPages];
                 }
             }
         }
