@@ -11,7 +11,7 @@
                 "subtitle": "Recent blog posts section example",
                 "actions": [
                     {
-                        "type": "Button",
+                        "$$type": "Button",
                         "label": "View All",
                         "altText": "View All Posts",
                         "url": "/blog",

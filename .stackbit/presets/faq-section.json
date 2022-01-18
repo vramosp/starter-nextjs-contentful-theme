@@ -43,7 +43,7 @@
                         "textAlign": "left"
                     }
                 },
-                "type": "FaqSection"
+                "$$type": "FaqSection"
             }
         },
         {
@@ -89,7 +89,7 @@
                         "textAlign": "left"
                     }
                 },
-                "type": "FaqSection"
+                "$$type": "FaqSection"
             }
         }
     ]

@@ -9,14 +9,14 @@
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
                 "form": {
-                    "type": "FormBlock",
+                    "$$type": "FormBlock",
                     "variant": "variant-a",
                     "elementId": "contact-form",
                     "action": "/.netlify/functions/submission_created",
                     "destination": "",
                     "fields": [
                         {
-                            "type": "TextFormControl",
+                            "$$type": "TextFormControl",
                             "name": "name",
                             "label": "Name",
                             "placeholder": "Your name",
@@ -24,7 +24,7 @@
                             "width": "1/2"
                         },
                         {
-                            "type": "EmailFormControl",
+                            "$$type": "EmailFormControl",
                             "name": "email",
                             "label": "Email",
                             "placeholder": "Your email",
@@ -32,7 +32,7 @@
                             "width": "1/2"
                         },
                         {
-                            "type": "TextFormControl",
+                            "$$type": "TextFormControl",
                             "name": "address",
                             "label": "Home address",
                             "placeholder": "Your home address",
@@ -40,7 +40,7 @@
                             "width": "full"
                         },
                         {
-                            "type": "CheckboxFormControl",
+                            "$$type": "CheckboxFormControl",
                             "name": "updates",
                             "label": "Sign me up to receive updates",
                             "isRequired": "false",
@@ -77,14 +77,14 @@
                 "title": "Contact us",
                 "text": "We look forward to hearing from you.",
                 "form": {
-                    "type": "FormBlock",
+                    "$$type": "FormBlock",
                     "variant": "variant-a",
                     "elementId": "contact-form",
                     "action": "/.netlify/functions/submission_created",
                     "destination": "",
                     "fields": [
                         {
-                            "type": "TextFormControl",
+                            "$$type": "TextFormControl",
                             "name": "name",
                             "label": "Name",
                             "placeholder": "Your name",
@@ -92,7 +92,7 @@
                             "width": "1/2"
                         },
                         {
-                            "type": "EmailFormControl",
+                            "$$type": "EmailFormControl",
                             "name": "email",
                             "label": "Email",
                             "placeholder": "Your email",
@@ -100,7 +100,7 @@
                             "width": "1/2"
                         },
                         {
-                            "type": "TextFormControl",
+                            "$$type": "TextFormControl",
                             "name": "address",
                             "label": "Home address",
                             "placeholder": "Your home address",
@@ -108,7 +108,7 @@
                             "width": "full"
                         },
                         {
-                            "type": "CheckboxFormControl",
+                            "$$type": "CheckboxFormControl",
                             "name": "updates",
                             "label": "Sign me up to receive updates",
                             "isRequired": "false",
@@ -118,7 +118,7 @@
                     "submitLabel": "Send Message"
                 },
                 "media": {
-                    "type": "ImageBlock",
+                    "$$type": "ImageBlock",
                     "url": "/images/careers.jpg",
                     "altText": "Contact form image"
                 },
@@ -149,14 +149,14 @@
                 "title": "Get early access",
                 "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
                 "form": {
-                    "type": "FormBlock",
+                    "$$type": "FormBlock",
                     "variant": "variant-b",
                     "elementId": "sign-up-form",
                     "action": "/.netlify/functions/submission_created",
                     "destination": "",
                     "fields": [
                         {
-                            "type": "EmailFormControl",
+                            "$$type": "EmailFormControl",
                             "name": "email",
                             "placeholder": "Your email",
                             "isRequired": "true",

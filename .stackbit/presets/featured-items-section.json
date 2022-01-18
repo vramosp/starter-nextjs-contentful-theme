@@ -10,11 +10,11 @@
                 "subtitle": "These are all excellent features that will provide exactly the things you’re looking for.",
                 "items": [
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Faster",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/faster.svg",
                             "altText": "Item image"
                         },
@@ -25,11 +25,11 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Smarter",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/smarter.svg",
                             "altText": "Item image"
                         },
@@ -40,11 +40,11 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Focused",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/focused.svg",
                             "altText": "Item image"
                         },
@@ -86,7 +86,7 @@
                 "subtitle": "",
                 "items": [
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Faster",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": null,
@@ -97,7 +97,7 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Smarter",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": null,
@@ -108,7 +108,7 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Focused",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": null,
@@ -150,7 +150,7 @@
                 "subtitle": "",
                 "items": [
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Faster",
                         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
                         "featuredImage": null,
@@ -161,7 +161,7 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Smarter",
                         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
                         "featuredImage": null,
@@ -172,7 +172,7 @@
                         }
                     },
                     {
-                        "type": "FeaturedItem",
+                        "$$type": "FeaturedItem",
                         "title": "Focused",
                         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.",
                         "featuredImage": null,

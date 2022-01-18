@@ -8,7 +8,7 @@
                 "title":"Empty page",
                 "sections": [
                     {
-                        "type": "TextSection",
+                        "$$type": "TextSection",
                         "colors": "colors-a",
                         "title": "This in an empty page",
                         "subtitle": "Start adding sections by clicking the + button on the page or though the sidebar.",
@@ -42,19 +42,19 @@
                 "title": "Landing",
                 "sections": [
                     {
-                        "type": "HeroSection",
+                        "$$type": "HeroSection",
                         "colors": "colors-a",
                         "title": "Love where you work, because work loves you",
                         "subtitle": "One platform, one community.",
                         "actions": [
                             {
-                                "type": "Button",
+                                "$$type": "Button",
                                 "label": "Get Started",
                                 "url": "/",
                                 "style": "primary"
                             },
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "Learn More",
                                 "url": "/",
                                 "showIcon": true,
@@ -63,7 +63,7 @@
                             }
                         ],
                         "media": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/hero.png",
                             "altText": "Hero section image"
                         },
@@ -92,13 +92,13 @@
                         }
                     },
                     {
-                        "type": "FeatureHighlightSection",
+                        "$$type": "FeatureHighlightSection",
                         "colors": "colors-f",
                         "backgroundSize": "inset",
                         "title": "Where did everyone go?",
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "badge": {
-                            "type": "Badge",
+                            "$$type": "Badge",
                             "label": "Case study",
                             "styles": {
                                 "self": {
@@ -108,13 +108,13 @@
                         },
                         "actions": [
                             {
-                                "type": "Button",
+                                "$$type": "Button",
                                 "label": "Get Started",
                                 "url": "/",
                                 "style": "primary"
                             },
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "Watch Video",
                                 "url": "/",
                                 "style": "link",
@@ -124,7 +124,7 @@
                             }
                         ],
                         "media": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/hero-3.jpg",
                             "altText": "Team meeting"
                         },
@@ -155,49 +155,49 @@
                         }
                     },
                     {
-                        "type": "MediaGallerySection",
+                        "$$type": "MediaGallerySection",
                         "colors": "colors-h",
                         "title": "",
                         "subtitle": "Trusted by",
                         "images": [
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/apple.svg",
                                 "caption": "Apple",
                                 "altText": "Apple"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/google-play.svg",
                                 "caption": "Google Play",
                                 "altText": "Google Play"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/playstation.svg",
                                 "caption": "PlayStation",
                                 "altText": "PlayStation"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/gatsby.svg",
                                 "caption": "Gatsby",
                                 "altText": "Gatsby"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/xbox.svg",
                                 "caption": "Xbox",
                                 "altText": "Xbox"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/skype.svg",
                                 "caption": "Apple",
                                 "altText": "Apple"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/zcool.svg",
                                 "caption": "ZCOOL",
                                 "altText": "ZCOOL"
@@ -226,17 +226,17 @@
                         }
                     },
                     {
-                        "type": "FeaturedItemsSection",
+                        "$$type": "FeaturedItemsSection",
                         "colors": "colors-a",
                         "title": "Remote doesn’t mean alone. Here are so great features",
                         "subtitle": "These are all excellent features that will provide exactly the things you’re looking for.",
                         "items": [
                             {
-                                "type": "FeaturedItem",
+                                "$$type": "FeaturedItem",
                                 "title": "Faster",
                                 "text": "Learn how top tech companies have learned working remote using our product.",
                                 "featuredImage": {
-                                    "type": "ImageBlock",
+                                    "$$type": "ImageBlock",
                                     "url": "/images/faster.svg",
                                     "altText": "Item image"
                                 },
@@ -251,11 +251,11 @@
                                 }
                             },
                             {
-                                "type": "FeaturedItem",
+                                "$$type": "FeaturedItem",
                                 "title": "Smarter",
                                 "text": "Learn how top tech companies have learned working remote using our product.",
                                 "featuredImage": {
-                                    "type": "ImageBlock",
+                                    "$$type": "ImageBlock",
                                     "url": "/images/smarter.svg",
                                     "altText": "Item image"
                                 },
@@ -270,11 +270,11 @@
                                 }
                             },
                             {
-                                "type": "FeaturedItem",
+                                "$$type": "FeaturedItem",
                                 "title": "Focused",
                                 "text": "Learn how top tech companies have learned working remote using our product.",
                                 "featuredImage": {
-                                    "type": "ImageBlock",
+                                    "$$type": "ImageBlock",
                                     "url": "/images/focused.svg",
                                     "altText": "Item image"
                                 },
@@ -308,19 +308,19 @@
                         }
                     },
                     {
-                        "type": "FeatureHighlightSection",
+                        "$$type": "FeatureHighlightSection",
                         "colors": "colors-a",
                         "title": "A great feature, we’re proud of",
                         "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
                         "actions": [
                             {
-                                "type": "Button",
+                                "$$type": "Button",
                                 "label": "Get Started",
                                 "url": "/",
                                 "style": "primary"
                             },
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "Learn More",
                                 "url": "/",
                                 "showIcon": true,
@@ -329,7 +329,7 @@
                             }
                         ],
                         "media": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/hero-1.png",
                             "altText": "Hero section image"
                         },
@@ -358,19 +358,19 @@
                         }
                     },
                     {
-                        "type": "FeatureHighlightSection",
+                        "$$type": "FeatureHighlightSection",
                         "colors": "colors-a",
                         "title": "And a strong value proposition",
                         "text": "Share WIP, comment on each other’s work, approve what’s ready to go, ship together",
                         "actions": [
                             {
-                                "type": "Button",
+                                "$$type": "Button",
                                 "label": "Get Started",
                                 "url": "/",
                                 "style": "primary"
                             },
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "Learn More",
                                 "url": "/",
                                 "showIcon": true,
@@ -379,7 +379,7 @@
                             }
                         ],
                         "media": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/hero-2.png",
                             "altText": "Hero section image"
                         },
@@ -408,13 +408,13 @@
                         }
                     },
                     {
-                        "type": "FeaturedPostsSection",
+                        "$$type": "FeaturedPostsSection",
                         "colors": "colors-a",
                         "variant": "variant-b",
                         "title": "We sometimes write things. You should read it, it might shed some  light on why we’re doing what we’re doing",
                         "actions": [
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "See all posts",
                                 "url": "/blog",
                                 "showIcon": true,
@@ -447,13 +447,13 @@
                         }
                     },
                     {
-                        "type": "FaqSection",
+                        "$$type": "FaqSection",
                         "colors": "colors-f",
                         "title": "Need Answers?",
                         "subtitle": "",
                         "actions": [
                             {
-                                "type": "Link",
+                                "$$type": "Link",
                                 "label": "See all",
                                 "url": "/",
                                 "showIcon": true,
@@ -492,7 +492,7 @@
                         }
                     },
                     {
-                        "type": "TestimonialsSection",
+                        "$$type": "TestimonialsSection",
                         "colors": "colors-a",
                         "variant": "variant-a",
                         "title": "",
@@ -503,7 +503,7 @@
                                 "name": "Carla Rogers",
                                 "title": "Happy customer",
                                 "image": {
-                                    "type": "ImageBlock",
+                                    "$$type": "ImageBlock",
                                     "url": "/images/carla.jpg",
                                     "altText": "Photo of Carla Rogers"
                                 }
@@ -526,19 +526,19 @@
                         }
                     },
                     {
-                        "type": "ContactSection",
+                        "$$type": "ContactSection",
                         "colors": "colors-f",
                         "backgroundSize": "inset",
                         "title": "Get early access",
                         "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
                         "form": {
-                            "type": "FormBlock",
+                            "$$type": "FormBlock",
                             "elementId": "sign-up-form",
                             "action": "/.netlify/functions/submission_created",
                             "destination": "",
                             "fields": [
                                 {
-                                    "type": "EmailFormControl",
+                                    "$$type": "EmailFormControl",
                                     "name": "email",
                                     "label": "Email",
                                     "hideLabel": true,
@@ -585,7 +585,7 @@
                 "title": "FAQ",
                 "sections": [
                     {
-                        "type": "FaqSection",
+                        "$$type": "FaqSection",
                         "colors": "colors-a",
                         "title": "Need Answers?",
                         "subtitle": "",
@@ -638,7 +638,7 @@
                         }
                     },
                     {
-                        "type": "FeaturedPostsSection",
+                        "$$type": "FeaturedPostsSection",
                         "variant": "variant-b",
                         "colors": "colors-a",
                         "title": "Recent posts",
@@ -667,19 +667,19 @@
                         }
                     },
                     {
-                        "type": "ContactSection",
+                        "$$type": "ContactSection",
                         "colors": "colors-f",
                         "backgroundSize": "inset",
                         "title": "Get early access",
                         "text": "Sign up your team today to be the first to try out our new product to increase your team's productivity.",
                         "form": {
-                            "type": "FormBlock",
+                            "$$type": "FormBlock",
                             "elementId": "sign-up-form",
                             "action": "/.netlify/functions/submission_created",
                             "destination": "",
                             "fields": [
                                 {
-                                    "type": "EmailFormControl",
+                                    "$$type": "EmailFormControl",
                                     "name": "email",
                                     "label": "Email",
                                     "hideLabel": true,
@@ -726,12 +726,12 @@
                 "title": "Careers",
                 "sections": [
                     {
-                        "type": "HeroSection",
+                        "$$type": "HeroSection",
                         "colors": "colors-h",
                         "title": "We’re growing fast",
                         "text": "You should join us.",
                         "media": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/hero-4.jpg",
                             "caption": "Team meeting",
                             "altText": "Hero section image"
@@ -763,7 +763,7 @@
                         }
                     },
                     {
-                        "type": "QuoteSection",
+                        "$$type": "QuoteSection",
                         "colors": "colors-h",
                         "quote": "## Being part of this team has been incredible. We’ve fill each other’s gaps, and we go to lunch together :)",
                         "name": "Carla Rogers",
@@ -788,19 +788,19 @@
                         }
                     },
                     {
-                        "type": "MediaGallerySection",
+                        "$$type": "MediaGallerySection",
                         "colors": "colors-a",
                         "title": "",
                         "subtitle": "",
                         "images": [
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/careers.jpg",
                                 "caption": "Meeting room",
                                 "altText": "People in the meeting room"
                             },
                             {
-                                "type": "ImageBlock",
+                                "$$type": "ImageBlock",
                                 "url": "/images/post-2.jpg",
                                 "caption": "Team meeting",
                                 "altText": "Team meeting"
@@ -829,23 +829,23 @@
                         }
                     },
                     {
-                        "type": "JobsSection",
+                        "$$type": "JobsSection",
                         "colors": "colors-a",
                         "title": "Open roles",
                         "subtitle": "",
                         "jobLists": [
                             {
-                                "type": "JobList",
+                                "$$type": "JobList",
                                 "title": "Product",
                                 "items": [
                                     {
-                                        "type": "JobListItem",
+                                        "$$type": "JobListItem",
                                         "title": "Director of product management",
                                         "location": "San Francisco",
                                         "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
                                         "actions": [
                                             {
-                                                "type": "Link",
+                                                "$$type": "Link",
                                                 "label": "Apply",
                                                 "url": "/",
                                                 "showIcon": true,
@@ -857,17 +857,17 @@
                                 ]
                             },
                             {
-                                "type": "JobList",
+                                "$$type": "JobList",
                                 "title": "Engineering",
                                 "items": [
                                     {
-                                        "type": "JobListItem",
+                                        "$$type": "JobListItem",
                                         "title": "Head of engineering",
                                         "location": "San Francisco",
                                         "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
                                         "actions": [
                                             {
-                                                "type": "Link",
+                                                "$$type": "Link",
                                                 "label": "Apply",
                                                 "url": "/",
                                                 "showIcon": true,
@@ -877,13 +877,13 @@
                                         ]
                                     },
                                     {
-                                        "type": "JobListItem",
+                                        "$$type": "JobListItem",
                                         "title": "Senior Backend Engineer",
                                         "location": "Remote",
                                         "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
                                         "actions": [
                                             {
-                                                "type": "Link",
+                                                "$$type": "Link",
                                                 "label": "Apply",
                                                 "url": "/",
                                                 "showIcon": true,
@@ -895,17 +895,17 @@
                                 ]
                             },
                             {
-                                "type": "JobList",
+                                "$$type": "JobList",
                                 "title": "Sales",
                                 "items": [
                                     {
-                                        "type": "JobListItem",
+                                        "$$type": "JobListItem",
                                         "title": "Sales Development Representative",
                                         "location": "San Francisco",
                                         "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and",
                                         "actions": [
                                             {
-                                                "type": "Link",
+                                                "$$type": "Link",
                                                 "label": "Apply",
                                                 "url": "/",
                                                 "showIcon": true,
@@ -934,40 +934,40 @@
                         }
                     },
                     {
-                        "type": "ContactSection",
+                        "$$type": "ContactSection",
                         "colors": "colors-f",
                         "backgroundSize": "inset",
                         "title": "Not seeing the right role? Contact us",
                         "text": "We might have more roles soon, and we’ll contact you if we think there might be a good match",
                         "form": {
-                            "type": "FormBlock",
+                            "$$type": "FormBlock",
                             "elementId": "contact-form",
                             "action": "/.netlify/functions/submission_created",
                             "destination": "",
                             "fields": [
                                 {
-                                    "type": "TextFormControl",
+                                    "$$type": "TextFormControl",
                                     "name": "name",
                                     "placeholder": "Your name",
                                     "isRequired": "true",
                                     "width": "1/2"
                                 },
                                 {
-                                    "type": "EmailFormControl",
+                                    "$$type": "EmailFormControl",
                                     "name": "email",
                                     "placeholder": "Your email",
                                     "isRequired": "true",
                                     "width": "1/2"
                                 },
                                 {
-                                    "type": "TextFormControl",
+                                    "$$type": "TextFormControl",
                                     "name": "address",
                                     "placeholder": "Your home address",
                                     "isRequired": "false",
                                     "width": "full"
                                 },
                                 {
-                                    "type": "CheckboxFormControl",
+                                    "$$type": "CheckboxFormControl",
                                     "name": "updates",
                                     "label": "Sign me up to receive updates",
                                     "isRequired": "false",

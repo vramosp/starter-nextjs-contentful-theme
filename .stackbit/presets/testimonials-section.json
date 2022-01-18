@@ -15,7 +15,7 @@
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/carla.jpg",
                             "altText": "Photo of Carla Rogers"
                         }
@@ -52,7 +52,7 @@
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/carla.jpg",
                             "altText": "Photo of Carla Rogers"
                         }
@@ -89,7 +89,7 @@
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
-                            "type": "ImageBlock",
+                            "$$type": "ImageBlock",
                             "url": "/images/carla.jpg",
                             "altText": "Photo of Carla Rogers"
                         }
