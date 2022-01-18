@@ -20,7 +20,7 @@
                             "name": "name",
                             "label": "Name",
                             "placeholder": "Your name",
-                            "isRequired": "true",
+                            "isRequired": true,
                             "width": "1/2"
                         },
                         {
@@ -28,7 +28,7 @@
                             "name": "email",
                             "label": "Email",
                             "placeholder": "Your email",
-                            "isRequired": "true",
+                            "isRequired": true,
                             "width": "1/2"
                         },
                         {
@@ -36,14 +36,14 @@
                             "name": "address",
                             "label": "Home address",
                             "placeholder": "Your home address",
-                            "isRequired": "false",
+                            "isRequired": false,
                             "width": "full"
                         },
                         {
                             "$$type": "CheckboxFormControl",
                             "name": "updates",
                             "label": "Sign me up to receive updates",
-                            "isRequired": "false",
+                            "isRequired": false,
                             "width": "full"
                         }
                     ],
@@ -88,7 +88,7 @@
                             "name": "name",
                             "label": "Name",
                             "placeholder": "Your name",
-                            "isRequired": "true",
+                            "isRequired": true,
                             "width": "1/2"
                         },
                         {
@@ -96,7 +96,7 @@
                             "name": "email",
                             "label": "Email",
                             "placeholder": "Your email",
-                            "isRequired": "true",
+                            "isRequired": true,
                             "width": "1/2"
                         },
                         {
@@ -104,14 +104,14 @@
                             "name": "address",
                             "label": "Home address",
                             "placeholder": "Your home address",
-                            "isRequired": "false",
+                            "isRequired": false,
                             "width": "full"
                         },
                         {
                             "$$type": "CheckboxFormControl",
                             "name": "updates",
                             "label": "Sign me up to receive updates",
-                            "isRequired": "false",
+                            "isRequired": false,
                             "width": "full"
                         }
                     ],
@@ -159,7 +159,7 @@
                             "$$type": "EmailFormControl",
                             "name": "email",
                             "placeholder": "Your email",
-                            "isRequired": "true",
+                            "isRequired": true,
                             "width": "full"
                         }
                     ],

@@ -89,7 +89,7 @@ export default class FormBlock extends React.Component<any> {
                         data-sb-field-path=".fields"
                     >
                         <input type="hidden" name="form-name" value={elementId} />
-                        <input type="hidden" name="form-destination" value={destination} />
+                        <input type="hidden" name="form-destination" value={destination || ''} />
                         {fields.map((field, index) => {
                             const fieldType = field.__metadata.modelName;
                             if (!fieldType) {

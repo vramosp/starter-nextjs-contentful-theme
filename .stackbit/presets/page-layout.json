@@ -543,7 +543,7 @@
                                     "label": "Email",
                                     "hideLabel": true,
                                     "placeholder": "Your email",
-                                    "isRequired": "true",
+                                    "isRequired": true,
                                     "width": "full"
                                 }
                             ],
@@ -643,7 +643,7 @@
                         "colors": "colors-a",
                         "title": "Recent posts",
                         "subtitle": "",
-                        "showDate": "true",
+                        "showDate": true,
                         "posts": [
                             "content/pages/blog/post-four.md",
                             "content/pages/blog/post-three.md"
@@ -684,7 +684,7 @@
                                     "label": "Email",
                                     "hideLabel": true,
                                     "placeholder": "Your email",
-                                    "isRequired": "true",
+                                    "isRequired": true,
                                     "width": "full"
                                 }
                             ],
@@ -949,28 +949,28 @@
                                     "$$type": "TextFormControl",
                                     "name": "name",
                                     "placeholder": "Your name",
-                                    "isRequired": "true",
+                                    "isRequired": true,
                                     "width": "1/2"
                                 },
                                 {
                                     "$$type": "EmailFormControl",
                                     "name": "email",
                                     "placeholder": "Your email",
-                                    "isRequired": "true",
+                                    "isRequired": true,
                                     "width": "1/2"
                                 },
                                 {
                                     "$$type": "TextFormControl",
                                     "name": "address",
                                     "placeholder": "Your home address",
-                                    "isRequired": "false",
+                                    "isRequired": false,
                                     "width": "full"
                                 },
                                 {
                                     "$$type": "CheckboxFormControl",
                                     "name": "updates",
                                     "label": "Sign me up to receive updates",
-                                    "isRequired": "false",
+                                    "isRequired": false,
                                     "width": "full"
                                 }
                             ],
