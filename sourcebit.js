@@ -1,4 +1,4 @@
-const { cssClassesFromUrlPath } = require('./src/utils/page-utils');
+const { cssClassesFromUrlPath, getPageUrl } = require('./src/utils/page-utils');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -45,10 +45,10 @@ module.exports = {
                     return { site };
                 },
                 pages: (objects) => {
-                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout'].includes(page.__metadata.modelName));
+                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout', 'PostLayout'].includes(page.__metadata.modelName));
                     const pages = pageObjects.map((page) => {
                         const { __metadata, ...restProps } = page;
-                        const urlPath = page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
+                        const urlPath = getPageUrl(page);
                         return {
                             __metadata: {
                                 ...__metadata,
@@ -59,21 +59,7 @@ module.exports = {
                         };
                     });
 
-                    const postObjects = objects.filter((page) => ['PostLayout'].includes(page.__metadata.modelName));
-                    const posts = postObjects.map((page) => {
-                        const { __metadata, ...restProps } = page;
-                        const urlPath = `/blog/${page.slug.replace('^/', '')}`;
-                        return {
-                            __metadata: {
-                                ...__metadata,
-                                urlPath,
-                                pageCssClasses: cssClassesFromUrlPath(urlPath)
-                            },
-                            ...restProps
-                        };
-                    });
-
-                    return [...pages, ...posts];
+                    return [...pages];
                 }
             }
         }

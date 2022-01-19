@@ -7,6 +7,7 @@ import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import ArrowRightIcon from '../../svgs/arrow-right';
+import { getPageUrl } from '../../../utils/page-utils';
 
 export default function PostFeedSection(props) {
     const cssId = props.elementId || null;
@@ -122,7 +123,7 @@ function postsVariantA(props) {
                 <article key={index} data-sb-object-id={post.__metadata?.id}>
                     {post.featuredImage && (
                         <Link
-                            href={post.__metadata?.urlPath}
+                            href={getPageUrl(post)}
                             className="block rounded-2xl mb-6 h-0 w-full pt-1/1 relative overflow-hidden lg:mb-10"
                             data-sb-field-path="featuredImage"
                         >
@@ -134,7 +135,7 @@ function postsVariantA(props) {
                     )}
                     <div>
                         <h3 className="text-2xl">
-                            <Link href={post.__metadata?.urlPath} data-sb-field-path="title">
+                            <Link href={getPageUrl(post)} data-sb-field-path="title">
                                 {post.title}
                             </Link>
                         </h3>
@@ -174,7 +175,7 @@ function postsVariantB(props) {
                 >
                     {post.featuredImage && (
                         <Link
-                            href={post.__metadata?.urlPath}
+                            href={getPageUrl(post)}
                             className="block rounded-2xl mb-6 h-0 w-full pt-9/16 relative overflow-hidden md:pt-0 md:h-64 lg:h-96 lg:mb-10"
                             data-sb-field-path="featuredImage"
                         >
@@ -186,7 +187,7 @@ function postsVariantB(props) {
                     )}
                     <div>
                         <h3 className="text-2xl">
-                            <Link href={post.__metadata?.urlPath} data-sb-field-path="title">
+                            <Link href={getPageUrl(post)} data-sb-field-path="title">
                                 {post.title}
                             </Link>
                         </h3>
@@ -224,7 +225,7 @@ function postsVariantC(props) {
                         <div className="flex flex-col min-h-full">
                             {post.featuredImage && (
                                 <Link
-                                    href={post.__metadata?.urlPath}
+                                    href={getPageUrl(post)}
                                     className="block h-0 w-full pt-9/16 relative overflow-hidden"
                                     data-sb-field-path="featuredImage"
                                 >
@@ -238,7 +239,7 @@ function postsVariantC(props) {
                                 <div className="flex-grow">
                                     {props.showDate && <PostDate post={post} className="mb-2" />}
                                     <h3 className="text-2xl">
-                                        <Link href={post.__metadata?.urlPath} data-sb-field-path="title">
+                                        <Link href={getPageUrl(post)} data-sb-field-path="title">
                                             {post.title}
                                         </Link>
                                     </h3>
@@ -250,7 +251,7 @@ function postsVariantC(props) {
                                     )}
                                 </div>
                                 <div className="mt-3">
-                                    <Link href={post.__metadata?.urlPath} className="sb-component sb-component-block sb-component-link">
+                                    <Link href={getPageUrl(post)} className="sb-component sb-component-block sb-component-link">
                                         <span>Read post</span>
                                         <ArrowRightIcon className="fill-current h-5 w-5 ml-3" />
                                     </Link>
