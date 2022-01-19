@@ -20,7 +20,7 @@ module.exports = {
                 environment: process.env.CONTENTFUL_ENVIRONMENT || 'master',
                 preview: isDev,
                 watch: isDev,
-                host: 'preview.contentful.com'
+                host: isDev ? 'preview.contentful.com' : undefined
             }
         },
 
