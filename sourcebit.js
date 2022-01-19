@@ -45,20 +45,6 @@ module.exports = {
                     return { site };
                 },
                 pages: (objects) => {
-                    const personObjects = objects.filter((object) => object.__metadata.modelName === 'Person');
-                    const personPages = personObjects.map((person) => {
-                        const { __metadata, ...restProps } = person;
-                        const urlPath = `/blog/author/${person.firstName}-${person.lastName}`;
-                        return {
-                            __metadata: {
-                                ...__metadata,
-                                urlPath,
-                                pageCssClasses: cssClassesFromUrlPath(urlPath)
-                            },
-                            ...restProps
-                        };
-                    });
-
                     const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout'].includes(page.__metadata.modelName));
                     const pages = pageObjects.map((page) => {
                         const { __metadata, ...restProps } = page;
@@ -87,7 +73,7 @@ module.exports = {
                         };
                     });
 
-                    return [...pages, ...posts, ...personPages];
+                    return [...pages, ...posts];
                 }
             }
         }
