@@ -1,10 +1,5 @@
-const fs = require('fs');
 const plugin = require('tailwindcss/plugin');
-
-// we use readFileSync here instead of require because tailwind.purge.content will not load the file if it has been required.
-const sourcebitCacheFile = fs.readFileSync('./.sourcebit-nextjs-cache.json');
-const sourcebitData = JSON.parse(sourcebitCacheFile);
-const themeStyle = sourcebitData.objects.find((item) => item.__metadata.modelName === 'ThemeStyle');
+const themeStyle = require('./content/data/style.json');
 
 module.exports = {
     mode: 'jit',

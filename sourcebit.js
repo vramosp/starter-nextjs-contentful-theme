@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const { cssClassesFromUrlPath, getPageUrl } = require('./src/utils/page-utils');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -21,6 +23,25 @@ module.exports = {
                 preview: isDev,
                 watch: isDev,
                 host: isDev ? 'preview.contentful.com' : undefined
+            }
+        },
+
+        // middleware to save ThemeStyle objects in filesystem for use with tailwind.
+        {
+            module: {
+                transform: ({ data }) => {
+                    data.objects.find((object) => {
+                        if (object.__metadata.modelName === 'ThemeStyle') {
+                            const dirname = path.join(__dirname, 'content/data');
+                            if (!fs.existsSync(dirname)) {
+                                fs.mkdirSync(dirname, { recursive: true });
+                            }
+                            fs.writeFileSync(path.join(dirname, 'style.json'), JSON.stringify(object, null, 4));
+                            return true;
+                        }
+                    });
+                    return data;
+                }
             }
         },
 
