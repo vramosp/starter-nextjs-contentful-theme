@@ -39,7 +39,7 @@ export default function PostLayout(props) {
                         {sections.map((section, index) => {
                             const Component = getComponent(section.__metadata.modelName);
                             if (!Component) {
-                                throw new Error(`no component matching the page section's type: ${section.__metadata.modelName}`);
+                                throw new Error(`no component matching the page section's model name: ${section.__metadata.modelName}`);
                             }
                             return <Component key={index} {...section} data-sb-field-path={`bottomSections.${index}`} />;
                         })}

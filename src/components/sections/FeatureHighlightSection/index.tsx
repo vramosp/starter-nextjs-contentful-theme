@@ -101,13 +101,13 @@ export default function FeatureHighlightSection(props) {
 }
 
 function featureHighlightMedia(media) {
-    const mediaType = media.__metadata.modelName;
-    if (!mediaType) {
-        throw new Error(`hero section media does not have the 'type' property`);
+    const modelName = media.__metadata.modelName;
+    if (!modelName) {
+        throw new Error(`hero section media does not have the 'modelName' property`);
     }
-    const Media = getComponent(mediaType);
+    const Media = getComponent(modelName);
     if (!Media) {
-        throw new Error(`no component matching the hero section media type: ${mediaType}`);
+        throw new Error(`no component matching the hero section media model name: ${modelName}`);
     }
     return <Media {...media} data-sb-field-path=".media" />;
 }
