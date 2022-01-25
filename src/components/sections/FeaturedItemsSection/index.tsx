@@ -5,8 +5,9 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import Action from '../../atoms/Action';
 import FeaturedItem from './FeaturedItem';
+import * as types from '../../../types/sourcebit';
 
-export default function FeaturedItemsSection(props) {
+export default function FeaturedItemsSection(props: types.FeaturedItemsSection) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
@@ -64,23 +65,26 @@ export default function FeaturedItemsSection(props) {
                             ))}
                         </div>
                     )}
-                    {featuredItemActions(props)}
+                    <Actions actions={props.actions} styles={props.styles?.actions} />
                 </div>
             </div>
         </div>
     );
 }
 
-function featuredItemActions(props) {
-    const actions = props.actions || [];
+interface ActionProps {
+    actions?: (types.Button | types.Link)[];
+    styles?: Record<string, any>;
+}
+
+function Actions({ actions = [], styles = {} }: ActionProps = {}) {
     if (actions.length === 0) {
         return null;
     }
-    const styles = props.styles || {};
     return (
         <div className="mt-12 overflow-x-hidden">
             <div
-                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles.actions ? mapStyles(styles.actions) : null)}
+                className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', styles ? mapStyles(styles) : null)}
                 data-sb-field-path=".actions"
             >
                 {actions.map((action, index) => (
