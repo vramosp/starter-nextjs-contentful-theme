@@ -30,8 +30,8 @@ export default function FeaturedItem(props: types.FeaturedItem & { enableHover?:
             }}
             data-sb-field-path={props['data-sb-field-path']}>
             {props.featuredImage && (
-                <div className="mb-6" data-sb-field-path=".featuredImage">
-                    <ImageBlock {...props.featuredImage} className="inline-block" />
+                <div className="mb-6">
+                    <ImageBlock {...props.featuredImage} className="inline-block" data-sb-field-path=".featuredImage" />
                 </div>
             )}
             {props.title && (

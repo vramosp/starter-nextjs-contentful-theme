@@ -19,8 +19,14 @@
                 ],
                 "media": {
                     "$$type": "ImageBlock",
-                    "url": "/images/hero.png",
-                    "altText": "Hero image"
+                    "url": {
+                        "$$ref": "qUVr161WvmcBvHHKj08uh"
+                    },
+                    "altText": "Hero image",
+                    "styles": {
+                        "self": {
+                        }
+                    } 
                 },
                 "styles": {
                     "self": {
@@ -70,8 +76,14 @@
                 ],
                 "media": {
                     "$$type": "ImageBlock",
-                    "url": "/images/hero.png",
-                    "altText": "Hero image"
+                    "url": {
+                        "$$ref": "qUVr161WvmcBvHHKj08uh"
+                    },
+                    "altText": "Hero image",
+                    "styles": {
+                        "self": {
+                        }
+                    } 
                 },
                 "styles": {
                     "self": {
@@ -122,8 +134,14 @@
                 ],
                 "media": {
                     "$$type": "ImageBlock",
-                    "url": "/images/hero-3.jpg",
-                    "altText": "Hero image"
+                    "url": {
+                        "$$ref": "7kcDWvhCA84C25h5BRKYgq"
+                    },
+                    "altText": "Hero image",
+                    "styles": {
+                        "self": {
+                        }
+                    } 
                 },
                 "styles": {
                     "self": {
