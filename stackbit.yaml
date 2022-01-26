@@ -23,22 +23,14 @@ import:
 
 styleObjectModelName: ThemeStyle
 
-contentModels:
+# These models are merged with Contentful models
+models:
   PageLayout:
-    isPage: true
+    type: page
     urlPath: '/{slug}'
   PostLayout:
-    isPage: true
+    type: page
     urlPath: '/blog/{slug}'
   PostFeedLayout:
-    isPage: true
-    singleInstance: true
+    type: page
     urlPath: '/blog'
-
-modelsSource:
-  type: 'contentful'
-  # the name of the environment variable with the value of the space ID
-  spaceIdEnvVar: 'CONTENTFUL_SPACE_ID'
-  # the name of the environment variable with the value of the access token
-  accessTokenEnvVar: 'CONTENTFUL_ACCESS_TOKEN'
-  environment: 'master'
