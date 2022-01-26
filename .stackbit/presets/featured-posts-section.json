@@ -5,10 +5,11 @@
             "label": "Featured posts light - 2 columns",
             "thumbnail": "images/feat-posts-light-2-col.png",
             "data": {
+                "elementId": "",
+                "showDate": false,
+                "showAuthor": false,
+                "showExcerpt": false,
                 "variant": "variant-b",
-                "colors": "colors-h",
-                "title": "Featured",
-                "subtitle": "Featured blog posts section example",
                 "actions": [
                     {
                         "$$type": "Button",
@@ -16,6 +17,20 @@
                         "altText": "View All Posts",
                         "url": "/blog",
                         "style": "primary"
+                    }
+                ],
+                "title": "Featured",
+                "subtitle": "Featured blog posts section example",
+                "colors": "colors-h",
+                "posts": [
+                    {
+                        "$$ref": "2R5tigAtp0wVA0xYN7PuKI"
+                    },
+                    {
+                        "$$ref": "4spTyjU9mvDXhFC5ttbJGI"
+                    },
+                    {
+                        "$$ref": "6v4l0Q9dTLFaaDKHvg66b0"
                     }
                 ],
                 "styles": {
@@ -55,6 +70,17 @@
                         "style": "primary"
                     }
                 ],
+                "posts": [
+                    {
+                        "$$ref": "2R5tigAtp0wVA0xYN7PuKI"
+                    },
+                    {
+                        "$$ref": "4spTyjU9mvDXhFC5ttbJGI"
+                    },
+                    {
+                        "$$ref": "6v4l0Q9dTLFaaDKHvg66b0"
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -90,6 +116,17 @@
                         "altText": "View All Posts",
                         "url": "/blog",
                         "style": "primary"
+                    }
+                ],
+                "posts": [
+                    {
+                        "$$ref": "2R5tigAtp0wVA0xYN7PuKI"
+                    },
+                    {
+                        "$$ref": "4spTyjU9mvDXhFC5ttbJGI"
+                    },
+                    {
+                        "$$ref": "6v4l0Q9dTLFaaDKHvg66b0"
                     }
                 ],
                 "styles": {

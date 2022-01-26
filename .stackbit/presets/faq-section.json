@@ -8,18 +8,41 @@
                 "colors": "colors-h",
                 "elementId": "",
                 "title": "Need Answers?",
+                "subtitle": "The section subtitle",
+                "actions": [
+                    {
+                        "$$type": "Button",
+                        "label": "See All",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "url": "/",
+                        "style": "link"
+                    }
+                ],
                 "items": [
                     {
-                        "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "$$type": "FaqItem",
+                        "question": "How is this different from what we have today?",
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     },
                     {
+                        "$$type": "FaqItem",
                         "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     },
                     {
+                        "$$type": "FaqItem",
                         "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     }
                 ],
                 "styles": {
@@ -42,8 +65,7 @@
                         "fontStyle": "normal",
                         "textAlign": "left"
                     }
-                },
-                "$$type": "FaqSection"
+                }
             }
         },
         {
@@ -54,18 +76,40 @@
                 "elementId": "",
                 "title": "Need Answers?",
                 "subtitle": "We are here to help",
+                "actions": [
+                    {
+                        "$$type": "Button",
+                        "label": "See All",
+                        "showIcon": true,
+                        "icon": "arrowRight",
+                        "url": "/",
+                        "style": "link"
+                    }
+                ],
                 "items": [
                     {
+                        "$$type": "FaqItem",
                         "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     },
                     {
+                        "$$type": "FaqItem",
                         "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     },
                     {
+                        "$$type": "FaqItem",
                         "question": "How it this different from what we have today?",
-                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation"
+                        "answer": "At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation, At the office, working together is often a distruction, on remote, it could be motivation",
+                        "styles": {
+                            "self": {}
+                        }
                     }
                 ],
                 "styles": {
@@ -88,8 +132,7 @@
                         "fontStyle": "normal",
                         "textAlign": "left"
                     }
-                },
-                "$$type": "FaqSection"
+                }
             }
         }
     ]

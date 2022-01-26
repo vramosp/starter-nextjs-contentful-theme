@@ -11,13 +11,27 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "$$type": "Testimonial",
+                        "quote": "Such a great experience to be using this product. It really helped with what I needed help with.",
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
                             "$$type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
+                            "url": {
+                                "$$ref": "3SqhXAnGWUjEUL0wL2tpAP"
+                            },
+                            "altText": "Photo of Carla Rogers",
+                            "caption": "Carla Rogers",
+                            "elementId": "",
+                            "styles": {
+                                "self": {
+                                }
+                            } 
+                        },
+                        "elementId": "",
+                        "styles": {
+                            "self": {
+                            }
                         }
                     }
                 ],
@@ -26,7 +40,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0"],
-                        "padding": ["pt-28", "pb-28"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "justifyContent": "center"
                     },
                     "title": {
@@ -48,13 +62,27 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "$$type": "Testimonial",
+                        "quote": "Such a great experience to be using this product. It really helped with what I needed help with.",
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
                             "$$type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
+                            "url": {
+                                "$$ref": "3SqhXAnGWUjEUL0wL2tpAP"
+                            },
+                            "altText": "Photo of Carla Rogers",
+                            "caption": "Carla Rogers",
+                            "elementId": "",
+                            "styles": {
+                                "self": {
+                                }
+                            } 
+                        },
+                        "elementId": "",
+                        "styles": {
+                            "self": {
+                            }
                         }
                     }
                 ],
@@ -63,7 +91,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0"],
-                        "padding": ["pt-28", "pb-28"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "justifyContent": "center"
                     },
                     "title": {
@@ -85,13 +113,27 @@
                 "subtitle": "",
                 "testimonials": [
                     {
-                        "quote": "\"Such a great experience to be using this product. It really helped with what I needed help with.\"\n",
+                        "$$type": "Testimonial",
+                        "quote": "Such a great experience to be using this product. It really helped with what I needed help with.",
                         "name": "Carla Rogers",
                         "title": "Happy customer",
                         "image": {
                             "$$type": "ImageBlock",
-                            "url": "/images/carla.jpg",
-                            "altText": "Photo of Carla Rogers"
+                            "url": {
+                                "$$ref": "3SqhXAnGWUjEUL0wL2tpAP"
+                            },
+                            "altText": "Photo of Carla Rogers",
+                            "caption": "Carla Rogers",
+                            "elementId": "",
+                            "styles": {
+                                "self": {
+                                }
+                            } 
+                        },
+                        "elementId": "",
+                        "styles": {
+                            "self": {
+                            }
                         }
                     }
                 ],
@@ -100,7 +142,7 @@
                         "height": "auto",
                         "width": "wide",
                         "margin": ["mt-0", "mb-0"],
-                        "padding": ["pt-28", "pb-28"],
+                        "padding": ["pt-28", "pb-28", "pl-4", "pr-4"],
                         "justifyContent": "center"
                     },
                     "title": {

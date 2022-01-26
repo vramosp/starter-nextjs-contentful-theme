@@ -10,9 +10,45 @@
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
-                "people": [
-                    "content/data/team/desmond-eagle.json",
-                    "content/data/team/hilary-ouse.json"
+                "people": [  
+                    {
+                        "$$type": "Person",
+                        "firstName": "Desmond",
+                        "lastName": "Eagle",
+                        "role": "Co-founder & CEO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Desmond Eagle Headshot",
+                            "url": {
+                                "$$ref": "2oWTiGupvk1YQkWSV3JiXP"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$$type": "Person",
+                        "firstName": "Hilary",
+                        "lastName": "Ouse",
+                        "role": "Co-founder & CTO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Hilary Ouse Headshot",
+                            "url": {
+                                "$$ref": "13cCABu23ZnxcKw3C6lPxt"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    }
                 ],
                 "styles": {
                     "self": {
@@ -43,6 +79,65 @@
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
+                "people": [  
+                    {
+                        "$$type": "Person",
+                        "firstName": "Desmond",
+                        "lastName": "Eagle",
+                        "role": "Co-founder & CEO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Desmond Eagle Headshot",
+                            "url": {
+                                "$$ref": "2oWTiGupvk1YQkWSV3JiXP"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$$type": "Person",
+                        "firstName": "Dianne",
+                        "lastName": "Ameter",
+                        "role": "Designer",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Dianne Ameter Headshot",
+                            "url": {
+                                "$$ref": "5ufPSJAGB5qSBqk7hv1r8W"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$$type": "Person",
+                        "firstName": "Hilary",
+                        "lastName": "Ouse",
+                        "role": "Co-founder & CTO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Hilary Ouse Headshot",
+                            "url": {
+                                "$$ref": "13cCABu23ZnxcKw3C6lPxt"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",
@@ -72,6 +167,65 @@
                 "title": "About us",
                 "subtitle": "Featured people section example",
                 "actions": [],
+                "people": [  
+                    {
+                        "$$type": "Person",
+                        "firstName": "Desmond",
+                        "lastName": "Eagle",
+                        "role": "Co-founder & CEO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Desmond Eagle Headshot",
+                            "url": {
+                                "$$ref": "2oWTiGupvk1YQkWSV3JiXP"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$$type": "Person",
+                        "firstName": "Dianne",
+                        "lastName": "Ameter",
+                        "role": "Designer",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Dianne Ameter Headshot",
+                            "url": {
+                                "$$ref": "5ufPSJAGB5qSBqk7hv1r8W"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$$type": "Person",
+                        "firstName": "Hilary",
+                        "lastName": "Ouse",
+                        "role": "Co-founder & CTO",
+                        "bio": "This is the thing you were missing in your workflow, thank god we have it for you to use.",
+                        "image": {
+                            "$$type": "ImageBlock",
+                            "elementId": "",
+                            "altText": "Hilary Ouse Headshot",
+                            "url": {
+                                "$$ref": "13cCABu23ZnxcKw3C6lPxt"
+                            },              
+                            "styles": {
+                                "self": {
+                                }
+                            }
+                        }
+                    }
+                ],
                 "styles": {
                     "self": {
                         "height": "auto",

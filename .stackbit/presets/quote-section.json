@@ -37,7 +37,10 @@
             "data": {
                 "colors": "colors-c",
                 "backgroundImage": {
-                    "url": "/images/bg.jpg",
+                    "$$type": "ImageBlock",
+                    "url": {
+                        "$$ref": "6gKVhoYb6g7OpHqdyCXlM0"
+                    },
                     "altText": "Product Marketing Manager Quote",
                     "styles": {
                         "self": {

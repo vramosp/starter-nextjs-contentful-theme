@@ -119,7 +119,9 @@
                 },
                 "media": {
                     "$$type": "ImageBlock",
-                    "url": "/images/careers.jpg",
+                    "url": {
+                        "$$ref": "18F16J7nmtuEbKfXRC5pIS"
+                    },
                     "altText": "Contact form image"
                 },
                 "styles": {
@@ -158,6 +160,7 @@
                         {
                             "$$type": "EmailFormControl",
                             "name": "email",
+                            "label": "",
                             "placeholder": "Your email",
                             "isRequired": true,
                             "width": "full"

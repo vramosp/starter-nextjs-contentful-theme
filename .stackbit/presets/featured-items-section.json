@@ -15,7 +15,9 @@
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
                             "$$type": "ImageBlock",
-                            "url": "/images/faster.svg",
+                            "url": {
+                                "$$ref": "z0jabKas3r8ura3ZIkCOP"
+                            },
                             "altText": "Item image"
                         },
                         "styles": {
@@ -30,7 +32,9 @@
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
                             "$$type": "ImageBlock",
-                            "url": "/images/smarter.svg",
+                            "url": {
+                                "$$ref": "M4wKWJIXhTrOs5EyiaX6a"
+                            },
                             "altText": "Item image"
                         },
                         "styles": {
@@ -45,7 +49,9 @@
                         "text": "Learn how top tech companies have learned working remote using our product.",
                         "featuredImage": {
                             "$$type": "ImageBlock",
-                            "url": "/images/focused.svg",
+                            "url": {
+                                "$$ref": "6NgdQK35vdwaqE8q4sEJlX"
+                            },
                             "altText": "Item image"
                         },
                         "styles": {
