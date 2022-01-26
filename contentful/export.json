@@ -140,7 +140,7 @@
         }
       },
       "displayField": "label",
-      "name": "Checkbox",
+      "name": "Checkbox Form Control",
       "description": null,
       "fields": [
         {
@@ -556,7 +556,7 @@
         }
       },
       "displayField": "title",
-      "name": "Contact",
+      "name": "Contact Block",
       "description": null,
       "fields": [
         {
@@ -721,7 +721,7 @@
         }
       },
       "displayField": "label",
-      "name": "Email",
+      "name": "Email Form Control",
       "description": null,
       "fields": [
         {
@@ -861,7 +861,7 @@
         }
       },
       "displayField": "title",
-      "name": "Contact",
+      "name": "Contact Section",
       "description": null,
       "fields": [
         {
@@ -1227,7 +1227,7 @@
         }
       },
       "displayField": "title",
-      "name": "FAQ",
+      "name": "FAQ Section",
       "description": null,
       "fields": [
         {
@@ -1404,7 +1404,7 @@
         }
       },
       "displayField": "title",
-      "name": "Feature highlight",
+      "name": "Feature Highlight Section",
       "description": null,
       "fields": [
         {
@@ -1628,7 +1628,7 @@
         }
       },
       "displayField": "title",
-      "name": "Item",
+      "name": "Featured Item",
       "description": null,
       "fields": [
         {
@@ -1788,7 +1788,7 @@
         }
       },
       "displayField": "title",
-      "name": "Featured items",
+      "name": "Featured Items Section",
       "description": null,
       "fields": [
         {
@@ -1999,7 +1999,7 @@
         }
       },
       "displayField": "title",
-      "name": "Featured people",
+      "name": "Featured People Section",
       "description": null,
       "fields": [
         {
@@ -2197,7 +2197,7 @@
         }
       },
       "displayField": "label",
-      "name": "Textarea",
+      "name": "Textarea Form Control",
       "description": null,
       "fields": [
         {
@@ -2340,7 +2340,7 @@
         }
       },
       "displayField": "altText",
-      "name": "Image",
+      "name": "Image Block",
       "description": null,
       "fields": [
         {
@@ -2458,7 +2458,7 @@
         }
       },
       "displayField": "title",
-      "name": "Item",
+      "name": "Job List Item",
       "description": null,
       "fields": [
         {
@@ -2576,7 +2576,7 @@
         }
       },
       "displayField": "title",
-      "name": "Jobs",
+      "name": "Jobs Section",
       "description": null,
       "fields": [
         {
@@ -2730,7 +2730,7 @@
         }
       },
       "displayField": "label",
-      "name": "Text",
+      "name": "Text Form Control",
       "description": null,
       "fields": [
         {
@@ -2873,7 +2873,7 @@
         }
       },
       "displayField": "title",
-      "name": "Featured posts",
+      "name": "Featured Posts Section",
       "description": null,
       "fields": [
         {
@@ -3577,7 +3577,7 @@
         }
       },
       "displayField": "title",
-      "name": "Job list",
+      "name": "Job List",
       "description": null,
       "fields": [
         {
@@ -3666,7 +3666,7 @@
         }
       },
       "displayField": "title",
-      "name": "Media gallery",
+      "name": "Media Gallery Section",
       "description": null,
       "fields": [
         {
@@ -3933,7 +3933,7 @@
         }
       },
       "displayField": "title",
-      "name": "Page",
+      "name": "Page Layout",
       "description": null,
       "fields": [
         {
@@ -3947,6 +3947,20 @@
           "defaultValue": {
             "en-US": "This is a new page"
           },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -3984,17 +3998,6 @@
             ],
             "linkType": "Entry"
           }
-        },
-        {
-          "id": "slug",
-          "name": "Slug",
-          "type": "Text",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
         }
       ]
     },
@@ -4046,7 +4049,7 @@
         }
       },
       "displayField": "title",
-      "name": "Post feed",
+      "name": "Paged Posts Section",
       "description": null,
       "fields": [
         {
@@ -4390,7 +4393,7 @@
         }
       },
       "displayField": "title",
-      "name": "Recent posts",
+      "name": "Recent Posts Section",
       "description": null,
       "fields": [
         {
@@ -4622,7 +4625,7 @@
         }
       },
       "displayField": "title",
-      "name": "Video",
+      "name": "Video Block",
       "description": null,
       "fields": [
         {
@@ -4793,7 +4796,7 @@
         }
       },
       "displayField": "title",
-      "name": "Post feed",
+      "name": "Post Feed Section",
       "description": null,
       "fields": [
         {
@@ -5011,7 +5014,7 @@
         }
       },
       "displayField": "name",
-      "name": "Quote",
+      "name": "Quote Section",
       "description": null,
       "fields": [
         {
@@ -5174,7 +5177,7 @@
         }
       },
       "displayField": "label",
-      "name": "Select",
+      "name": "Select Form Control",
       "description": null,
       "fields": [
         {
@@ -5333,7 +5336,7 @@
         }
       },
       "displayField": "title",
-      "name": "Testimonials",
+      "name": "Testimonials Section",
       "description": null,
       "fields": [
         {
@@ -5502,7 +5505,7 @@
         }
       },
       "displayField": "title",
-      "name": "Post",
+      "name": "Post Layout",
       "description": null,
       "fields": [
         {
@@ -5516,6 +5519,20 @@
           "defaultValue": {
             "en-US": "This is a blog post title"
           },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -5614,17 +5631,6 @@
           }
         },
         {
-          "id": "slug",
-          "name": "Slug",
-          "type": "Text",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
           "id": "content",
           "name": "Content",
           "type": "Text",
@@ -5632,99 +5638,6 @@
           "required": false,
           "validations": [
           ],
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "2zqi83f33bxg"
-          }
-        },
-        "id": "Section",
-        "type": "ContentType",
-        "createdAt": "2022-01-18T19:49:38.712Z",
-        "updatedAt": "2022-01-18T19:49:50.848Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2022-01-18T19:49:50.848Z",
-        "firstPublishedAt": "2022-01-18T19:49:50.848Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0a3FDK3QSZ7XBXIJWxn2UU"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0a3FDK3QSZ7XBXIJWxn2UU"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0a3FDK3QSZ7XBXIJWxn2UU"
-          }
-        }
-      },
-      "displayField": "elementId",
-      "name": "Section",
-      "description": null,
-      "fields": [
-        {
-          "id": "colors",
-          "name": "Colors",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "in": [
-                "colors-a",
-                "colors-b",
-                "colors-c",
-                "colors-d",
-                "colors-e",
-                "colors-f",
-                "colors-g",
-                "colors-h"
-              ]
-            }
-          ],
-          "defaultValue": {
-            "en-US": "colors-a"
-          },
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "elementId",
-          "name": "Element ID",
-          "type": "Text",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "defaultValue": {
-            "en-US": ""
-          },
           "disabled": false,
           "omitted": false
         }
@@ -5934,7 +5847,7 @@
         }
       },
       "displayField": null,
-      "name": "Button Style",
+      "name": "Theme Style Button",
       "description": null,
       "fields": [
         {
@@ -6133,7 +6046,7 @@
         }
       },
       "displayField": "size",
-      "name": "Heading Style",
+      "name": "Theme Style Heading",
       "description": null,
       "fields": [
         {
@@ -6664,7 +6577,7 @@
         }
       },
       "displayField": "title",
-      "name": "CTA",
+      "name": "CTA Section",
       "description": null,
       "fields": [
         {
@@ -6856,7 +6769,7 @@
         }
       },
       "displayField": "question",
-      "name": "Item",
+      "name": "FAQ Item",
       "description": null,
       "fields": [
         {
@@ -6948,7 +6861,7 @@
         }
       },
       "displayField": "elementId",
-      "name": "Form",
+      "name": "Form Block",
       "description": null,
       "fields": [
         {
@@ -7114,7 +7027,7 @@
         }
       },
       "displayField": "title",
-      "name": "Hero",
+      "name": "Hero Section",
       "description": null,
       "fields": [
         {
@@ -7319,7 +7232,7 @@
         }
       },
       "displayField": "title",
-      "name": "Blog",
+      "name": "Post Feed Layout",
       "description": null,
       "fields": [
         {
@@ -7333,6 +7246,20 @@
           "defaultValue": {
             "en-US": "This is a page title"
           },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -7443,17 +7370,6 @@
           "type": "Object",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "slug",
-          "name": "Slug",
-          "type": "Text",
-          "localized": false,
-          "required": true,
           "validations": [
           ],
           "disabled": false,
@@ -7646,7 +7562,7 @@
         }
       },
       "displayField": "title",
-      "name": "Text block",
+      "name": "Text Section",
       "description": null,
       "fields": [
         {
@@ -7808,6 +7724,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8245,6 +8164,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8403,6 +8325,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8492,6 +8417,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8567,6 +8495,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8653,6 +8584,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8735,6 +8669,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -8882,6 +8819,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -9018,6 +8958,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -9167,6 +9110,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         },
         {
@@ -9266,6 +9212,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -9345,6 +9294,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -9497,6 +9449,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -9550,14 +9505,14 @@
           "widgetId": "singleLine"
         },
         {
-          "fieldId": "sections"
-        },
-        {
           "fieldId": "slug",
           "settings": {
             "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
           },
-          "widgetId": "singleLine"
+          "widgetId": "slugEditor"
+        },
+        {
+          "fieldId": "sections"
         }
       ]
     },
@@ -9618,6 +9573,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         },
         {
@@ -9795,6 +9753,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         },
         {
@@ -9992,6 +9953,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -10071,6 +10035,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -10223,6 +10190,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -10276,6 +10246,13 @@
           "widgetId": "singleLine"
         },
         {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+          },
+          "widgetId": "slugEditor"
+        },
+        {
           "fieldId": "date",
           "settings": {
             "format": "dateonly"
@@ -10296,78 +10273,11 @@
           "fieldId": "bottomSections"
         },
         {
-          "fieldId": "slug",
-          "settings": {
-            "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
-          },
-          "widgetId": "singleLine"
-        },
-        {
           "fieldId": "content",
           "settings": {
             "helpText": "Page content"
           },
           "widgetId": "markdown"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "2zqi83f33bxg",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 2,
-        "createdAt": "2022-01-18T19:49:50.899Z",
-        "createdBy": {
-          "sys": {
-            "id": "0a3FDK3QSZ7XBXIJWxn2UU",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2022-01-18T19:49:57.805Z",
-        "updatedBy": {
-          "sys": {
-            "id": "0a3FDK3QSZ7XBXIJWxn2UU",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "Section",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "colors",
-          "settings": {
-            "helpText": "The color theme of the section"
-          },
-          "widgetId": "dropdown"
-        },
-        {
-          "fieldId": "elementId",
-          "settings": {
-            "helpText": "The unique ID for an HTML element, must not contain whitespace"
-          },
-          "widgetId": "singleLine"
         }
       ]
     },
@@ -10794,6 +10704,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -10852,6 +10765,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -10928,6 +10844,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -11013,6 +10932,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -11066,6 +10988,13 @@
           "widgetId": "singleLine"
         },
         {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+          },
+          "widgetId": "slugEditor"
+        },
+        {
           "fieldId": "numOfPostsPerPage",
           "settings": {
             "helpText": "set to 0 to show all posts on a single page"
@@ -11083,14 +11012,10 @@
         },
         {
           "fieldId": "styles",
-          "widgetId": "objectEditor"
-        },
-        {
-          "fieldId": "slug",
           "settings": {
-            "helpText": "The URL path of this page relative to site root. For example, the site root page would be \"/\", and post page would be \"posts/new-post/\""
+            "helpText": "The styles field is controlled by Stackbit editor"
           },
-          "widgetId": "singleLine"
+          "widgetId": "objectEditor"
         }
       ]
     },
@@ -11162,6 +11087,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]
@@ -11238,6 +11166,9 @@
         },
         {
           "fieldId": "styles",
+          "settings": {
+            "helpText": "The styles field is controlled by Stackbit editor"
+          },
           "widgetId": "objectEditor"
         }
       ]

@@ -5,8 +5,9 @@ import Markdown from 'markdown-to-jsx';
 import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
 import Action from '../../../atoms/Action';
 import ImageBlock from '../../../molecules/ImageBlock';
+import * as types from '../../../../types/sourcebit';
 
-export default function FeaturedItem(props) {
+export default function FeaturedItem(props: types.FeaturedItem & { enableHover?: boolean | undefined; }) {
     const cssId = props.elementId || null;
     const styles = props.styles || {};
     const itemBorderWidth = styles.self?.borderWidth ? styles.self?.borderWidth : 0;
@@ -57,27 +58,31 @@ export default function FeaturedItem(props) {
                     {props.text}
                 </Markdown>
             )}
-            {itemActions(props)}
+            <Actions actions={props.actions} styles={props.styles?.self} hasTopMargin={!!(props.title || props.subtitle || props.text)} />
         </article>
     );
 }
 
-function itemActions(props) {
-    const actions = props.actions || [];
+interface ActionProps {
+    actions?: (types.Button | types.Link)[];
+    styles?: Record<string, any>;
+    hasTopMargin?: boolean;
+}
+
+function Actions({ actions = [], styles = {}, hasTopMargin = false }: ActionProps = {}) {
     if (actions.length === 0) {
         return null;
     }
-    const styles = props.styles || {};
     return (
         <div
             className={classNames('overflow-x-hidden', {
-                'mt-6': props.title || props.subtitle || props.text
+                'mt-6': hasTopMargin
             })}
         >
             <div
                 className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', {
-                    'justify-center': styles.self?.textAlign === 'center',
-                    'justify-end': styles.self?.textAlign === 'right'
+                    'justify-center': styles.textAlign === 'center',
+                    'justify-end': styles.textAlign === 'right'
                 })}
                 data-sb-field-path=".actions"
             >

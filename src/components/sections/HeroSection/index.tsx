@@ -6,8 +6,11 @@ import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Action, Badge } from '../../atoms';
+import * as types from '../../../types/sourcebit';
 
-export default function HeroSection(props) {
+export type HeroSectionProps = types.HeroSection;
+
+export default function HeroSection(props: HeroSectionProps) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
@@ -60,7 +63,7 @@ export default function HeroSection(props) {
                         </div>
                         {props.media && (
                             <div className="flex-1 w-full">
-                                {heroMedia(props.media)}
+                                <Media media={props.media}/>
                             </div>
                         )}
                     </div>
@@ -70,19 +73,19 @@ export default function HeroSection(props) {
     );
 }
 
-function heroMedia(media) {
-    const mediaType = media.__metadata.modelName;
-    if (!mediaType) {
-        throw new Error(`hero section media does not have the 'type' property`);
+function Media({ media }: { media: types.FormBlock | types.ImageBlock | types.VideoBlock }) {
+    const modelName = media.__metadata.modelName;
+    if (!modelName) {
+        throw new Error(`hero section media does not have the 'modelName' property`);
     }
-    const Media = getComponent(mediaType);
-    if (!Media) {
-        throw new Error(`no component matching the hero section media type: ${mediaType}`);
+    const MediaComponent = getComponent(modelName);
+    if (!MediaComponent) {
+        throw new Error(`no component matching the hero section media model name: ${modelName}`);
     }
-    return <Media {...media} data-sb-field-path=".media" />;
+    return <MediaComponent {...media} data-sb-field-path=".media" />;
 }
 
-function heroBody(props) {
+function heroBody(props: HeroSectionProps) {
     const styles = props.styles || {};
     return (
         <div>

@@ -1,43 +1,36 @@
+# The stackbit.yaml file lets you define the characteristic of your website
+# needed to make your theme, or project, work with Stackbit. For more info about
+# stackbit.yaml configuration visit https://docs.stackbit.com/reference/stackbit-yaml/
 stackbitVersion: ~0.4.0
 ssgName: nextjs
+cmsName: contentful
 nodeVersion: '14'
+
+# The "buildCommand" and the "publishDir" properties are used to configure the
+# serverless deployment platform when Stackbit creates a new site from this theme.
 buildCommand: npm run build
-publishDir: public
+publishDir: out
+
+# The "import" object defines how Stackbit should provision Contentful when
+# creating a new site from this theme via https://app.stackbit.com/create.
 import:
   type: contentful
-  contentFile: contentful-export/export.json
+  contentFile: contentful/export.json
+  uploadAssets: true
+  assetsDirectory: contentful
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_DELIVERY_TOKEN
-  uploadAssets: true
-  assetsDirectory: contentful-export
-assets:
-  referenceType: static
-  staticDir: public
-  uploadDir: images
-  publicPath: /
-dataDir: content/data
-pagesDir: content/pages
-pageLayoutKey: layout
-objectTypeKey: type
+
 styleObjectModelName: ThemeStyle
-contentModels:
+
+# These models are merged with Contentful models
+models:
   PageLayout:
-    isPage: true
+    type: page
     urlPath: '/{slug}'
-    newFilePath: '{slug}.md'
   PostLayout:
-    isPage: true
+    type: page
     urlPath: '/blog/{slug}'
-    newFilePath: 'blog/{slug}.md'
-  Person:
-    newFilePath: 'team/{slug}.json'
   PostFeedLayout:
-    isPage: true
-    singleInstance: true
+    type: page
     urlPath: '/blog'
-    file: 'blog/index.md'
-    newFilePath: 'blog/index.md'
-modelsSource:
-  type: files
-  modelDirs:
-    - .stackbit/models
