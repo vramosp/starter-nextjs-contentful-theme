@@ -10,7 +10,7 @@
         "build": "next build && next export",
         "start": "next start",
         "export": "next export",
-        "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful.d.ts",
+        "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful.d.ts && ./contentful-to-sourcebit-types.js",
         "validate": "stackbit validate",
         "analyze": "ANALYZE=true next build",
         "analyze:server": "BUNDLE_ANALYZE=server next build",

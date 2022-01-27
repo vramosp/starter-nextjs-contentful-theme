@@ -7,7 +7,7 @@ import Action from '../../atoms/Action';
 import FeaturedItem from './FeaturedItem';
 import * as types from '../../../types/sourcebit';
 
-export default function FeaturedItemsSection(props: types.FeaturedItemsSection) {
+export default function FeaturedItemsSection(props: types.IFeaturedItemsSection) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
@@ -73,7 +73,7 @@ export default function FeaturedItemsSection(props: types.FeaturedItemsSection) 
 }
 
 interface ActionProps {
-    actions?: (types.Button | types.Link)[];
+    actions?: (types.IButton | types.ILink)[];
     styles?: Record<string, any>;
 }
 

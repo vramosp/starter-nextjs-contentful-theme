@@ -7,7 +7,7 @@ import Action from '../../../atoms/Action';
 import ImageBlock from '../../../molecules/ImageBlock';
 import * as types from '../../../../types/sourcebit';
 
-export default function FeaturedItem(props: types.FeaturedItem & { enableHover?: boolean | undefined; }) {
+export default function FeaturedItem(props: types.IFeaturedItem & { enableHover?: boolean | undefined; }) {
     const cssId = props.elementId || null;
     const styles = props.styles || {};
     const itemBorderWidth = styles.self?.borderWidth ? styles.self?.borderWidth : 0;
@@ -64,7 +64,7 @@ export default function FeaturedItem(props: types.FeaturedItem & { enableHover?:
 }
 
 interface ActionProps {
-    actions?: (types.Button | types.Link)[];
+    actions?: (types.IButton | types.ILink)[];
     styles?: Record<string, any>;
     hasTopMargin?: boolean;
 }

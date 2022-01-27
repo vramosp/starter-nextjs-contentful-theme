@@ -8,7 +8,7 @@ import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Action, Badge } from '../../atoms';
 import * as types from '../../../types/sourcebit';
 
-export type HeroSectionProps = types.HeroSection;
+export type HeroSectionProps = types.IHeroSection;
 
 export default function HeroSection(props: HeroSectionProps) {
     const cssId = props.elementId || null;
@@ -73,7 +73,7 @@ export default function HeroSection(props: HeroSectionProps) {
     );
 }
 
-function Media({ media }: { media: types.FormBlock | types.ImageBlock | types.VideoBlock }) {
+function Media({ media }: { media: types.IFormBlock | types.IImageBlock | types.IVideoBlock }) {
     const modelName = media.__metadata.modelName;
     if (!modelName) {
         throw new Error(`hero section media does not have the 'modelName' property`);

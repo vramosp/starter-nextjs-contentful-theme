@@ -5,7 +5,7 @@ import { iconMap } from '../../svgs';
 import * as types from '../../../types/sourcebit';
 import { Annotations } from '../../../types/stackbit';
 
-export type SocialProps = types.Social & Annotations & { className?: string };
+export type SocialProps = types.ISocial & Annotations & { className?: string };
 
 export default function Social(props: SocialProps) {
     const { label, altText, url, icon = 'facebook', style = 'link', className, elementId } = props;

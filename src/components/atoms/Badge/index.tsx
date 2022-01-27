@@ -4,7 +4,7 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import * as types from '../../../types/sourcebit';
 import { Annotations } from '../../../types/stackbit';
 
-export type BadgeProps = types.Badge & Annotations & { className?: string };
+export type BadgeProps = types.IBadge & Annotations & { className?: string };
 
 export default function Badge(props: BadgeProps) {
     const { label, className, elementId } = props;

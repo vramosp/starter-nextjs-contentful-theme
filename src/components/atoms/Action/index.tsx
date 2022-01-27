@@ -5,7 +5,7 @@ import Link from '../Link';
 import * as types from '../../../types/sourcebit';
 import { Annotations } from '../../../types/stackbit';
 
-export type ActionProps = (types.Link | types.Button) & Annotations & { className?: string };
+export type ActionProps = (types.ILink | types.IButton) & Annotations & { className?: string };
 
 export default function Action(props: ActionProps) {
     const { label, altText, url, showIcon, icon = 'arrowLeft', iconPosition = 'right', className, elementId } = props;
