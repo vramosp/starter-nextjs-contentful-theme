@@ -91,7 +91,7 @@ To contribute to this theme, please follow the following steps:
 
 ## Working with types
 
-When you update content models in Contentful, run `npm run contentful-typescript-codegen` with `CONTENTFUL_ACCESS_TOKEN` and `CONTENTFUL_SPACE_ID` environment variables to generate types from Contentful content models. The types will be stored at `src/types/contentful.d.ts`.
+When you update content models in Contentful, run `npm run generate-types` with `CONTENTFUL_ACCESS_TOKEN` and `CONTENTFUL_SPACE_ID` environment variables to generate types from Contentful content models. The types will be stored at `src/types/contentful.d.ts`.
 
 Contentful types re-mapped into internal Sourcebit types inside `src/types/sourcebit.ts`. And these are the types that are used by React components. The remapping is done for several reasons:
 
