@@ -1,12 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
-import * as types from '../../../types/sourcebit';
-import { Annotations } from '../../../types/stackbit';
 
-export type BadgeProps = types.IBadge & Annotations & { className?: string };
-
-export default function Badge(props: BadgeProps) {
+export default function Badge(props) {
     const { label, className, elementId } = props;
     if (!label) {
         return null;

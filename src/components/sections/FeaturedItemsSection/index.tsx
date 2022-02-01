@@ -5,9 +5,8 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import Action from '../../atoms/Action';
 import FeaturedItem from './FeaturedItem';
-import * as types from '../../../types/sourcebit';
 
-export default function FeaturedItemsSection(props: types.IFeaturedItemsSection) {
+export default function FeaturedItemsSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const styles = props.styles || {};
@@ -73,7 +72,7 @@ export default function FeaturedItemsSection(props: types.IFeaturedItemsSection)
 }
 
 interface ActionProps {
-    actions?: (types.IButton | types.ILink)[];
+    actions?: any[];
     styles?: Record<string, any>;
 }
 

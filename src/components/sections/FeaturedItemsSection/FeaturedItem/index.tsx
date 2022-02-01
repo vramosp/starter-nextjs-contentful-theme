@@ -5,9 +5,8 @@ import Markdown from 'markdown-to-jsx';
 import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
 import Action from '../../../atoms/Action';
 import ImageBlock from '../../../molecules/ImageBlock';
-import * as types from '../../../../types/sourcebit';
 
-export default function FeaturedItem(props: types.IFeaturedItem & { enableHover?: boolean | undefined; }) {
+export default function FeaturedItem(props) {
     const cssId = props.elementId || null;
     const styles = props.styles || {};
     const itemBorderWidth = styles.self?.borderWidth ? styles.self?.borderWidth : 0;
@@ -64,12 +63,12 @@ export default function FeaturedItem(props: types.IFeaturedItem & { enableHover?
 }
 
 interface ActionProps {
-    actions?: (types.IButton | types.ILink)[];
+    actions?: any;
     styles?: Record<string, any>;
     hasTopMargin?: boolean;
 }
 
-function Actions({ actions = [], styles = {}, hasTopMargin = false }: ActionProps = {}) {
+function Actions({ actions = [], styles = {}, hasTopMargin = false }: ActionProps) {
     if (actions.length === 0) {
         return null;
     }

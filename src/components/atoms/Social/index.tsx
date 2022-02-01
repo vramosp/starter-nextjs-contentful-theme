@@ -2,12 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Link from '../Link';
 import { iconMap } from '../../svgs';
-import * as types from '../../../types/sourcebit';
-import { Annotations } from '../../../types/stackbit';
 
-export type SocialProps = types.ISocial & Annotations & { className?: string };
-
-export default function Social(props: SocialProps) {
+export default function Social(props) {
     const { label, altText, url, icon = 'facebook', style = 'link', className, elementId } = props;
     const IconComponent = iconMap[icon];
     const fieldPath = props['data-sb-field-path'] ?? '';

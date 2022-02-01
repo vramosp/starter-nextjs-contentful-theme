@@ -6,11 +6,8 @@ import { getComponent } from '../../components-registry';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import { getDataAttrs } from '../../../utils/get-data-attrs';
 import { Action, Badge } from '../../atoms';
-import * as types from '../../../types/sourcebit';
 
-export type HeroSectionProps = types.IHeroSection;
-
-export default function HeroSection(props: HeroSectionProps) {
+export default function HeroSection(props) {
     const cssId = props.elementId || null;
     const colors = props.colors || 'colors-a';
     const sectionStyles = props.styles?.self || {};
@@ -73,7 +70,7 @@ export default function HeroSection(props: HeroSectionProps) {
     );
 }
 
-function Media({ media }: { media: types.IFormBlock | types.IImageBlock | types.IVideoBlock }) {
+function Media({ media }: { media: any }) {
     const modelName = media.__metadata.modelName;
     if (!modelName) {
         throw new Error(`hero section media does not have the 'modelName' property`);
@@ -85,7 +82,7 @@ function Media({ media }: { media: types.IFormBlock | types.IImageBlock | types.
     return <MediaComponent {...media} data-sb-field-path=".media" />;
 }
 
-function heroBody(props: HeroSectionProps) {
+function heroBody(props) {
     const styles = props.styles || {};
     return (
         <div>
