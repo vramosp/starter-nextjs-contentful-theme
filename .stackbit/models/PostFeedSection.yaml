@@ -1,41 +1,9 @@
-type: object
 name: PostFeedSection
-label: Post feed
-labelField: title
 extends:
   - Section
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - type: string
-    name: title
-    label: Title
-    default: Posts
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: Blog posts
-  - type: boolean
-    name: showDate
-    label: Show post date
-    default: false
-  - type: boolean
-    name: showAuthor
-    label: Show post author
-    description: Show the author of the post
-    default: false
-  - type: boolean
-    name: showExcerpt
-    label: Show post excerpt
-    default: false
-  - type: enum
-    name: variant
+  - name: variant
     group: styles
-    label: Arrangement
-    default: variant-a
     options:
       - label: Three columns grid
         value: variant-a
@@ -43,14 +11,7 @@ fields:
         value: variant-b
       - label: Three columns cards grid
         value: variant-c
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: actions
     default:
       - type: Button
         label: View all

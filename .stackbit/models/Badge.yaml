@@ -1,23 +1,10 @@
-type: object
 name: Badge
-label: Badge
-labelField: label
 fieldGroups:
   - name: settings
     label: Settings
 fields:
-  - type: string
-    name: label
-    label: Label
-    description: The text in the badge
-    default: 'This is the badge'
-    required: true
-  - type: string
-    name: elementId
+  - name: elementId
     group: settings
-    label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
-    default: ''
   - type: style
     name: styles
     styles:

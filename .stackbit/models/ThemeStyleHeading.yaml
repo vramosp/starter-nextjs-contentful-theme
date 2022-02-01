@@ -1,11 +1,6 @@
-type: object
 name: ThemeStyleHeading
-label: Heading Style
-labelField: size
 fields:
-  - type: enum
-    name: size
-    label: Font size
+  - name: size
     options:
       - label: XS
         value: xs
@@ -33,20 +28,14 @@ fields:
         value: 8xl
       - label: 9XL
         value: 9xl
-    default: 5xl
-  - type: enum
-    name: weight
-    label: Font weight
+  - name: weight
     controlType: button-group
     options:
       - label: Normal
         value: normal
       - label: Bold
         value: bold
-    default: bold
-  - type: enum
-    name: decoration
-    label: Decoration
+  - name: decoration
     controlType: button-group
     options:
       - label: None
@@ -55,10 +44,7 @@ fields:
         value: underline
       - label: Line through
         value: line-through
-    default: none
-  - type: enum
-    name: case
-    label: Case
+  - name: case
     controlType: button-group
     options:
       - label: Default
@@ -69,10 +55,7 @@ fields:
         value: capitalize
       - label: AG
         value: uppercase
-    default: none
-  - type: enum
-    name: letterSpacing
-    label: Letter spacing
+  - name: letterSpacing
     controlType: button-group
     options:
       - label: Tighter
@@ -85,4 +68,3 @@ fields:
         value: wide
       - label: Wider
         value: wider
-    default: normal

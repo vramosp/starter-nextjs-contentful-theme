@@ -1,7 +1,4 @@
-type: data
 name: ThemeStyle
-label: Theme Style
-file: style.json
 fieldGroups:
   - name: text-styles
     label: Text styles
@@ -10,60 +7,32 @@ fieldGroups:
   - name: button-styles
     label: Button styles
 fields:
-  - type: enum
-    name: fontHeadlines
-    label: Font - headlines & subtitles
+  - name: fontHeadlines
     group: text-styles
     options:
       - label: Sans
         value: sans
       - label: Sans alt
         value: sansAlt
-  - type: model
-    name: h1
-    label: H1
+  - name: h1
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: model
-    name: h2
-    label: H2
+  - name: h2
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: model
-    name: h3
-    label: H3
+  - name: h3
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: model
-    name: h4
-    label: H4
+  - name: h4
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: model
-    name: h5
-    label: H5
+  - name: h5
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: model
-    name: h6
-    label: H6
+  - name: h6
     group: text-styles
     readOnly: true
-    models:
-      - ThemeStyleHeading
-  - type: enum
-    name: fontBody
-    label: Font - body & captions
+  - name: fontBody
     group: text-styles
     options:
       - label: Sans
@@ -72,66 +41,43 @@ fields:
         value: sansAlt
   - type: color
     name: main
-    label: Site background
     group: color-palettes
   - type: color
     name: light
-    label: Light
     group: color-palettes
   - type: color
     name: onLight
-    label: Foreground over light
     group: color-palettes
   - type: color
     name: dark
-    label: Dark
     group: color-palettes
   - type: color
     name: onDark
-    label: Foreground over dark
     group: color-palettes
   - type: color
     name: primary
-    label: Primary
     group: color-palettes
   - type: color
     name: onPrimary
-    label: Foreground over primary
     group: color-palettes
   - type: color
     name: secondary
-    label: Secondary
     group: color-palettes
   - type: color
     name: onSecondary
-    label: Foreground over secondary
     group: color-palettes
   - type: color
     name: complementary
-    label: Complementary
     group: color-palettes
   - type: color
     name: onComplementary
-    label: Foreground over complementary
     group: color-palettes
-  - type: model
-    name: buttonPrimary
-    label: Primary button
+  - name: buttonPrimary
     group: button-styles
     readOnly: true
-    models:
-      - ThemeStyleButton
-  - type: model
-    name: buttonSecondary
-    label: Secondary button
+  - name: buttonSecondary
     group: button-styles
     readOnly: true
-    models:
-      - ThemeStyleButton
-  - type: model
-    name: link
-    label: Link
+  - name: link
     group: button-styles
     readOnly: true
-    models:
-      - ThemeStyleButton

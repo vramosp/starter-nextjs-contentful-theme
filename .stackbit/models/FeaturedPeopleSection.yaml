@@ -1,22 +1,10 @@
-type: object
 name: FeaturedPeopleSection
-label: Featured people
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - type: enum
-    name: variant
+  - name: variant
     group: styles
-    label: Arrangement
     options:
       - label: Four column grid
         value: variant-a
@@ -24,36 +12,6 @@ fields:
         value: variant-b
       - label: Two column alt grid
         value: variant-c
-    default: variant-a
-  - name: colors
-    default: colors-h
-  - type: string
-    name: title
-    label: Title
-    default: About us
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: Featured people section example
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
-  - type: list
-    name: people
-    label: People
-    items:
-      type: reference
-      models:
-        - Person
-    default:
-      - content/data/team/desmond-eagle.json
-      - content/data/team/dianne-ameter.json
-      - content/data/team/hilary-ouse.json
   - type: style
     name: styles
     styles:

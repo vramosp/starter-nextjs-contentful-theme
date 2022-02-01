@@ -1,40 +1,15 @@
-type: object
 name: FeaturedItemsSection
-label: Featured items
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - type: string
-    name: title
-    label: Title
-    default: Featured Items
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: The section subtitle
-  - type: list
-    name: items
-    label: Items
-    items:
-      type: model
-      models:
-        - FeaturedItem
+  - name: items
     default:
       - type: FeaturedItem
         title: Item Title
         text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.'
         featuredImage:
           type: ImageBlock
-          url: 'https://assets.stackbit.com/components/images/default/default-image.png'
           altText: Item image
         styles:
           title:
@@ -47,14 +22,7 @@ fields:
             textAlign: left
           actions:
             justifyContent: flex-start
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: actions
     default:
       - type: Button
         label: Apply Now
@@ -64,19 +32,9 @@ fields:
         label: Learn More
         url: '#'
         style: secondary
-  - type: number
-    name: columns
-    label: Items per row
+  - name: columns
     group: styles
     controlType: 'slider'
-    min: 1
-    max: 4
-    step: 1
-    default: 3
-  - type: boolean
-    name: enableHover
-    label: Enable hover
-    default: false
   - type: style
     name: styles
     styles:

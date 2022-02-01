@@ -1,7 +1,4 @@
-type: object
 name: Header
-label: Header
-labelField: title
 readOnly: true
 fieldGroups:
   - name: styles
@@ -9,10 +6,8 @@ fieldGroups:
   - name: settings
     label: Settings
 fields:
-  - type: enum
-    name: headerVariant
+  - name: headerVariant
     group: styles
-    label: Header arrangement
     options:
       - label: Header with logo and primary links on the left
         value: variant-a
@@ -24,10 +19,7 @@ fields:
         value: variant-d
       - label: Header with logo centered and primary links centered
         value: variant-e
-    default: variant-c
-  - type: enum
-    name: primaryColors
-    label: Primary colors
+  - name: primaryColors
     group: styles
     controlType: palette
     options:
@@ -71,10 +63,7 @@ fields:
         textColor: '$onComplementary'
         backgroundColor: '$complementary'
         borderColor: '#ececec'
-    default: colors-a
-  - type: enum
-    name: secondaryColors
-    label: Secondary colors (mobile menu)
+  - name: secondaryColors
     group: styles
     controlType: palette
     options:
@@ -118,32 +107,12 @@ fields:
         textColor: '$onComplementary'
         backgroundColor: '$complementary'
         borderColor: '#ececec'
-    default: colors-a
-  - type: string
-    name: title
-    label: Title
-    default: Your Brand
-  - type: boolean
-    name: isTitleVisible
-    label: Display title
-    default: true
-  - type: model
-    name: logo
-    label: Logo
-    models: [ImageBlock]
+  - name: logo
     default:
       type: ImageBlock
-      url: 'https://assets.stackbit.com/components/images/default/default-image.png'
       altText: 'Your logo image'
       caption: ''
-  - type: list
-    name: primaryLinks
-    label: Primary navigation links
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: primaryLinks
     default:
       - type: Link
         label: Home
@@ -153,14 +122,7 @@ fields:
         label: Blog
         url: /
         altText: Blog
-  - type: list
-    name: secondaryLinks
-    label: Secondary links
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: secondaryLinks
     default:
       - type: Button
         label: Sign up

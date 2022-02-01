@@ -1,47 +1,16 @@
-type: object
 name: FaqSection
-label: FAQ
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - type: string
-    name: title
-    label: Title
-    default: Frequently Asked Questions
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: The section subtitle
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: actions
     default:
       - type: Link
         label: See all
         url: '/'
         showIcon: true
         icon: arrowRight
-  - type: list
-    name: items
-    label: Items
-    items:
-      type: model
-      models:
-        - FaqItem
+  - name: items
     default:
       - question: How it this different from what we have today?
         answer: At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation. At the office, working together is often a distruction, on remote, it could be motivation.

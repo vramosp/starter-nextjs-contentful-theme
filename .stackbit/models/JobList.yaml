@@ -1,19 +1,6 @@
-type: object
 name: JobList
-label: Job list
-labelField: title
 fields:
-  - type: string
-    name: title
-    label: Title
-    default: Job List Title
-  - type: list
-    name: items
-    label: Items
-    items:
-      type: model
-      models:
-        - JobListItem
+  - name: items
     default:
       - type: JobListItem
         title: Role Title

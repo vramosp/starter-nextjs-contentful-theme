@@ -1,16 +1,11 @@
-type: object
 name: Section
-label: Section
 fieldGroups:
   - name: styles
     label: Styles
   - name: settings
     label: Settings
 fields:
-  - type: enum
-    name: colors
-    label: Colors
-    description: The color theme of the section
+  - name: colors
     group: styles
     controlType: palette
     options:
@@ -55,9 +50,5 @@ fields:
         backgroundColor: '$complementary'
         borderColor: '#ececec'
     default: colors-a
-  - type: string
-    name: elementId
+  - name: elementId
     group: settings
-    label: Element ID
-    description: The unique ID for an HTML element, must not contain whitespace
-    default: ''

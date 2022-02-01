@@ -1,21 +1,14 @@
-type: object
 name: ThemeStyleButton
-label: Button Style
-group: button-styles
 readOnly: true
 fields:
-  - type: enum
-    name: weight
-    label: Font weight
+  - name: weight
     controlType: button-group
     options:
       - label: Normal
         value: normal
       - label: Bold
         value: bold
-  - type: enum
-    name: case
-    label: Case
+  - name: case
     controlType: button-group
     options:
       - label: Default
@@ -26,9 +19,7 @@ fields:
         value: capitalize
       - label: AG
         value: uppercase
-  - type: enum
-    name: letterSpacing
-    label: Letter spacing
+  - name: letterSpacing
     controlType: button-group
     options:
       - label: Tighter
@@ -41,9 +32,7 @@ fields:
         value: wide
       - label: Wider
         value: wider
-  - type: enum
-    name: borderRadius
-    label: Corner radius
+  - name: borderRadius
     controlType: button-group
     options:
       - label: None
@@ -52,9 +41,7 @@ fields:
         value: md
       - label: Large
         value: full
-  - type: enum
-    name: borderStyle
-    label: Border style
+  - name: borderStyle
     controlType: button-group
     options:
       - label: None
@@ -67,25 +54,13 @@ fields:
         value: dotted
       - label: Double
         value: double
-  - type: number
-    name: horizontalPadding
-    label: Horizontal padding
+  - name: horizontalPadding
     controlType: slider
-    min: 0
-    max: 30
-    step: 1
     unit: px
-  - type: number
-    name: verticalPadding
-    label: Vertical padding
+  - name: verticalPadding
     controlType: slider
-    min: 0
-    max: 30
-    step: 1
     unit: px
-  - type: enum
-    name: shadow
-    label: Shadow
+  - name: shadow
     controlType: button-group
     options:
       - label: None

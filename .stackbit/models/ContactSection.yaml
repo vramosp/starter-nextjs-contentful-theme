@@ -1,49 +1,22 @@
-type: object
 name: ContactSection
-label: Contact
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - name: colors
-    default: colors-h
-  - type: enum
-    name: backgroundSize
+  - name: backgroundSize
     group: styles
-    label: Background size
     options:
       - label: Full
         value: full
       - label: Inset
         value: inset
-    default: full
-  - type: string
-    name: title
-    label: Title
-  - type: markdown
-    name: text
-    label: Text
-    default: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum.
-  - type: model
-    name: form
-    label: Form
-    models:
-      - FormBlock
+  - name: form
     default:
       type: FormBlock
       elementId: contact-form
       action: /.netlify/functions/submission_created
       destination: ''
+      submitLabel: Send Message
       fields:
         - type: TextFormControl
           name: name
@@ -67,16 +40,9 @@ fields:
           name: updates
           label: Sign me up to receive updates
           width: full
-      submitLabel: Send Message
-  - type: model
-    name: media
-    label: Media
-    models:
-      - ImageBlock
-      - VideoBlock
+  - name: media
     default:
       type: ImageBlock
-      url: https://assets.stackbit.com/components/images/default/contact.png
       altText: Contact form image
   - type: style
     name: styles

@@ -1,38 +1,8 @@
-type: object
 name: TextSection
-label: Text block
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - name: colors
-    default: colors-f
-  - type: string
-    name: title
-    label: Title
-    default: The Section Title
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: The section subtitle
-  - type: markdown
-    name: text
-    label: Text
-    default: |-
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo
-      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
   - type: style
     name: styles
     styles:

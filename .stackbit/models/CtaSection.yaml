@@ -1,58 +1,23 @@
-type: object
 name: CtaSection
-label: CTA
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - name: colors
-    default: colors-f
-  - type: enum
-    name: backgroundSize
+  - name: backgroundSize
     group: styles
-    label: Background size
     options:
       - label: Full
         value: full
       - label: Inset
         value: inset
-    default: full
-  - type: string
-    name: title
-    label: Title
-    default: "Let's do this"
-  - type: markdown
-    name: text
-    label: Text
-    default: |-
-      The Stackbit theme is flexible and scalable to every need. It can manage any layout and any screen.
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: actions
     default:
       - type: Button
         label: Try it now
         url: '/about'
         style: primary
-  - type: model
-    name: backgroundImage
+  - name: backgroundImage
     group: styles
-    label: Background image
-    models:
-      - ImageBlock
   - type: style
     name: styles
     styles:

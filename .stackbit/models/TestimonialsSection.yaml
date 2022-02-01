@@ -1,24 +1,10 @@
-type: object
 name: TestimonialsSection
-label: Testimonials
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - name: colors
-    default: colors-h
-  - type: enum
-    name: variant
+  - name: variant
     group: styles
-    label: Arrangement
     options:
       - label: Left aligned, large author image
         value: variant-a
@@ -26,20 +12,7 @@ fields:
         value: variant-b
       - label: Centered, small author image
         value: variant-c
-    default: variant-a
-  - type: string
-    name: title
-    label: Title
-  - type: string
-    name: subtitle
-    label: Subtitle
-  - type: list
-    name: testimonials
-    label: Testimonials
-    items:
-      type: model
-      models:
-        - Testimonial
+  - name: testimonials
     default:
       - type: Testimonial
         quote: |-
@@ -49,7 +22,6 @@ fields:
         title: Product Marketing Manager at Acme
         image:
           type: ImageBlock
-          url: https://assets.stackbit.com/components/images/default/default-person.png
           altText: Person photo
   - type: style
     name: styles

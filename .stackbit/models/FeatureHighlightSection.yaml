@@ -1,59 +1,16 @@
-type: object
 name: FeatureHighlightSection
-label: Feature highlight
-labelField: title
 thumbnail: https://assets.stackbit.com/components/models/thumbnails/default.png
 extends:
   - Section
-groups:
-  - sectionComponent
-fieldGroups:
-  - name: styles
-    label: Styles
-  - name: settings
-    label: Settings
 fields:
-  - name: colors
-    default: colors-f
-  - type: enum
-    name: backgroundSize
+  - name: backgroundSize
     group: styles
-    label: Background size
     options:
       - label: Full
         value: full
       - label: Inset
         value: inset
-    default: full
-  - type: string
-    name: title
-    label: Title
-    default: This Is A Feature Title
-  - type: string
-    name: subtitle
-    label: Subtitle
-    default: The section subtitle
-  - type: model
-    name: badge
-    label: Badge
-    models:
-      - Badge
-  - type: markdown
-    name: text
-    label: Text
-    default: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
-  - type: list
-    name: actions
-    label: Actions
-    items:
-      type: model
-      models:
-        - Button
-        - Link
+  - name: actions
     default:
       - type: Button
         label: Get Started
@@ -64,15 +21,9 @@ fields:
         label: Learn More
         url: '/'
         style: secondary
-  - type: model
-    name: media
-    label: Media
-    models:
-      - ImageBlock
-      - VideoBlock
+  - name: media
     default:
       type: ImageBlock
-      url: https://assets.stackbit.com/components/images/default/hero.png
       altText: Hero section image
   - type: style
     name: styles
