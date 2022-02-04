@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { cssClassesFromUrlPath, getPageUrl } = require('./src/utils/page-utils');
+const { cssClassesFromUrlPath, getPageUrl, setEnvironmentVariables } = require('./src/utils/page-utils');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -63,10 +63,11 @@ module.exports = {
                 flattenAssetUrls: true,
                 commonProps: (objects) => {
                     const site = objects.find((page) => page.__metadata.modelName === 'Config');
+                    site.env = setEnvironmentVariables();
                     return { site };
                 },
                 pages: (objects) => {
-                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout', 'PostLayout'].includes(page.__metadata.modelName));
+                    const pageObjects = objects.filter((page) => ['PageLayout', 'PostFeedLayout', 'PostLayout'].includes(page?.__metadata.modelName));
                     const pages = pageObjects.map((page) => {
                         const { __metadata, ...restProps } = page;
                         const urlPath = getPageUrl(page);

@@ -23,7 +23,15 @@ function getPageUrl(page) {
     return page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
 }
 
+function setEnvironmentVariables() {
+  return {
+    ...(process?.env?.URL && { URL: process.env.URL }),
+  }
+}
+
+
 module.exports = {
     cssClassesFromUrlPath,
-    getPageUrl
+    getPageUrl,
+    setEnvironmentVariables
 };

@@ -136,6 +136,15 @@ export interface IConfigFields {
 
     /** Footer configuration */
     footer?: IFooter | undefined;
+
+    /** titleSuffix */
+    titleSuffix?: string | undefined;
+
+    /** defaultSocialImage */
+    defaultSocialImage?: Asset | undefined;
+
+    /** defaultMetaTags */
+    defaultMetaTags?: IMetaTag[] | undefined;
 }
 
 export interface IConfig extends Entry<IConfigFields> {
@@ -1044,6 +1053,49 @@ export interface IMediaGallerySection extends Entry<IMediaGallerySectionFields> 
     };
 }
 
+export interface IMetaTagFields {
+    /** property */
+    property?:
+        | 'og:title'
+        | 'og:type'
+        | 'og:image'
+        | 'og:image:alt'
+        | 'og:url'
+        | 'og:description'
+        | 'og:locale'
+        | 'og:site_name'
+        | 'og:video'
+        | 'twitter:card'
+        | 'twitter:site'
+        | 'twitter:creator'
+        | 'twitter:description'
+        | 'twitter:title'
+        | 'twitter:image'
+        | 'twitter:image:alt'
+        | 'twitter:player'
+        | undefined;
+
+    /** content */
+    content?: string | undefined;
+}
+
+export interface IMetaTag extends Entry<IMetaTagFields> {
+    sys: {
+        id: string;
+        type: string;
+        createdAt: string;
+        updatedAt: string;
+        locale: string;
+        contentType: {
+            sys: {
+                id: 'MetaTag';
+                linkType: 'ContentType';
+                type: 'Link';
+            };
+        };
+    };
+}
+
 export interface IPagedPostsSectionFields {
     /** Element ID */
     elementId?: string | undefined;
@@ -1119,6 +1171,9 @@ export interface IPageLayoutFields {
               | ITextSection
           )[]
         | undefined;
+
+    /** Seo */
+    seo?: ISeo | undefined;
 }
 
 export interface IPageLayout extends Entry<IPageLayoutFields> {
@@ -1480,6 +1535,40 @@ export interface ISelectFormControl extends Entry<ISelectFormControlFields> {
         contentType: {
             sys: {
                 id: 'SelectFormControl';
+                linkType: 'ContentType';
+                type: 'Link';
+            };
+        };
+    };
+}
+
+export interface ISeoFields {
+    /** metaTitle */
+    metaTitle?: string | undefined;
+
+    /** metaDescription */
+    metaDescription?: string | undefined;
+
+    /** addTitleSuffix */
+    addTitleSuffix?: boolean | undefined;
+
+    /** socialImage */
+    socialImage?: Asset | undefined;
+
+    /** metaTags */
+    metaTags?: IMetaTag[] | undefined;
+}
+
+export interface ISeo extends Entry<ISeoFields> {
+    sys: {
+        id: string;
+        type: string;
+        createdAt: string;
+        updatedAt: string;
+        locale: string;
+        contentType: {
+            sys: {
+                id: 'Seo';
                 linkType: 'ContentType';
                 type: 'Link';
             };
@@ -1943,6 +2032,7 @@ export type CONTENT_TYPE =
     | 'JobsSection'
     | 'Link'
     | 'MediaGallerySection'
+    | 'MetaTag'
     | 'PagedPostsSection'
     | 'PageLayout'
     | 'Person'
@@ -1952,6 +2042,7 @@ export type CONTENT_TYPE =
     | 'QuoteSection'
     | 'RecentPostsSection'
     | 'SelectFormControl'
+    | 'Seo'
     | 'Social'
     | 'Testimonial'
     | 'TestimonialsSection'
