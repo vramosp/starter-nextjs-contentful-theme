@@ -13,11 +13,17 @@ module.exports = {
         {
             module: require('sourcebit-source-contentful'),
             options: {
+                // accessToken is found in Account Settings > Tokens > Personal Access Tokens - https://app.contentful.com/account/profile/cma_tokens
+                // accessToken is optional to run dev server
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-                // deliveryToken is optional, if not specified will be automatically created and reused
+                // deliveryToken is found in Contentful Settings > API Keys > Content Delivery API - access token
+                // deliveryToken is optional to run dev server
                 deliveryToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
-                // previewToken is optional, if not specified will be automatically created and reused
+                // previewToken is found in Contentful Settings > API Keys > Content Preview API - access token 
+                // previewToken is required to run dev server
                 previewToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+                // spaceId is found in Contentful Settings > General settings > Space ID
+                // spaceId is required to run dev server
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
                 environment: process.env.CONTENTFUL_ENVIRONMENT || 'master',
                 preview: isDev,

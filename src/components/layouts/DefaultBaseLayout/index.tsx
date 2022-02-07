@@ -9,7 +9,6 @@ export default function DefaultBaseLayout(props) {
     const { page, site } = props;
     const siteMeta = site?.__metadata || {};
     const pageMeta = page?.__metadata || {};
-    console.log(page)
     let title = seoGenerateTitle(page, site);
     let metaTags = seoGenerateMetaTags(page, site);
     let metaDescription = seoGenerateMetaDescription(page, site);
