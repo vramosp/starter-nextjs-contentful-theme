@@ -16,7 +16,7 @@ export function getAllAuthorPostsSorted(objects, authorId) {
 }
 
 export function getAllPosts(objects) {
-    return objects.filter((object) => object?.__metadata?.modelName === 'PostLayout');
+    return objects.filter((object) => object.__metadata?.modelName === 'PostLayout');
 }
 
 export function sortPosts(posts) {
